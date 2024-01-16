@@ -29,7 +29,9 @@ class DashboardPanelProvider extends PanelProvider
             ->id('dashboard')
             ->path('dashboard')
             ->login()
-            ->brandName('FinTrack')
+            ->brandLogo(asset('/file/image/logo/svg/logo.svg'))
+            ->brandLogoHeight('3rem')
+            ->favicon(asset('file/image/logo/svg/logo.svg'))
             ->colors([
                 'primary' => Color::hex('#166534'),
             ])
