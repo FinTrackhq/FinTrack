@@ -12,14 +12,12 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('plan_accounts', function (Blueprint $table) {
-
             $table->id();
             $table->string('name');
             $table->softDeletes();
             $table->timestamps();
         });
     }
-
     /**
      * Reverse the migrations.
      */
