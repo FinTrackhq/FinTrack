@@ -3,14 +3,19 @@
 namespace App\Models;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
+use Filament\Models\Contracts\FilamentUser;
+use Filament\Models\Contracts\HasTenants;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\HasOne;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
-
-class User extends Authenticatable
+use \Filament\Panel;
+use \Illuminate\Database\Eloquent\Model;
+use \Illuminate\Support\Collection;
+class User extends Authenticatable implements HasTenants
 {
     use HasApiTokens, HasFactory, Notifiable;
 
@@ -44,9 +49,18 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
     ];
-
-    public function Company() : HasMany
+    public function getTenants(Panel $panel): Collection
     {
-        return $this->hasMany(Company::class);
+        return $this->companies;
+    }
+
+    public function companies(): BelongsToMany
+    {
+        return $this->belongsToMany(Company::class);
+    }
+
+    public function canAccessTenant(Model $tenant): bool
+    {
+        return $this->companies->contains($tenant);
     }
 }

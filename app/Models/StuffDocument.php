@@ -13,7 +13,7 @@ class StuffDocument extends Model
         'passport_number',
         'passport_issued',
         'passport_date',
-        'snils'
+        'snils',
     ];
     use HasFactory,SoftDeletes;
 }

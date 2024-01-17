@@ -16,10 +16,16 @@ return new class extends Migration
             $table->string('name');
             $table->string('short_name');
             $table->string('type');
-            $table->string('tax_system');
-            $table->foreignId('user_id')->constrained()->cascadeOnDelete()->cascadeOnUpdate();
+            $table->foreignId('user_id')->constrained()->cascadeOnDelete();
             $table->timestamps();
             $table->softDeletes();
+        });
+        Schema::create('company_user', function (Blueprint $table) {
+            $table->id();
+            $table->foreignId('company_id')->constrained();
+            $table->foreignId('user_id')->constrained();
+            $table->timestamps();
+
         });
     }
 
@@ -28,6 +34,7 @@ return new class extends Migration
      */
     public function down(): void
     {
+        Schema::dropIfExists('company_user');
         Schema::dropIfExists('companies');
     }
 };
