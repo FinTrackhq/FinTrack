@@ -1,6 +1,6 @@
 <?php
 
-namespace Database\Factories\PlanAccount;
+namespace Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
 
@@ -17,7 +17,7 @@ class PlanAccountFactory extends Factory
     public function definition(): array
     {
         return [
-
+            'name' => fake()->name(),
         ];
     }
 }

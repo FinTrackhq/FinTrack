@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
 class StuffDocument extends Model
@@ -16,4 +17,9 @@ class StuffDocument extends Model
         'snils',
     ];
     use HasFactory,SoftDeletes;
+
+    public function stuff(): BelongsTo
+    {
+        return $this->belongsTo(CompanyStuff::class);
+    }
 }

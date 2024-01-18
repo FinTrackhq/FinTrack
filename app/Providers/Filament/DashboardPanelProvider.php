@@ -38,7 +38,8 @@ class DashboardPanelProvider extends PanelProvider
             ->colors([
                 'primary' => Color::hex('#166534'),
             ])
-            ->tenant(Company::class)
+            ->font('Roboto')
+            ->tenant(Company::class,slugAttribute: 'short_name')
             ->tenantRegistration(RegisterCompany::class)
             ->tenantProfile(EditCompanyProfile::class)
             ->discoverResources(in: app_path('Filament/Resources'), for: 'App\\Filament\\Resources')

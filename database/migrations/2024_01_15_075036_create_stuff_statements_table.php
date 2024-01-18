@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('stuff_statements', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('company_stuff_id')->constrained()->cascadeOnDelete()->cascadeOnUpdate();
+            $table->foreignId('stuff_id')->constrained('company_stuffs')->cascadeOnDelete()->cascadeOnUpdate();
             $table->integer('salary_10');
             $table->integer('salary_25');
             $table->integer('salary');

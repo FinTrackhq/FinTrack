@@ -4,6 +4,8 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\HasOne;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
 class CompanyExtract extends Model
@@ -16,5 +18,13 @@ class CompanyExtract extends Model
 
     ];
 
+    public function company():BelongsTo
+    {
+        return $this->belongsTo(Company::class);
+    }
+    public function companyPayment() : HasOne
+    {
+        return $this->hasOne(CompanyPayment::class);
+    }
     use HasFactory,SoftDeletes;
 }

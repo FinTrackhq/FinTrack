@@ -17,7 +17,7 @@ return new class extends Migration
             $table->string('coming');
             $table->string('expenditure');
             $table->foreignId('company_id')->constrained()->cascadeOnDelete()->cascadeOnUpdate();
-            $table->foreignIdFor(\App\Models\CompanyPayment::class);
+            $table->foreignId('payment_id')->constrained('company_payments')->cascadeOnDelete()->cascadeOnUpdate();
             $table->timestamps();
             $table->softDeletes();
         });

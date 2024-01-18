@@ -16,6 +16,14 @@ class CompanyPayment extends Model
         'corporate_account'
     ];
 
+    public function company(): BelongsTo
+    {
+        return $this->belongsTo(Company::class);
+    }
 
+    public function companyExtract() : BelongsTo
+    {
+        return $this->belongsTo(CompanyExtract::class);
+    }
     use HasFactory,SoftDeletes;
 }
