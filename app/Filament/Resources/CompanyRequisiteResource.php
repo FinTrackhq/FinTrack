@@ -19,7 +19,7 @@ class CompanyRequisiteResource extends Resource
 {
     protected static ?string $model = CompanyRequisite::class;
     protected static ?string $navigationGroup = 'Company management';
-    protected static ?string $navigationLabel = 'Company requisite';
+    protected static ?string $navigationLabel = 'Requisite';
     protected static ?string $modelLabel = 'Requisite';
     protected static ?string $navigationIcon = 'heroicon-o-clipboard-document-list';
 
@@ -33,7 +33,7 @@ class CompanyRequisiteResource extends Resource
             ->schema([
                 Forms\Components\Select::make('company_id')
                     ->reactive()
-                    ->options(\App\Models\Company::query()->where('id', session()->get('name'))->pluck('name', 'id'))
+                    ->options(\App\Models\Company::where('id', session()->get('name'))->pluck('name', 'id'))
                     ->default(session()->get('company_id'))
                     ->disabled(),
                 Forms\Components\TextInput::make('inn')

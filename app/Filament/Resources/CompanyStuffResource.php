@@ -17,7 +17,10 @@ class CompanyStuffResource extends Resource
 {
     protected static ?string $model = CompanyStuff::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+    protected static ?string $navigationIcon = 'heroicon-o-user-group';
+    protected static ?string $navigationGroup = 'Stuff management';
+    protected static ?string $modelLabel = 'Stuff';
+    protected static ?string $navigationLabel = 'Stuff';
 
     public static function form(Form $form): Form
     {
@@ -25,7 +28,7 @@ class CompanyStuffResource extends Resource
             ->schema([
                 Forms\Components\Select::make('company_id')
                     ->reactive()
-                    ->options(\App\Models\Company::query()->where('id', session()->get('name'))->pluck('name', 'id'))
+                    ->options(\App\Models\Company::where('id', session()->get('name'))->pluck('name', 'id'))
                     ->default(session()->get('company_id'))
                     ->disabled(),
                 Forms\Components\TextInput::make('full_name')

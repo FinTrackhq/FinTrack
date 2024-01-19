@@ -40,6 +40,11 @@ class Company extends Model
         return $this->hasMany(CompanyPayment::class);
     }
 
+    public function stuffDocuments(): HasMany
+    {
+        return $this->hasMany(StuffDocument::class);
+    }
+
     public function companyContacts() : HasMany
     {
         return $this->hasMany(CompanyContact::class);

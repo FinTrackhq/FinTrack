@@ -16,7 +16,7 @@ use Illuminate\Database\Eloquent\SoftDeletingScope;
 class CompanyPaymentResource extends Resource
 {
     protected static ?string $model = CompanyPayment::class;
-    protected static ?string $navigationLabel = 'Company payment';
+    protected static ?string $navigationLabel = 'Payment';
     protected static ?string $modelLabel = 'Payment';
     protected static ?string $navigationGroup = 'Company management';
     protected static ?string $navigationIcon = 'heroicon-o-credit-card';
@@ -26,24 +26,20 @@ class CompanyPaymentResource extends Resource
             ->schema([
                 Forms\Components\Select::make('company_id')
                     ->reactive()
-                    ->options(\App\Models\Company::query()->where('id', session()->get('name'))->pluck('name', 'id'))
+                    ->options(\App\Models\Company::where('id', session()->get('name'))->pluck('name', 'id'))
                     ->default(session()->get('company_id'))
                     ->disabled(),
                 Forms\Components\TextInput::make('account')
                     ->required()
                     ->numeric()
-                    ->mask('00000000000000000000')
                     ->maxLength(20)
                     ->placeholder('00000000000000000000'),
                 Forms\Components\TextInput::make('bic')
                     ->required()
                     ->numeric()
-
-                    ->mask('012345678')
                     ->placeholder('012345678')
                     ->maxLength(9),
                 Forms\Components\TextInput::make('corporate_account')
-                    ->mask('00000000000000000000')
                     ->placeholder('00000000000000000000')
                     ->required()
                     ->maxLength(20),

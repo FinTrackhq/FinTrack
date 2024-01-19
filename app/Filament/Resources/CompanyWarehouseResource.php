@@ -16,10 +16,10 @@ use Illuminate\Database\Eloquent\SoftDeletingScope;
 class CompanyWarehouseResource extends Resource
 {
     protected static ?string $model = CompanyWarehouse::class;
-    protected static ?string $navigationLabel = 'Company warehouse';
+    protected static ?string $navigationLabel = 'Warehouse';
     protected static ?string $modelLabel = 'Warehouse';
     protected static ?string $navigationIcon = 'heroicon-o-wallet';
-    protected static ?string $navigationGroup = 'Company management';
+    protected static ?string $navigationGroup = 'Warehouse management';
 
     public static function form(Form $form): Form
     {
@@ -27,19 +27,9 @@ class CompanyWarehouseResource extends Resource
             ->schema([
                 Forms\Components\Select::make('company_id')
                     ->reactive()
-                    ->options(\App\Models\Company::query()->where('id', session()->get('name'))->pluck('name', 'id'))
+                    ->options(\App\Models\Company::where('id', session()->get('name'))->pluck('name', 'id'))
                     ->default(session()->get('company_id'))
                     ->disabled(),
-                Forms\Components\TextInput::make('name')
-                    ->required()
-                    ->maxLength(255),
-                Forms\Components\TextInput::make('quantity')
-                    ->required()
-                    ->numeric(),
-                Forms\Components\TextInput::make('price')
-                    ->required()
-                    ->numeric()
-                    ->prefix('$'),
             ]);
     }
 
@@ -50,8 +40,8 @@ class CompanyWarehouseResource extends Resource
                 Tables\Columns\TextColumn::make('company.name')
                     ->numeric()
                     ->sortable(),
-                Tables\Columns\TextColumn::make('name')
-                    ->searchable(),
+                Tables\Columns\TextColumn::make('warehouse.id')
+                    ->sortable(),
                 Tables\Columns\TextColumn::make('quantity')
                     ->numeric()
                     ->sortable(),

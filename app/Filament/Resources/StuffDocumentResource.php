@@ -16,18 +16,17 @@ use Illuminate\Database\Eloquent\SoftDeletingScope;
 class StuffDocumentResource extends Resource
 {
     protected static ?string $model = StuffDocument::class;
-
+    protected static ?string $navigationGroup = 'Stuff management';
+    protected static ?string $navigationLabel = 'Document';
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
 
     public static function form(Form $form): Form
     {
         return $form
             ->schema([
-                Forms\Components\Select::make('company_id')
-                    ->reactive()
-                    ->options(\App\Models\Company::query()->where('id', session()->get('name'))->pluck('name', 'id'))
-                    ->default(session()->get('company_id'))
-                    ->disabled(),
+                Forms\Components\Select::make('stuff_id')
+                    ->relationship('stuff', 'full_name')
+                    ->required(),
                 Forms\Components\TextInput::make('passport_series')
                     ->required()
                     ->numeric(),
@@ -49,7 +48,7 @@ class StuffDocumentResource extends Resource
     {
         return $table
             ->columns([
-                Tables\Columns\TextColumn::make('stuff.id')
+                Tables\Columns\TextColumn::make('stuff.full_name')
                     ->numeric()
                     ->sortable(),
                 Tables\Columns\TextColumn::make('passport_series')
