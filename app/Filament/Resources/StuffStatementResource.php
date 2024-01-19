@@ -2,9 +2,9 @@
 
 namespace App\Filament\Resources;
 
-use App\Filament\Resources\StuffDocumentResource\Pages;
-use App\Filament\Resources\StuffDocumentResource\RelationManagers;
-use App\Models\StuffDocument;
+use App\Filament\Resources\StuffStatementResource\Pages;
+use App\Filament\Resources\StuffStatementResource\RelationManagers;
+use App\Models\StuffStatement;
 use Filament\Forms;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
@@ -13,32 +13,31 @@ use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 
-class StuffDocumentResource extends Resource
+class StuffStatementResource extends Resource
 {
-    protected static ?string $model = StuffDocument::class;
+    protected static ?string $model = StuffStatement::class;
+
     protected static ?string $navigationGroup = 'Stuff management';
-    protected static ?string $navigationLabel = 'Document';
-    protected static ?string $navigationIcon = 'heroicon-o-clipboard-document';
+    protected static ?string $navigationLabel = 'Statement';
+    protected static ?string $navigationIcon = 'heroicon-o-presentation-chart-line';
 
     public static function form(Form $form): Form
     {
         return $form
             ->schema([
                 Forms\Components\Select::make('stuff_id')
-                    ->relationship('stuff', 'full_name')
+                    ->relationship('stuff', 'id')
                     ->required(),
-                Forms\Components\TextInput::make('passport_series')
+                Forms\Components\Select::make('company_id')
+                    ->relationship('company', 'name')
+                    ->required(),
+                Forms\Components\TextInput::make('salary_10')
                     ->required()
                     ->numeric(),
-                Forms\Components\TextInput::make('passport_number')
+                Forms\Components\TextInput::make('salary_25')
                     ->required()
                     ->numeric(),
-                Forms\Components\TextInput::make('passport_issued')
-                    ->required()
-                    ->maxLength(255),
-                Forms\Components\DatePicker::make('passport_date')
-                    ->required(),
-                Forms\Components\TextInput::make('snils')
+                Forms\Components\TextInput::make('salary')
                     ->required()
                     ->numeric(),
             ]);
@@ -48,21 +47,19 @@ class StuffDocumentResource extends Resource
     {
         return $table
             ->columns([
-                Tables\Columns\TextColumn::make('stuff.full_name')
+                Tables\Columns\TextColumn::make('stuff.id')
                     ->numeric()
                     ->sortable(),
-                Tables\Columns\TextColumn::make('passport_series')
+                Tables\Columns\TextColumn::make('company.name')
                     ->numeric()
                     ->sortable(),
-                Tables\Columns\TextColumn::make('passport_number')
+                Tables\Columns\TextColumn::make('salary_10')
                     ->numeric()
                     ->sortable(),
-                Tables\Columns\TextColumn::make('passport_issued')
-                    ->searchable(),
-                Tables\Columns\TextColumn::make('passport_date')
-                    ->date()
+                Tables\Columns\TextColumn::make('salary_25')
+                    ->numeric()
                     ->sortable(),
-                Tables\Columns\TextColumn::make('snils')
+                Tables\Columns\TextColumn::make('salary')
                     ->numeric()
                     ->sortable(),
                 Tables\Columns\TextColumn::make('deleted_at')
@@ -102,10 +99,10 @@ class StuffDocumentResource extends Resource
     public static function getPages(): array
     {
         return [
-            'index' => Pages\ListStuffDocuments::route('/'),
-            'create' => Pages\CreateStuffDocument::route('/create'),
-            'view' => Pages\ViewStuffDocument::route('/{record}'),
-            'edit' => Pages\EditStuffDocument::route('/{record}/edit'),
+            'index' => Pages\ListStuffStatements::route('/'),
+            'create' => Pages\CreateStuffStatement::route('/create'),
+            'view' => Pages\ViewStuffStatement::route('/{record}'),
+            'edit' => Pages\EditStuffStatement::route('/{record}/edit'),
         ];
     }
 }

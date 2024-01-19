@@ -54,5 +54,10 @@ class Company extends Model
     {
         return $this->hasMany(CompanyStuff::class);
     }
+
+    public function stuffStatements(): HasMany
+    {
+        return $this->hasMany(StuffStatement::class);
+    }
     use HasFactory, SoftDeletes;
 }

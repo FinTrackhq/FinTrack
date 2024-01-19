@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('stuff_statements', function (Blueprint $table) {
             $table->id();
             $table->foreignId('stuff_id')->constrained('company_stuffs')->cascadeOnDelete()->cascadeOnUpdate();
+            $table->foreignId('company_id')->constrained()->cascadeOnDelete()->cascadeOnUpdate();
             $table->integer('salary_10');
             $table->integer('salary_25');
             $table->integer('salary');
