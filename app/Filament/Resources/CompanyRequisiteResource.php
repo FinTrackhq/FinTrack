@@ -12,6 +12,8 @@ use Filament\Tables;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
+use Psr\Container\ContainerExceptionInterface;
+use Psr\Container\NotFoundExceptionInterface;
 
 class CompanyRequisiteResource extends Resource
 {
@@ -21,13 +23,19 @@ class CompanyRequisiteResource extends Resource
     protected static ?string $modelLabel = 'Requisite';
     protected static ?string $navigationIcon = 'heroicon-o-clipboard-document-list';
 
+    /**
+     * @throws ContainerExceptionInterface
+     * @throws NotFoundExceptionInterface
+     */
     public static function form(Form $form): Form
     {
         return $form
             ->schema([
                 Forms\Components\Select::make('company_id')
-                    ->relationship('company', 'name')
-                    ->required(),
+                    ->reactive()
+                    ->options(\App\Models\Company::query()->where('id', session()->get('name'))->pluck('name', 'id'))
+                    ->default(session()->get('company_id'))
+                    ->disabled(),
                 Forms\Components\TextInput::make('inn')
                     ->required()
                     ->numeric(),
