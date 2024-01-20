@@ -19,16 +19,13 @@ class CompanyPaymentResource extends Resource
     protected static ?string $navigationLabel = 'Payment';
     protected static ?string $modelLabel = 'Payment';
     protected static ?string $navigationGroup = 'Company management';
+    protected  static ?string $slug ='Payment';
     protected static ?string $navigationIcon = 'heroicon-o-credit-card';
+
     public static function form(Form $form): Form
     {
         return $form
             ->schema([
-                Forms\Components\Select::make('company_id')
-                    ->reactive()
-                    ->options(\App\Models\Company::where('id', session()->get('name'))->pluck('name', 'id'))
-                    ->default(session()->get('company_id'))
-                    ->disabled(),
                 Forms\Components\TextInput::make('account')
                     ->required()
                     ->numeric()

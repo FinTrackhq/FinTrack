@@ -28,9 +28,6 @@ class StuffStatementResource extends Resource
                 Forms\Components\Select::make('stuff_id')
                     ->relationship('stuff', 'id')
                     ->required(),
-                Forms\Components\Select::make('company_id')
-                    ->relationship('company', 'name')
-                    ->required(),
                 Forms\Components\TextInput::make('salary_10')
                     ->required()
                     ->numeric(),

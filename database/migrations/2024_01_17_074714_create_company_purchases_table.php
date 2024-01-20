@@ -17,8 +17,9 @@ return new class extends Migration
             $table->integer('quantity');
             $table->integer('price');
             $table->integer('summary');
-            $table->foreignId('company_warehouse_id')->constrained()->cascadeOnUpdate()->cascadeOnDelete();
+            $table->foreignId('warehouse_id')->constrained('company_warehouses')->cascadeOnUpdate()->cascadeOnDelete();
             $table->foreignId('plan_account_id')->constrained('plan_accounts')->cascadeOnUpdate();
+            $table->foreignId('company_id')->constrained('companies')->cascadeOnUpdate()->cascadeOnDelete();
             $table->timestamps();
             $table->softDeletes();
         });

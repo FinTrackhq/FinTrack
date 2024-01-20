@@ -1,5 +1,7 @@
 <?php
 
+use lockscreen\FilamentLockscreen\Http\Middleware\Locker;
+
 return [
 
     /*
@@ -68,7 +70,11 @@ return [
     | Livewire's standard 200ms delay.
     |
     */
-
+    'middleware' => [
+        'auth' => [
+            Locker::class,
+        ],
+        ],
     'livewire_loading_delay' => 'default',
 
 ];

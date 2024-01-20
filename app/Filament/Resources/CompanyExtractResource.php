@@ -18,18 +18,13 @@ class CompanyExtractResource extends Resource
     protected static ?string $model = CompanyExtract::class;
     protected static ?string $navigationGroup = 'Company management';
     protected static ?string $navigationLabel = 'Extract';
-    protected static ?string $modelLabel = 'Extracts';
+    protected static ?string $modelLabel = 'Extract';
+    protected static ?string $slug = 'Extract';
     protected static ?string $navigationIcon = 'heroicon-o-document-duplicate';
-    protected static ?string $tenantOwnershipRelationshipName = 'company';
     public static function form(Form $form): Form
     {
         return $form
             ->schema([
-                Forms\Components\Select::make('company_id')
-                    ->reactive()
-                    ->options(\App\Models\Company::where('id', session()->get('name'))->pluck('name', 'id'))
-                    ->default(session()->get('company_id'))
-                    ->disabled(),
                 Forms\Components\TextInput::make('name')
                     ->required()
                     ->maxLength(255),

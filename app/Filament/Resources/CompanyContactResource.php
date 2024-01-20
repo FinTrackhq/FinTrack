@@ -17,6 +17,8 @@ class CompanyContactResource extends Resource
 {
     protected static ?string $model = CompanyContact::class;
     protected static ?string $modelLabel = 'Contact';
+    protected static ?string $navigationLabel = 'Contact';
+    protected static ?string $slug = 'Contact';
     protected static ?string $navigationGroup = 'Company management';
     protected static ?string $navigationIcon = 'heroicon-o-user-circle';
 
@@ -24,11 +26,7 @@ class CompanyContactResource extends Resource
     {
         return $form
             ->schema([
-                Forms\Components\Select::make('company_id')
-                    ->reactive()
-                    ->options(\App\Models\Company::where('id', session()->get('name'))->pluck('name', 'id'))
-                    ->default(session()->get('company_id'))
-                    ->disabled(),
+
                 Forms\Components\TextInput::make('address')
                     ->required()
                     ->suffixIcon('heroicon-m-globe-alt')

@@ -13,8 +13,9 @@ return new class extends Migration
     {
         Schema::create('company_warehouses', function (Blueprint $table) {
             $table->id();
-            $table->integer('quantity')->nullable();
-            $table->integer('price')->nullable();
+            $table->string('name');
+            $table->integer('quantity')->default('0')->nullable();
+            $table->integer('price')->default('0')->nullable();
             $table->foreignId('company_id')->constrained()->cascadeOnDelete()->cascadeOnUpdate();
             $table->timestamps();
             $table->softDeletes();

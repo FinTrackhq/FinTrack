@@ -31,11 +31,6 @@ class CompanyRequisiteResource extends Resource
     {
         return $form
             ->schema([
-                Forms\Components\Select::make('company_id')
-                    ->reactive()
-                    ->options(\App\Models\Company::where('id', session()->get('name'))->pluck('name', 'id'))
-                    ->default(session()->get('company_id'))
-                    ->disabled(),
                 Forms\Components\TextInput::make('inn')
                     ->required()
                     ->numeric(),
