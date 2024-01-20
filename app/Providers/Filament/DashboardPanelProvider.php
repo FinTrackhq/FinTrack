@@ -26,6 +26,7 @@ use Illuminate\Session\Middleware\StartSession;
 use Illuminate\View\Middleware\ShareErrorsFromSession;
 use lockscreen\FilamentLockscreen\Http\Middleware\Locker;
 use lockscreen\FilamentLockscreen\Lockscreen;
+use Njxqlus\FilamentProgressbar\FilamentProgressbarPlugin;
 use Rupadana\ApiService\ApiServicePlugin;
 use BezhanSalleh\FilamentLanguageSwitch\LanguageSwitch;
 use ShuvroRoy\FilamentSpatieLaravelHealth\FilamentSpatieLaravelHealthPlugin;
@@ -52,6 +53,8 @@ class DashboardPanelProvider extends PanelProvider
                 new Lockscreen(),
                 FilamentSpatieLaravelHealthPlugin::make()
                     ->usingPage(HealthCheckResults::class),
+                FilamentProgressbarPlugin::make()
+                    ->color('#166534'),
             ])
             ->registration()
             ->brandLogo(asset('/file/image/logo/svg/logo.svg'))
