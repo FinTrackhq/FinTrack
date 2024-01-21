@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\HasOne;
@@ -18,16 +19,14 @@ class Company extends Model
         'short_name',
         'type',
     ];
-    public function members(): BelongsToMany
+    public function users(): BelongsToMany
     {
         return $this->belongsToMany(User::class);
     }
-
     public function companyExtracts() : HasMany
     {
         return $this->hasMany(CompanyExtract::class);
     }
-
     public function companyRequisites() : HasOne
     {
         return $this->hasOne(CompanyRequisite::class);
@@ -71,7 +70,7 @@ class Company extends Model
         return $this->hasMany(CompanyPurchase::class);
     }
 
-    public function tokens(): HasMany
+    public function token(): HasMany
     {
         return $this->hasMany(Token::class);
     }
