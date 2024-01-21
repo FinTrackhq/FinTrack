@@ -5,8 +5,6 @@ namespace App\Providers\Filament;
 use App\Filament\Pages\Tenancy\EditCompanyProfile;
 use App\Filament\Pages\Tenancy\RegisterCompany;
 use App\Models\Company;
-use Awcodes\FilamentGravatar\GravatarPlugin;
-use Awcodes\FilamentGravatar\GravatarProvider;
 use Filament\Http\Middleware\Authenticate;
 use Filament\Http\Middleware\DisableBladeIconComponents;
 use Filament\Http\Middleware\DispatchServingFilamentEvent;
@@ -31,6 +29,7 @@ use Rupadana\ApiService\ApiServicePlugin;
 use BezhanSalleh\FilamentLanguageSwitch\LanguageSwitch;
 use ShuvroRoy\FilamentSpatieLaravelHealth\FilamentSpatieLaravelHealthPlugin;
 use ShuvroRoy\FilamentSpatieLaravelHealth\Pages\HealthCheckResults;
+use Swis\Filament\Backgrounds\FilamentBackgroundsPlugin;
 
 class DashboardPanelProvider extends PanelProvider
 {
@@ -48,6 +47,9 @@ class DashboardPanelProvider extends PanelProvider
             ->login()
             ->profile()
             ->plugins([
+                FilamentBackgroundsPlugin::make()
+                    ->showAttribution(false)
+                    ->remember(200),
                 ApiServicePlugin::make(),
                 ThemesPlugin::make(),
                 new Lockscreen(),

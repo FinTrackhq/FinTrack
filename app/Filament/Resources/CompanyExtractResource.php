@@ -33,7 +33,9 @@ class CompanyExtractResource extends Resource
                     ->maxLength(255),
                 Forms\Components\TextInput::make('expenditure')
                     ->required()
-                    ->maxLength(255),
+                    ->maxLength(255)
+                    ->numeric()
+                    ->prefix('$'),
                 Forms\Components\Select::make('payment_id')
                     ->relationship('companyPayment', 'bic')
                     ->required()

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "73ff145b7474481b1b7bdb4ccd864d17",
+    "content-hash": "9d4bc4873b399810cccca01fa97dea4b",
     "packages": [
         {
             "name": "aymanalhattami/filament-slim-scrollbar",
@@ -6003,6 +6003,82 @@
                 }
             ],
             "time": "2021-11-30T21:13:59+00:00"
+        },
+        {
+            "name": "swisnl/filament-backgrounds",
+            "version": "1.1.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/swisnl/filament-backgrounds.git",
+                "reference": "e3d0accade537344375cf28fb615d13de82abe75"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/swisnl/filament-backgrounds/zipball/e3d0accade537344375cf28fb615d13de82abe75",
+                "reference": "e3d0accade537344375cf28fb615d13de82abe75",
+                "shasum": ""
+            },
+            "require": {
+                "filament/filament": "^3.0.100",
+                "illuminate/contracts": "^10.21",
+                "php": "^8.1",
+                "spatie/laravel-package-tools": "^1.15.0"
+            },
+            "require-dev": {
+                "laravel/pint": "^1.13",
+                "nunomaduro/collision": "^7.10",
+                "nunomaduro/larastan": "^2.6",
+                "orchestra/testbench": "^8.15",
+                "pestphp/pest": "^2.25",
+                "pestphp/pest-plugin-arch": "^2.4",
+                "pestphp/pest-plugin-laravel": "^2.2",
+                "phpstan/extension-installer": "^1.3",
+                "phpstan/phpstan-deprecation-rules": "^1.1",
+                "phpstan/phpstan-phpunit": "^1.3"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Swis\\Filament\\Backgrounds\\FilamentBackgroundsServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Swis\\Filament\\Backgrounds\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Jasper Zonneveld",
+                    "email": "jasper@swis.nl",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Beautiful backgrounds for Filament auth pages",
+            "homepage": "https://github.com/swisnl/filament-backgrounds",
+            "keywords": [
+                "backgrounds",
+                "filament",
+                "laravel",
+                "swisnl"
+            ],
+            "support": {
+                "issues": "https://github.com/swisnl/filament-backgrounds/issues",
+                "source": "https://github.com/swisnl/filament-backgrounds"
+            },
+            "funding": [
+                {
+                    "url": "https://github.com/swisnl",
+                    "type": "github"
+                }
+            ],
+            "time": "2023-12-13T07:39:23+00:00"
         },
         {
             "name": "symfony/console",

@@ -30,15 +30,21 @@ class CompanyContactResource extends Resource
                 Forms\Components\TextInput::make('address')
                     ->required()
                     ->suffixIcon('heroicon-m-globe-alt')
+                    ->placeholder('Russia, Voronezh region, c. Voronezh, prospekt Revolyutsii, house 20')
+                    ->minLength(2)
                     ->maxLength(255),
                 Forms\Components\TextInput::make('email')
                     ->required()
                     ->email()
+                    ->placeholder('example@fintrack.space')
                     ->suffixIcon('heroicon-o-envelope')
+                    ->minLength(5)
                     ->maxLength(255),
                 Forms\Components\TextInput::make('number')
                     ->suffixIcon('heroicon-m-device-phone-mobile')
                     ->required()
+                    ->placeholder('7012345678')
+                    ->maxLength(10)
                     ->numeric(),
             ]);
     }
