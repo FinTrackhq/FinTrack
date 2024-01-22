@@ -11,7 +11,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 class CompanyPayment extends Model
 {
     protected $fillable =[
-        'payment_account',
+        'account',
         'bic',
         'corporate_account'
     ];

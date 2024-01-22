@@ -63,6 +63,11 @@ class User extends Authenticatable implements HasTenants
     public static array $allowedFilters = [
         'name'
     ];
+
+    public function companyContacts(): HasMany
+    {
+        return $this->hasMany(CompanyContact::class);
+    }
     public function getTenants(Panel $panel): Collection
     {
         return $this->companies;

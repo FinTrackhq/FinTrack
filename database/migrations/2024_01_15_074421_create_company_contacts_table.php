@@ -17,6 +17,7 @@ return new class extends Migration
             $table->string('email')->unique();
             $table->integer('number')->unique();
             $table->foreignId('company_id')->constrained()->cascadeOnDelete()->cascadeOnUpdate();
+            $table->foreignId('user_id')->constrained()->cascadeOnDelete()->cascadeOnUpdate();
             $table->softDeletes();
             $table->timestamps();
         });

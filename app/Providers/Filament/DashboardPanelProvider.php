@@ -30,7 +30,6 @@ use BezhanSalleh\FilamentLanguageSwitch\LanguageSwitch;
 use ShuvroRoy\FilamentSpatieLaravelHealth\FilamentSpatieLaravelHealthPlugin;
 use ShuvroRoy\FilamentSpatieLaravelHealth\Pages\HealthCheckResults;
 use Swis\Filament\Backgrounds\FilamentBackgroundsPlugin;
-
 class DashboardPanelProvider extends PanelProvider
 {
     /**
@@ -44,7 +43,6 @@ class DashboardPanelProvider extends PanelProvider
             ->passwordReset()
             ->id('dashboard')
             ->path('dashboard')
-            ->login()
             ->profile()
             ->plugins([
                 FilamentBackgroundsPlugin::make()
@@ -66,7 +64,7 @@ class DashboardPanelProvider extends PanelProvider
                 'primary' => Color::hex('#166534'),
             ])
             ->font('Roboto')
-            ->tenant(Company::class,slugAttribute: 'short_name')
+            ->tenant(Company::class,slugAttribute: 'short_name', ownershipRelationship: 'company')
             ->tenantRegistration(RegisterCompany::class)
             ->tenantProfile(EditCompanyProfile::class)
             ->discoverResources(in: app_path('Filament/Resources'), for: 'App\\Filament\\Resources')
@@ -84,7 +82,6 @@ class DashboardPanelProvider extends PanelProvider
 
             ])
             ->middleware([
-
                 EncryptCookies::class,
                 AddQueuedCookiesToResponse::class,
                 StartSession::class,

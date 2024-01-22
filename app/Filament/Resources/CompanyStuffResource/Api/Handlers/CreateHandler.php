@@ -6,7 +6,7 @@ use Rupadana\ApiService\Http\Handlers;
 use App\Filament\Resources\CompanyStuffResource;
 
 class CreateHandler extends Handlers {
-    public static string | null $uri = '/';
+    public static string | null $uri = '/{tenant}/';
     public static string | null $resource = CompanyStuffResource::class;
 
     public static function getMethod()

@@ -15,7 +15,6 @@ return new class extends Migration
             $table->id();
             $table->integer('account')->unique();
             $table->integer('bic');
-            $table->string('corporate_account')->unique();
             $table->foreignId('company_id')->constrained()->cascadeOnDelete()->cascadeOnUpdate();
             $table->timestamps();
             $table->softDeletes();

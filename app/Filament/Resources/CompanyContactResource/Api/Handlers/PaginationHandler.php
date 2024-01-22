@@ -1,6 +1,7 @@
 <?php
 namespace App\Filament\Resources\CompanyContactResource\Api\Handlers;
 
+use App\Models\CompanyContact;
 use Illuminate\Http\Request;
 use Rupadana\ApiService\Http\Handlers;
 use Spatie\QueryBuilder\QueryBuilder;

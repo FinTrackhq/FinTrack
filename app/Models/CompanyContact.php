@@ -21,5 +21,10 @@ class CompanyContact extends Model
     {
         return $this->belongsTo(Company::class);
     }
+
+    public function user(): BelongsTo
+    {
+        return $this->belongsTo(User::class);
+    }
     use HasFactory, SoftDeletes;
 }
