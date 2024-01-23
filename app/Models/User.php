@@ -15,7 +15,6 @@ use Laravel\Sanctum\HasApiTokens;
 use \Filament\Panel;
 use \Illuminate\Database\Eloquent\Model;
 use \Illuminate\Support\Collection;
-use Rupadana\ApiService\Models\Token;
 
 class User extends Authenticatable implements HasTenants
 {
@@ -51,18 +50,6 @@ class User extends Authenticatable implements HasTenants
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
     ];
-    public static array $allowedFields = [
-        'name'
-    ];
-
-    public static array $allowedSorts = [
-        'name',
-        'created_at'
-    ];
-
-    public static array $allowedFilters = [
-        'name'
-    ];
 
     public function companyContacts(): HasMany
     {
@@ -81,10 +68,5 @@ class User extends Authenticatable implements HasTenants
     public function canAccessTenant(Model $tenant): bool
     {
         return $this->companies->contains($tenant);
-    }
-
-    public function tokens(): HasMany
-    {
-        return $this->hasMany(Token::class);
     }
 }

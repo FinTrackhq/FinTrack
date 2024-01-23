@@ -9,7 +9,6 @@ use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\HasOne;
 use Illuminate\Database\Eloquent\SoftDeletes;
-use Rupadana\ApiService\Models\Token;
 
 class Company extends Model
 {
@@ -64,15 +63,9 @@ class Company extends Model
     {
         return $this->hasMany(CompanySale::class);
     }
-
     public function companyPurchase(): HasMany
     {
         return $this->hasMany(CompanyPurchase::class);
-    }
-
-    public function token(): HasMany
-    {
-        return $this->hasMany(Token::class);
     }
     use HasFactory, SoftDeletes;
 }
