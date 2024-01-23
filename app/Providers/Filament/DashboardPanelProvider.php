@@ -25,7 +25,6 @@ use Illuminate\View\Middleware\ShareErrorsFromSession;
 use lockscreen\FilamentLockscreen\Http\Middleware\Locker;
 use lockscreen\FilamentLockscreen\Lockscreen;
 use Njxqlus\FilamentProgressbar\FilamentProgressbarPlugin;
-use Rupadana\ApiService\ApiServicePlugin;
 use BezhanSalleh\FilamentLanguageSwitch\LanguageSwitch;
 use ShuvroRoy\FilamentSpatieLaravelHealth\FilamentSpatieLaravelHealthPlugin;
 use ShuvroRoy\FilamentSpatieLaravelHealth\Pages\HealthCheckResults;
@@ -48,7 +47,6 @@ class DashboardPanelProvider extends PanelProvider
                 FilamentBackgroundsPlugin::make()
                     ->showAttribution(false)
                     ->remember(200),
-                ApiServicePlugin::make(),
                 ThemesPlugin::make(),
                 new Lockscreen(),
                 FilamentSpatieLaravelHealthPlugin::make()
