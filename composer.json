@@ -15,6 +15,7 @@
         "essa/api-tool-kit": "^2.1",
         "filament/filament": "3.1",
         "filament/forms": "3.1",
+        "filament/widgets": "3.1",
         "guzzlehttp/guzzle": "^7.2",
         "hasnayeen/themes": "^3.0",
         "icetalker/filament-chatgpt-bot": "^1.0",
