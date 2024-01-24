@@ -22,6 +22,9 @@ use Illuminate\Routing\Middleware\SubstituteBindings;
 use Illuminate\Session\Middleware\AuthenticateSession;
 use Illuminate\Session\Middleware\StartSession;
 use Illuminate\View\Middleware\ShareErrorsFromSession;
+use LaraZeus\Boredom\BoringAvatarPlugin;
+use LaraZeus\Boredom\BoringAvatarsProvider;
+use LaraZeus\Boredom\Enums\Variants;
 use lockscreen\FilamentLockscreen\Http\Middleware\Locker;
 use lockscreen\FilamentLockscreen\Lockscreen;
 use Njxqlus\FilamentProgressbar\FilamentProgressbarPlugin;
@@ -44,6 +47,11 @@ class DashboardPanelProvider extends PanelProvider
             ->path('dashboard')
             ->profile()
             ->plugins([
+               BoringAvatarPlugin::make()
+                    ->variant(Variants::MARBLE)
+                    ->size(60)
+                    ->square()
+                    ->colors(['0A0310','49007E','FF005B','FF7D10','FFB238']),
                 FilamentBackgroundsPlugin::make()
                     ->showAttribution(false)
                     ->remember(200),
@@ -61,6 +69,9 @@ class DashboardPanelProvider extends PanelProvider
             ->colors([
                 'primary' => Color::hex('#166534'),
             ])
+            ->defaultAvatarProvider(
+             BoringAvatarsProvider::class
+            )
             ->font('Roboto')
             ->tenant(Company::class,slugAttribute: 'short_name', ownershipRelationship: 'company')
             ->tenantRegistration(RegisterCompany::class)
@@ -71,10 +82,6 @@ class DashboardPanelProvider extends PanelProvider
                 Pages\Dashboard::class,
             ])
             ->discoverWidgets(in: app_path('Filament/Widgets'), for: 'App\\Filament\\Widgets')
-            ->widgets([
-                Widgets\AccountWidget::class,
-                Widgets\FilamentInfoWidget::class,
-            ])
             ->tenantMiddleware([
                 SetTheme::class
 

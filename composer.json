@@ -19,6 +19,7 @@
         "guzzlehttp/guzzle": "^7.2",
         "hasnayeen/themes": "^3.0",
         "icetalker/filament-chatgpt-bot": "^1.0",
+        "lara-zeus/boredom": "*",
         "laravel/framework": "^10.10",
         "laravel/sanctum": "^3.3",
         "laravel/tinker": "^2.8",
