@@ -3,7 +3,6 @@
 namespace App\Filament\Resources;
 
 use App\Filament\Resources\StuffStatementResource\Pages;
-use App\Filament\Resources\StuffStatementResource\RelationManagers;
 use App\Models\StuffStatement;
 use Filament\Forms;
 use Filament\Forms\Form;

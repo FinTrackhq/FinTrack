@@ -3,7 +3,6 @@
 namespace App\Filament\Resources;
 
 use App\Filament\Resources\CompanyPurchaseResource\Pages;
-use App\Filament\Resources\CompanyPurchaseResource\RelationManagers;
 use App\Models\CompanyPurchase;
 use Filament\Forms;
 use Filament\Forms\Components\Select;
@@ -11,8 +10,6 @@ use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Table;
-use Illuminate\Database\Eloquent\Builder;
-use Illuminate\Database\Eloquent\SoftDeletingScope;
 
 class CompanyPurchaseResource extends Resource
 {

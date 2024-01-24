@@ -4,8 +4,7 @@ namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use App\Models\PlanAccount;
-use Database\Seeders\PlanAccount\PlanAccountSeed;
-use Database\Seeders\User\UserSeed;
+use App\Models\User;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -19,7 +18,7 @@ class DatabaseSeeder extends Seeder
         $this->call([
         ]);
 
-        \App\Models\User::factory(1)->create();
+        User::factory(1)->create();
 
         // \App\Models\User::factory()->create([
         //     'name' => 'Test User',

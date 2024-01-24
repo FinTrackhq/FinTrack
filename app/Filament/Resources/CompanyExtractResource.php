@@ -3,7 +3,6 @@
 namespace App\Filament\Resources;
 
 use App\Filament\Resources\CompanyExtractResource\Pages;
-use App\Filament\Resources\CompanyExtractResource\RelationManagers;
 use App\Models\CompanyExtract;
 use Filament\Forms;
 use Filament\Forms\Form;

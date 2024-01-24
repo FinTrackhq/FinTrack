@@ -3,7 +3,6 @@
 namespace App\Filament\Resources;
 
 use App\Filament\Resources\CompanyWarehouseResource\Pages;
-use App\Filament\Resources\CompanyWarehouseResource\RelationManagers;
 use App\Models\CompanyWarehouse;
 use Filament\Forms;
 use Filament\Forms\Form;

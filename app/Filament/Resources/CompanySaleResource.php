@@ -3,7 +3,6 @@
 namespace App\Filament\Resources;
 
 use App\Filament\Resources\CompanySaleResource\Pages;
-use App\Filament\Resources\CompanySaleResource\RelationManagers;
 use App\Models\CompanySale;
 use Filament\Forms;
 use Filament\Forms\Components\Select;
