@@ -1,18 +1,19 @@
 <?php
 
-namespace Database\Seeders\PlanAccount;
+namespace Database\Seeders;
 
 use App\Models\PlanAccount;
 use Illuminate\Database\Seeder;
 
-class PlanAccountSeed extends Seeder
+class PlanAccountSeeder extends Seeder
 {
     /**
      * Run the database seeds.
+     *
+     * @return void
      */
     public function run(): void
     {
-        PlanAccount::factory(5)
-            ->create();
+        PlanAccount::factory(10)->create();
     }
 }

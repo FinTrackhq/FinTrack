@@ -6,6 +6,7 @@ use App\Filament\Resources\CompanySaleResource\Pages;
 use App\Filament\Resources\CompanySaleResource\RelationManagers;
 use App\Models\CompanySale;
 use Filament\Forms;
+use Filament\Forms\Components\Select;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
@@ -16,7 +17,6 @@ use Illuminate\Database\Eloquent\SoftDeletingScope;
 class CompanySaleResource extends Resource
 {
     protected static ?string $model = CompanySale::class;
-
     protected static ?string $navigationLabel = 'Sale';
     protected static ?string $modelLabel = 'Sale';
     protected  static ?string $slug ='Sale';
@@ -27,12 +27,12 @@ class CompanySaleResource extends Resource
     {
         return $form
             ->schema([
-                Forms\Components\TextInput::make('warehouse_id')
-                    ->required()
-                    ->numeric(),
-                Forms\Components\TextInput::make('plan_account_id')
-                    ->required()
-                    ->numeric(),
+                Select::make('warehouse_id')
+                    ->relationship('warehouse', 'name')
+                    ->required(),
+                Select::make('plan_account_id')
+                    ->relationship('planAccount','name')
+                    ->required(),
                 Forms\Components\TextInput::make('name')
                     ->required()
                     ->maxLength(255),

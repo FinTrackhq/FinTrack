@@ -13,10 +13,10 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 class Company extends Model
 {
     protected  $fillable = [
-        'user_id',
         'name',
         'short_name',
         'type',
+        'user_id',
     ];
     public function users(): BelongsToMany
     {
@@ -63,7 +63,7 @@ class Company extends Model
     {
         return $this->hasMany(CompanySale::class);
     }
-    public function companyPurchase(): HasMany
+    public function companyPurchases(): HasMany
     {
         return $this->hasMany(CompanyPurchase::class);
     }

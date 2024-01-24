@@ -55,7 +55,7 @@ class CompanyExtractResource extends Resource
                     ->searchable(),
                 Tables\Columns\TextColumn::make('expenditure')
                     ->searchable(),
-                Tables\Columns\TextColumn::make('company_payment_id')
+                Tables\Columns\TextColumn::make('payment_id')
                     ->numeric()
                     ->sortable(),
                 Tables\Columns\TextColumn::make('created_at')

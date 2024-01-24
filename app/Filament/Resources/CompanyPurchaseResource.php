@@ -6,6 +6,7 @@ use App\Filament\Resources\CompanyPurchaseResource\Pages;
 use App\Filament\Resources\CompanyPurchaseResource\RelationManagers;
 use App\Models\CompanyPurchase;
 use Filament\Forms;
+use Filament\Forms\Components\Select;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
@@ -27,12 +28,12 @@ class CompanyPurchaseResource extends Resource
     {
         return $form
             ->schema([
-                Forms\Components\TextInput::make('warehouse_id')
-                    ->required()
-                    ->numeric(),
-                Forms\Components\TextInput::make('plan_account_id')
-                    ->required()
-                    ->numeric(),
+                Select::make('warehouse_id')
+                    ->relationship('warehouse', 'name')
+                    ->required(),
+                Select::make('plan_account_id')
+                    ->relationship('planAccount','name')
+                    ->required(),
                 Forms\Components\TextInput::make('name')
                     ->required()
                     ->maxLength(255),

@@ -36,10 +36,6 @@ class CompanyPaymentResource extends Resource
                     ->numeric()
                     ->placeholder('012345678')
                     ->maxLength(9),
-                Forms\Components\TextInput::make('corporate_account')
-                    ->placeholder('00000000000000000000')
-                    ->required()
-                    ->maxLength(20),
             ]);
     }
 
@@ -56,8 +52,6 @@ class CompanyPaymentResource extends Resource
                 Tables\Columns\TextColumn::make('bic')
                     ->numeric()
                     ->sortable(),
-                Tables\Columns\TextColumn::make('corporate_account')
-                    ->searchable(),
                 Tables\Columns\TextColumn::make('created_at')
                     ->dateTime()
                     ->sortable()

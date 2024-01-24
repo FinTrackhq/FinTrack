@@ -17,7 +17,6 @@ class DatabaseSeeder extends Seeder
     {
 
         $this->call([
-            PlanAccountSeed::class,
         ]);
 
         \App\Models\User::factory(1)->create();

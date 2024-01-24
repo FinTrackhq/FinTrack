@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
@@ -9,15 +10,25 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 
 class CompanyWarehouse extends Model
 {
-    protected $fillable =[
+    use HasFactory, SoftDeletes;
+
+
+
+    /**
+     * Mass-assignable attributes.
+     *
+     * @var array
+     */
+    protected $fillable = [
         'name',
-        'quantity',
-        'price'
+		'quantity',
+		'price',
+		'company_id',
     ];
 
-    public function Company():BelongsTo
-    {
-        return $this->belongsTo(Company::class);
-    }
-    use HasFactory,SoftDeletes;
+	public function company():BelongsTo
+	{
+		return $this->belongsTo(Company::class);
+	}
+
 }

@@ -2,16 +2,18 @@
 
 namespace Database\Seeders;
 
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use App\Models\CompanySale;
 use Illuminate\Database\Seeder;
 
-class CompanyExtractSeed extends Seeder
+class CompanySaleSeeder extends Seeder
 {
     /**
      * Run the database seeds.
+     *
+     * @return void
      */
     public function run(): void
     {
-        //
+        CompanySale::factory(10)->create();
     }
 }
