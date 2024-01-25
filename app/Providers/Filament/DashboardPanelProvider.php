@@ -45,6 +45,9 @@ class DashboardPanelProvider extends PanelProvider
             ->passwordReset()
             ->id('dashboard')
             ->path('dashboard')
+            ->colors([
+                'primary' => Color::hex('#166534'),
+            ])
             ->profile()
             ->plugins([
                BoringAvatarPlugin::make()
@@ -66,9 +69,7 @@ class DashboardPanelProvider extends PanelProvider
             ->brandLogo(asset('/file/image/logo/svg/logo.svg'))
             ->brandLogoHeight('3rem')
             ->favicon(asset('file/image/logo/svg/logo.svg'))
-            ->colors([
-                'primary' => Color::hex('#166534'),
-            ])
+
             ->defaultAvatarProvider(
              BoringAvatarsProvider::class
             )
