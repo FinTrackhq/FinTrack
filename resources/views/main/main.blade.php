@@ -6,6 +6,23 @@
             <div
                 class="relative flex w-full flex-col items-center space-y-12 overflow-hidden pt-12 text-center md:py-32"
             >
+                @if(session()->has('success'))
+                    <div id="toast-success" class="flex items-center w-full max-w-xs p-4 mb-4 text-gray-500 bg-white rounded-lg shadow dark:text-gray-400 dark:bg-gray-800" role="alert">
+                        <div class="inline-flex items-center justify-center flex-shrink-0 w-8 h-8 text-green-500 bg-green-100 rounded-lg dark:bg-green-800 dark:text-green-200">
+                            <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z"/>
+                            </svg>
+                            <span class="sr-only">Check icon</span>
+                        </div>
+                        <div class="ms-3 text-sm font-normal">   {{ session()->get('success') }}</div>
+                        <button type="button" class="ms-auto -mx-1.5 -my-1.5 bg-white text-gray-400 hover:text-gray-900 rounded-lg focus:ring-2 focus:ring-gray-300 p-1.5 hover:bg-gray-100 inline-flex items-center justify-center h-8 w-8 dark:text-gray-500 dark:hover:text-white dark:bg-gray-800 dark:hover:bg-gray-700" data-dismiss-target="#toast-success" aria-label="Close">
+                            <span class="sr-only">Close</span>
+                            <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"/>
+                            </svg>
+                        </button>
+                    </div>
+                @endif
                 <div class="flex max-w-xl flex-col space-y-4">
                     <h1
                         class="text-4xl font-semibold leading-snug tracking-tight md:text-5xl"
@@ -425,76 +442,49 @@
                     <h1
                         class="text-4xl font-semibold leading-snug tracking-tight md:text-5xl"
                     >
-                        Sign up today.
+                        Обратная связь.
                     </h1>
                     <p class="text-gray-600">
-                        Anim aute id magna aliqua ad ad non deserunt sunt.
+                        Если вы нашли баг или хотите со мной связаться, <br>то напиши те мне в TG: ya_hannes.
                     </p>
                 </div>
                 <div class="max-4xl flex flex-col space-y-4">
-                    <button
-                        class="flex w-full items-center justify-center rounded-lg border border-gray-200 bg-white py-2 px-6 text-center font-medium text-gray-700 shadow-sm hover:text-gray-500"
-                    >
-                        <svg
-                            class="mr-2"
-                            width="20"
-                            height="19"
-                            viewBox="0 0 25 24"
-                            fill="none"
-                            xmlns="http://www.w3.org/2000/svg"
-                        >
-                            <path
-                                d="M23.06 12.25C23.06 11.47 22.99 10.72 22.86 10H12.5V14.26H18.42C18.16 15.63 17.38 16.79 16.21 17.57V20.34H19.78C21.86 18.42 23.06 15.6 23.06 12.25V12.25Z"
-                                fill="#4285F4"
-                            />
-                            <path
-                                d="M12.4999 23.0001C15.4699 23.0001 17.9599 22.0201 19.7799 20.3401L16.2099 17.5701C15.2299 18.2301 13.9799 18.6301 12.4999 18.6301C9.63993 18.6301 7.20993 16.7001 6.33993 14.1001H2.67993V16.9401C4.48993 20.5301 8.19993 23.0001 12.4999 23.0001Z"
-                                fill="#34A853"
-                            />
-                            <path
-                                d="M6.34 14.0901C6.12 13.4301 5.99 12.7301 5.99 12.0001C5.99 11.2701 6.12 10.5701 6.34 9.91007V7.07007H2.68C1.93 8.55007 1.5 10.2201 1.5 12.0001C1.5 13.7801 1.93 15.4501 2.68 16.9301L5.53 14.7101L6.34 14.0901Z"
-                                fill="#FBBC05"
-                            />
-                            <path
-                                d="M12.4999 5.38C14.1199 5.38 15.5599 5.94 16.7099 7.02L19.8599 3.87C17.9499 2.09 15.4699 1 12.4999 1C8.19993 1 4.48993 3.47 2.67993 7.07L6.33993 9.91C7.20993 7.31 9.63993 5.38 12.4999 5.38Z"
-                                fill="#EA4335"
-                            />
-                        </svg>
-                        Sign up with Google
-                    </button>
-                    <p class="text-neutral-400">Or</p>
-                    <form class="flex flex-col space-y-3">
-                        <label for="email"></label><input
-                            type="email"
-                            id="email"
+                    <p class="text-neutral-400">Или</p>
+                    <form class="flex flex-col space-y-3" method="POST" action="{{route('feedback.create')}}">
+                        @csrf
+                        <label for="name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Name</label><input
+                            type="text"
+                            id="name" name="name"
                             class="block w-full rounded-md border border-gray-200 py-2.5 px-4 text-base text-gray-900 shadow-sm focus:border-green-500 focus:ring-green-500"
-                            placeholder="Email"
-                            required
+                            placeholder="Zhan"
+                            required minlength="2"
                         />
-                        <label for="password"></label><input
-                            type="password"
-                            id="password"
+                        <label for="Theme" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Theme</label><input
+                            type="text"
+                            id="Theme" name="theme"
                             class="block w-full rounded-md border border-gray-200 py-2.5 px-4 text-base text-gray-900 shadow-sm focus:border-green-500 focus:ring-green-500"
-                            placeholder="Password"
+                            placeholder="Write your theme..."
+                            required minlength="4"
+                        />
+                        <label for="message" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Message</label>
+                        <textarea id="message" rows="4" name="message" class="block p-2.5 w-full text-sm text-gray-900 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Write your message here..."
+                        required minlength="100">
+                        </textarea>
+                        <label for="social_link" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Social link</label><input
+                            type="text"
+                            id="social_link" name="social_link"
+                            class="block w-full rounded-md border border-gray-200 py-2.5 px-4 text-base text-gray-900 shadow-sm focus:border-green-500 focus:ring-green-500"
+                            placeholder="TG : @ya_hannes"
                             required
+                            minlength="2"
                         />
                         <button
                             type="submit"
                             class="rounded-md bg-green-600 py-2.5 px-8 text-base font-medium text-white hover:bg-green-700"
                         >
-                            Create account
+                            Send feedback
                         </button>
                     </form>
-                    <p class="text-gray-600">
-                        Already have an account?
-                        <a class="font-medium text-gray-900 hover:text-gray-500" href=""
-                        >Log in</a
-                        >
-                    </p>
-                    <p class="text-xs text-gray-500">
-                        By clicking "Create account", I agree to Datagardens TOS and
-                        Privacy Policy.
-                    </p>
                 </div>
             </div>
         </div>
