@@ -12,7 +12,7 @@ class FeedbackController extends Controller
 {
     public function create(FeedbackRequest $request, Feedback $feedback)
     {
-        Feedback::query()->create($request->validated())->with('Обращение успешно отправлено!');
-        return Redirect()->back();
+        Feedback::query()->create($request->validated());
+        return Redirect()->back()->with('success', 'Обращение успешно отправлено!');
     }
 }
