@@ -1,83 +1,507 @@
-@extends('components.layouts.app')
+@extends('components.layouts.main')
 @section('main')
-    <main class="py-6 px-4 sm:p-6 md:py-10 md:px-8">
-        <div class="max-w-4xl mx-auto grid grid-cols-1 lg:max-w-5xl lg:gap-x-20 lg:grid-cols-2">
-            <div class="relative p-3 col-start-1 row-start-1 flex flex-col-reverse rounded-lg bg-gradient-to-t from-black/75 via-black/0 sm:bg-none sm:row-start-2 sm:p-0 lg:row-start-1">
-                <h1 class="mt-1 text-lg font-semibold text-white sm:text-slate-900 md:text-2xl dark:sm:text-white">Beach House in Collingwood</h1>
-                <p class="text-sm leading-4 font-medium text-white sm:text-slate-500 dark:sm:text-slate-400">Entire house</p>
+<div class="flex flex-col space-y-8 p-4 md:p-8">
+    <div class="mx-auto w-full rounded-xl bg-neutral-100 p-6">
+        @include('components.navbar')
+        <div
+            class="relative flex w-full flex-col items-center space-y-12 overflow-hidden pt-12 text-center md:py-32"
+        >
+            <div class="flex max-w-xl flex-col space-y-4">
+                <h1
+                    class="text-4xl font-semibold leading-snug tracking-tight md:text-5xl"
+                >
+                    Лучший Веб-инструмент для бухгалтера
+                </h1>
+                <p class="text-gray-600">
+                    Максимально функциональный, красивый, удобный инструмент <br> с открытым исходным кодом!
+                </p>
             </div>
-            <div class="grid gap-4 col-start-1 col-end-3 row-start-1 sm:mb-6 sm:grid-cols-4 lg:gap-6 lg:col-start-2 lg:row-end-6 lg:row-span-6 lg:mb-0">
-                <img src="/beach-house.jpg" alt="" class="w-full h-60 object-cover rounded-lg sm:h-52 sm:col-span-2 lg:col-span-full" loading="lazy">
-                <img src="/beach-house-interior-1.jpg" alt="" class="hidden w-full h-52 object-cover rounded-lg sm:block sm:col-span-2 md:col-span-1 lg:row-start-2 lg:col-span-2 lg:h-32" loading="lazy">
-                <img src="/beach-house-interior-2.jpg" alt="" class="hidden w-full h-52 object-cover rounded-lg md:block lg:row-start-2 lg:col-span-2 lg:h-32" loading="lazy">
-            </div>
-            <dl class="mt-4 text-xs font-medium flex items-center row-start-2 sm:mt-1 sm:row-start-3 md:mt-2.5 lg:row-start-2">
-                <dt class="sr-only">Reviews</dt>
-                <dd class="text-indigo-600 flex items-center dark:text-indigo-400">
-                    <svg width="24" height="24" fill="none" aria-hidden="true" class="mr-1 stroke-current dark:stroke-indigo-500">
-                        <path d="m12 5 2 5h5l-4 4 2.103 5L12 16l-5.103 3L9 14l-4-4h5l2-5Z"  stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                    </svg>
-                    <span>4.89 <span class="text-slate-400 font-normal">(128)</span></span>
-                </dd>
-                <dt class="sr-only">Location</dt>
-                <dd class="flex items-center">
-                    <svg width="2" height="2" aria-hidden="true" fill="currentColor" class="mx-3 text-slate-300">
-                        <circle cx="1" cy="1" r="1" />
-                    </svg>
-                    <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-1 text-slate-400 dark:text-slate-500" aria-hidden="true">
-                        <path d="M18 11.034C18 14.897 12 19 12 19s-6-4.103-6-7.966C6 7.655 8.819 5 12 5s6 2.655 6 6.034Z" />
-                        <path d="M14 11a2 2 0 1 1-4 0 2 2 0 0 1 4 0Z" />
-                    </svg>
-                    Collingwood, Ontario
-                </dd>
-            </dl>
-            <div class="mt-4 col-start-1 row-start-3 self-center sm:mt-0 sm:col-start-2 sm:row-start-2 sm:row-span-2 lg:mt-6 lg:col-start-1 lg:row-start-3 lg:row-end-4">
-                <button type="button" class="bg-indigo-600 text-white text-sm leading-6 font-medium py-2 px-3 rounded-lg">Check availability</button>
-            </div>
-            <p class="mt-4 text-sm leading-6 col-start-1 sm:col-span-2 lg:mt-6 lg:row-start-4 lg:col-span-1 dark:text-slate-400">
-                This sunny and spacious room is for those traveling light and looking for a comfy and cosy place to lay their head for a night or two. This beach house sits in a vibrant neighborhood littered with cafes, pubs, restaurants and supermarkets and is close to all the major attractions such as Edinburgh Castle and Arthur's Seat.
-            </p>
-        </div>
-        <div class="bg-white">
-            <div class="mx-auto grid max-w-2xl grid-cols-1 items-center gap-x-8 gap-y-16 px-4 py-24 sm:px-6 sm:py-32 lg:max-w-7xl lg:grid-cols-2 lg:px-8">
+            <div class="mx-auto max-w-4xl">
+                <img
+                    src="{{asset('file/image/screenshots/dashboard.png')}}"
+                    class="relative z-50 rounded-xl md:w-auto" alt=""
+                />
                 <div>
-                    <h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Technical Specifications</h2>
-                    <p class="mt-4 text-gray-500">The walnut wood card tray is precision milled to perfectly fit a stack of Focus cards. The powder coated steel divider separates active cards from new ones, or can be used to archive important task lists.</p>
-
-                    <dl class="mt-16 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 sm:gap-y-16 lg:gap-x-8">
-                        <div class="border-t border-gray-200 pt-4">
-                            <dt class="font-medium text-gray-900">Origin</dt>
-                            <dd class="mt-2 text-sm text-gray-500">Designed by Good Goods, Inc.</dd>
-                        </div>
-                        <div class="border-t border-gray-200 pt-4">
-                            <dt class="font-medium text-gray-900">Material</dt>
-                            <dd class="mt-2 text-sm text-gray-500">Solid walnut base with rare earth magnets and powder coated steel card cover</dd>
-                        </div>
-                        <div class="border-t border-gray-200 pt-4">
-                            <dt class="font-medium text-gray-900">Dimensions</dt>
-                            <dd class="mt-2 text-sm text-gray-500">6.25&quot; x 3.55&quot; x 1.15&quot;</dd>
-                        </div>
-                        <div class="border-t border-gray-200 pt-4">
-                            <dt class="font-medium text-gray-900">Finish</dt>
-                            <dd class="mt-2 text-sm text-gray-500">Hand sanded and finished with natural oil</dd>
-                        </div>
-                        <div class="border-t border-gray-200 pt-4">
-                            <dt class="font-medium text-gray-900">Includes</dt>
-                            <dd class="mt-2 text-sm text-gray-500">Wood card tray and 3 refill packs</dd>
-                        </div>
-                        <div class="border-t border-gray-200 pt-4">
-                            <dt class="font-medium text-gray-900">Considerations</dt>
-                            <dd class="mt-2 text-sm text-gray-500">Made from natural materials. Grain and color vary with each item.</dd>
-                        </div>
-                    </dl>
-                </div>
-                <div class="grid grid-cols-2 grid-rows-2 gap-4 sm:gap-6 lg:gap-8">
-                    <img src="https://tailwindui.com/img/ecommerce-images/product-feature-03-detail-01.jpg" alt="Walnut card tray with white powder coated steel divider and 3 punchout holes." class="rounded-lg bg-gray-100">
-                    <img src="https://tailwindui.com/img/ecommerce-images/product-feature-03-detail-02.jpg" alt="Top down view of walnut card tray with embedded magnets and card groove." class="rounded-lg bg-gray-100">
-                    <img src="https://tailwindui.com/img/ecommerce-images/product-feature-03-detail-03.jpg" alt="Side of walnut card tray with card groove and recessed card area." class="rounded-lg bg-gray-100">
-                    <img src="https://tailwindui.com/img/ecommerce-images/product-feature-03-detail-04.jpg" alt="Walnut card tray filled with cards and card angled in dedicated groove." class="rounded-lg bg-gray-100">
+                    <div
+                        class="absolute top-[30rem] left-1/2 -ml-[40rem] w-[163.125rem] max-w-none sm:-ml-[37.5rem]"
+                    >
+                        <svg
+                            width="277"
+                            height="393"
+                            viewBox="0 0 277 393"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                        >
+                            <path
+                                d="M0 0V115.588C0 189.162 29.1838 259.723 81.1314 311.748C133.079 363.773 203.535 393 277 393V277.412C277 203.838 247.816 133.277 195.869 81.252C143.921 29.2272 73.465 0 0 0Z"
+                                fill="url(#paint0_linear_2_172)"
+                            />
+                            <defs>
+                                <linearGradient
+                                    id="paint0_linear_2_172"
+                                    x1="-106.596"
+                                    y1="-61.57"
+                                    x2="184.581"
+                                    y2="468.854"
+                                    gradientUnits="userSpaceOnUse"
+                                >
+                                    <stop
+                                        offset="0.0490857"
+                                        stop-color="#E5E5E5"
+                                        stop-opacity="0"
+                                    />
+                                    <stop
+                                        offset="0.906624"
+                                        stop-color="#E5E5E5"
+                                        stop-opacity="0.42"
+                                    />
+                                </linearGradient>
+                            </defs>
+                        </svg>
+                    </div>
+                    <div
+                        class="absolute top-[18rem] left-1/2 z-0 -ml-[40rem] w-[163.125rem] max-w-none sm:ml-[17.5rem]"
+                    >
+                        <svg
+                            width="369"
+                            height="600"
+                            viewBox="0 0 369 600"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                        >
+                            <path
+                                d="M0 369.231V600C97.8649 600 191.721 561.099 260.922 491.855C330.123 422.611 369 328.695 369 230.769V0C271.135 0 177.279 38.901 108.078 108.145C38.8767 177.389 0 271.305 0 369.231Z"
+                                fill="url(#paint0_linear_2_171)"
+                            />
+                            <defs>
+                                <linearGradient
+                                    id="paint0_linear_2_171"
+                                    x1="-142"
+                                    y1="-94"
+                                    x2="333"
+                                    y2="661"
+                                    gradientUnits="userSpaceOnUse"
+                                >
+                                    <stop
+                                        offset="0.0490857"
+                                        stop-color="#E5E5E5"
+                                        stop-opacity="0"
+                                    />
+                                    <stop
+                                        offset="0.906624"
+                                        stop-color="#E5E5E5"
+                                        stop-opacity="0.42"
+                                    />
+                                </linearGradient>
+                            </defs>
+                        </svg>
+                    </div>
                 </div>
             </div>
         </div>
-    </main>
+    </div>
+    <div class="mx-auto w-full rounded-xl bg-neutral-800 p-6">
+        <div
+            class="flex w-full flex-col items-center space-y-12 py-12 text-center md:space-y-24 md:py-32"
+        >
+            <div class="flex flex-col space-y-2">
+                <h1
+                    class="text-3xl font-semibold leading-snug text-white md:text-4xl"
+                >
+                    Designed for your data
+                </h1>
+                <p class="text-neutral-400">
+                    Anim aute id magna aliqua ad ad non deserunt sunt.
+                </p>
+            </div>
+            <div class="flex flex-col space-y-12">
+                <div class="w-full max-w-6xl justify-between">
+                    <div
+                        class="flex flex-col space-y-12 lg:flex-row lg:space-y-0 lg:space-x-12"
+                    >
+                        <div
+                            class="flex w-full overflow-clip rounded-xl bg-neutral-700 text-white"
+                        >
+                            <div
+                                class="relative flex h-[300px] w-full flex-col overflow-hidden px-10 py-9 text-left md:h-[408px]"
+                            >
+                                <div class="flex flex-col space-y-1">
+                                    <h3 class="text-xl font-medium text-white">
+                                        Powerful search tools
+                                    </h3>
+                                    <p class="text-neutral-300">
+                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                    </p>
+                                </div>
+                                <img
+                                    class="7xl:mt-16 absolute mt-24 -ml-4 md:mt-20"
+                                    src="#" alt=""
+                                />
+                            </div>
+                        </div>
+                        <div
+                            class="flex w-full overflow-clip rounded-xl bg-neutral-700 text-white"
+                        >
+                            <div
+                                class="relative flex h-[300px] w-full flex-col overflow-hidden px-10 py-9 text-left md:h-[408px]"
+                            >
+                                <div class="flex flex-col space-y-1">
+                                    <h3 class="text-xl font-medium text-white">
+                                        Conversational insights
+                                    </h3>
+                                    <p class="text-neutral-300">
+                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                    </p>
+                                </div>
+                                <img
+                                    class="7xl:mt-16 md:mt-18 absolute mt-28 -ml-8 w-full min-w-[700px]"
+                                    src="/#" alt=""
+                                />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="w-full max-w-6xl justify-between">
+                    <div
+                        class="flex flex-col space-y-12 lg:flex-row lg:space-y-0 lg:space-x-12"
+                    >
+                        <div
+                            class="flex w-full overflow-clip rounded-xl bg-neutral-700 text-white"
+                        >
+                            <div
+                                class="relative flex h-[308px] w-full flex-col overflow-hidden px-10 py-9 text-left"
+                            >
+                                <div class="flex flex-col space-y-1">
+                                    <h3 class="text-xl font-medium text-white">
+                                        Unlimited questions
+                                    </h3>
+                                    <p class="text-neutral-300">
+                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                    </p>
+                                </div>
+                                <img
+                                    class="7xl:mt-16 absolute mt-32 -ml-16 min-w-[800px] md:-ml-4 md:mt-20"
+                                    src="#" alt=""
+                                />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="mx-auto w-full rounded-xl bg-neutral-100 p-6">
+        <div
+            class="flex w-full flex-col items-center space-y-12 py-12 text-center md:space-y-20 md:py-32"
+        >
+            <div class="flex max-w-xl flex-col space-y-2">
+                <h1
+                    class="text-3xl font-semibold leading-snug text-neutral-900 md:text-4xl"
+                >
+                    Технологии
+                </h1>
+                <p class="text-neutral-600">
+                    В нашем проекте используются только наилучшие технологии дающие вам высокую производительность, чистый код, возможноть переделать проект именно под вас.
+                </p>
+            </div>
+            <div class="flex flex-col space-y-8 md:space-y-20">
+                <div class="flex max-w-6xl">
+                    <div
+                        class="flex w-full flex-col justify-between space-y-6 md:flex-row md:space-y-0 md:space-x-12"
+                    >
+                        <div class="flex flex-col space-y-2 text-left">
+                            <div class="max-w-sm">
+                                <p class="font-medium">PHP</p>
+                                <p class="font-normal text-neutral-600">
+                                    Самый популярный серверный язый програмирования.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="flex flex-col space-y-2 text-left">
+                            <div class="flex max-w-sm flex-col space-y-1">
+                                <p class="font-medium">Laravel</p>
+                                <p class="font-normal text-neutral-600">
+                                    это лучший фреймворк веб-приложений с выразительным, элегантным синтаксисом. <br> |Лучший PHP фреймворк.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="flex flex-col space-y-2 text-left">
+                            <div class="max-w-sm">
+                                <p class="font-medium">Blade</p>
+                                <p class="font-normal text-neutral-600">
+                                    Простой, но мощный движок для создания шаблонов, который входит в состав Laravel.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex max-w-6xl">
+                    <div
+                        class="flex w-full flex-col justify-between space-y-6 md:flex-row md:space-y-0 md:space-x-12"
+                    >
+                        <div class="flex flex-col space-y-2 text-left">
+                            <div class="max-w-sm">
+                                <p class="font-medium">TailwindCSS</p>
+                                <p class="font-normal text-neutral-600">
+                                    CSS-фреймворк, который позволяет создавать пользовательские интерфейсы при помощи набора готовых классов. Он был разработан для ускорения процесса разработки и облегчения поддержки кода.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="flex flex-col space-y-2 text-left">
+                            <div class="flex max-w-sm flex-col space-y-1">
+                                <p class="font-medium">Livewire</p>
+                                <p class="font-normal text-neutral-600">
+                                    Упрощает создание динамических интерфейсов, используя преимущественно PHP
+                                </p>
+                            </div>
+                        </div>
+                        <div class="flex flex-col space-y-2 text-left">
+                            <div class="max-w-sm">
+                                <p class="font-medium">FilamentPHP</p>
+                                <p class="font-normal text-neutral-600">
+                                    Это панель на Laravel, которая может ускорить процесс разработки веб-приложений.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="mx-auto w-full rounded-xl bg-neutral-800 p-6">
+        <div
+            class="flex w-full flex-col items-center space-y-12 py-12 text-center md:space-y-24 md:py-32"
+        >
+            <div class="flex max-w-xl flex-col space-y-2">
+                <h1
+                    class="text-3xl font-semibold leading-snug text-white md:text-4xl"
+                >
+                    Universally loved
+                </h1>
+                <p class="text-neutral-400">
+                    Anim aute id magna aliqua ad ad non deserunt sunt.
+                </p>
+            </div>
+            <div class="flex flex-col space-y-6 md:space-y-12">
+                <div class="flex max-w-6xl">
+                    <div
+                        class="flex w-full flex-col justify-between space-y-6 md:flex-row md:space-y-0 md:space-x-12"
+                    >
+                        <div
+                            class="group flex w-full cursor-pointer flex-col space-y-2 rounded-2xl bg-neutral-700 p-6 text-left md:w-1/3"
+                        >
+                            <div class="flex">
+                                <img
+                                    src="https://images.unsplash.com/flagged/photo-1570612861542-284f4c12e75f?ixlib=rb-1.2.1&q=80&fm=jpg&crop=faces&fit=crop&h=100&w=100&ixid=eyJhcHBfaWQiOjE3Nzg0fQ"
+                                    class="h-9 w-9 rounded-full" alt=""
+                                />
+                                <div class="ml-4 flex flex-col text-sm text-white">
+                                    <div class="font-semibold">Flex Readman</div>
+                                    <div
+                                        class="text-neutral-400 group-hover:text-neutral-300"
+                                    >
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="max-w-sm">
+                                <p class="text-neutral-300">
+                                    Just tried out Datagarden and it blew me away!
+                                </p>
+                            </div>
+                        </div>
+                        <div
+                            class="group flex w-full cursor-pointer flex-col space-y-2 rounded-2xl bg-neutral-700 p-6 text-left md:w-1/3"
+                        >
+                            <div class="flex">
+                                <img
+                                    src="https://images.unsplash.com/photo-1456327102063-fb5054efe647?ixlib=rb-0.3.5&q=80&fm=jpg&crop=faces&fit=crop&h=200&w=200&s=f05c14dd4db49f08a789e6449604c490"
+                                    class="h-9 w-9 rounded-full" alt=""
+                                />
+                                <div class="ml-4 flex flex-col text-sm text-white">
+                                    <div class="font-semibold">Eton Trust</div>
+                                    <div
+                                        class="text-neutral-400 group-hover:text-neutral-300"
+                                    >
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="min-w-sm">
+                                <p class="text-neutral-300">
+                                    If I had any money left after my last aquisition, i'd
+                                    totally buy this!
+                                </p>
+                            </div>
+                        </div>
+                        <div
+                            class="group flex w-full cursor-pointer flex-col space-y-2 rounded-2xl bg-neutral-700 p-6 text-left md:w-1/3"
+                        >
+                            <div class="flex">
+                                <img
+                                    src="https://randomuser.me/api/portraits/men/52.jpg"
+                                    class="h-9 w-9 rounded-full" alt=""
+                                />
+                                <div class="ml-4 flex flex-col text-sm text-white">
+                                    <div class="font-semibold">Go Rogueman</div>
+                                    <div
+                                        class="text-neutral-400 group-hover:text-neutral-300"
+                                    >
+
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="min-w-sm">
+                                <p class="text-neutral-300">
+                                    Amazing stuff! Adding this to my products list for this
+                                    year 👏
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="mx-auto flex max-w-6xl">
+                    <div
+                        class="flex w-full flex-col justify-between space-y-6 md:flex-row md:space-y-0 md:space-x-12"
+                    >
+                        <div
+                            class="group flex cursor-pointer flex-col space-y-2 rounded-2xl bg-neutral-700 p-6 text-left md:w-1/2 md:max-w-[326px]"
+                        >
+                            <div class="flex">
+                                <img
+                                    src="https://randomuser.me/api/portraits/men/29.jpg"
+                                    class="h-9 w-9 rounded-full" alt=""
+                                />
+                                <div class="ml-4 flex flex-col text-sm text-white">
+                                    <div class="font-semibold">Dishy Sunak</div>
+                                    <div
+                                        class="text-neutral-400 group-hover:text-neutral-300"
+                                    >
+
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="min-w-sm">
+                                <p class="text-neutral-300">
+                                    Congratulations to the team at Datagarden on todays
+                                    launch!
+                                </p>
+                            </div>
+                        </div>
+                        <div
+                            class="group flex cursor-pointer flex-col space-y-2 rounded-2xl bg-neutral-700 p-6 text-left md:w-1/2 md:max-w-[326px]"
+                        >
+                            <div class="flex">
+                                <img
+                                    src="https://randomuser.me/api/portraits/men/1.jpg"
+                                    class="h-9 w-9 rounded-full"
+                                 alt=""/>
+                                <div class="ml-4 flex flex-col text-sm text-white">
+                                    <div class="font-semibold">Dave Hawkins</div>
+                                    <div
+                                        class="text-neutral-400 group-hover:text-neutral-300"
+                                    >
+                                        <a href="https://twitter.com/davehawkins"
+                                        ></a
+                                        >
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="min-w-sm">
+                                <p class="text-neutral-300">
+                                    Hey wait this website looks familiar?? Congrats anyhow.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="mx-auto w-full rounded-xl bg-neutral-100 p-6">
+        <div
+            class="flex w-full flex-col items-center space-y-12 py-12 text-center md:py-32"
+        >
+            <div class="flex max-w-xl flex-col space-y-4">
+                <h1
+                    class="text-4xl font-semibold leading-snug tracking-tight md:text-5xl"
+                >
+                    Sign up today.
+                </h1>
+                <p class="text-gray-600">
+                    Anim aute id magna aliqua ad ad non deserunt sunt.
+                </p>
+            </div>
+            <div class="max-4xl flex flex-col space-y-4">
+                <button
+                    class="flex w-full items-center justify-center rounded-lg border border-gray-200 bg-white py-2 px-6 text-center font-medium text-gray-700 shadow-sm hover:text-gray-500"
+                >
+                    <svg
+                        class="mr-2"
+                        width="20"
+                        height="19"
+                        viewBox="0 0 25 24"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                    >
+                        <path
+                            d="M23.06 12.25C23.06 11.47 22.99 10.72 22.86 10H12.5V14.26H18.42C18.16 15.63 17.38 16.79 16.21 17.57V20.34H19.78C21.86 18.42 23.06 15.6 23.06 12.25V12.25Z"
+                            fill="#4285F4"
+                        />
+                        <path
+                            d="M12.4999 23.0001C15.4699 23.0001 17.9599 22.0201 19.7799 20.3401L16.2099 17.5701C15.2299 18.2301 13.9799 18.6301 12.4999 18.6301C9.63993 18.6301 7.20993 16.7001 6.33993 14.1001H2.67993V16.9401C4.48993 20.5301 8.19993 23.0001 12.4999 23.0001Z"
+                            fill="#34A853"
+                        />
+                        <path
+                            d="M6.34 14.0901C6.12 13.4301 5.99 12.7301 5.99 12.0001C5.99 11.2701 6.12 10.5701 6.34 9.91007V7.07007H2.68C1.93 8.55007 1.5 10.2201 1.5 12.0001C1.5 13.7801 1.93 15.4501 2.68 16.9301L5.53 14.7101L6.34 14.0901Z"
+                            fill="#FBBC05"
+                        />
+                        <path
+                            d="M12.4999 5.38C14.1199 5.38 15.5599 5.94 16.7099 7.02L19.8599 3.87C17.9499 2.09 15.4699 1 12.4999 1C8.19993 1 4.48993 3.47 2.67993 7.07L6.33993 9.91C7.20993 7.31 9.63993 5.38 12.4999 5.38Z"
+                            fill="#EA4335"
+                        />
+                    </svg>
+                    Sign up with Google
+                </button>
+                <p class="text-neutral-400">Or</p>
+                <form class="flex flex-col space-y-3">
+                    <label for="email"></label><input
+                        type="email"
+                        id="email"
+                        class="block w-full rounded-md border border-gray-200 py-2.5 px-4 text-base text-gray-900 shadow-sm focus:border-green-500 focus:ring-green-500"
+                        placeholder="Email"
+                        required
+                    />
+                    <label for="password"></label><input
+                        type="password"
+                        id="password"
+                        class="block w-full rounded-md border border-gray-200 py-2.5 px-4 text-base text-gray-900 shadow-sm focus:border-green-500 focus:ring-green-500"
+                        placeholder="Password"
+                        required
+                    />
+                    <button
+                        type="submit"
+                        class="rounded-md bg-green-600 py-2.5 px-8 text-base font-medium text-white hover:bg-green-700"
+                    >
+                        Create account
+                    </button>
+                </form>
+                <p class="text-gray-600">
+                    Already have an account?
+                    <a class="font-medium text-gray-900 hover:text-gray-500" href=""
+                    >Log in</a
+                    >
+                </p>
+                <p class="text-xs text-gray-500">
+                    By clicking "Create account", I agree to Datagardens TOS and
+                    Privacy Policy.
+                </p>
+            </div>
+        </div>
+    </div>
+    @include('components.footer')
+</div>
 @endsection
