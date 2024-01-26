@@ -1,0 +1,30 @@
+name: Deploy angels
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Deploy on server
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USERNAME }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          password: ${{ secrets.SSH_PASSWORD }}
+          script: |
+            cd /home/j/jan555is/fintrack.space
+            php8.2 artisan down
+            git pull origin main
+            php8.2 composer.phar install --optimize-autoloader
+            php8.2 artisan migrate --force
+            php8.2 artisan config:cache
+            php8.2 artisan event:cache
+            php8.2 artisan route:cache
+            php8.2 artisan view:cache
+            php8.2 artisan up
