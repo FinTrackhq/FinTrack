@@ -10,10 +10,10 @@
                     <h1
                         class="text-4xl font-semibold leading-snug tracking-tight md:text-5xl"
                     >
-                        Лучший Веб-инструмент для бухгалтера
+                        The best Web tool for an accountant
                     </h1>
                     <p class="text-gray-600">
-                        Максимально функциональный, красивый, удобный инструмент <br> с открытым исходным кодом!
+                        The most functional, beautiful, user-friendly open source tool!
                     </p>
                 </div>
                 <div class="mx-auto max-w-4xl">
@@ -108,10 +108,10 @@
                     <h1
                         class="text-3xl font-semibold leading-snug text-white md:text-4xl"
                     >
-                        Кастомизация
+                        Customization
                     </h1>
                     <p class="text-neutral-400">
-                        Настрой рабочую область как хочешь!
+                        Customize the workspace as you want!
                     </p>
                 </div>
                 <div class="flex flex-col space-y-12">
@@ -127,7 +127,7 @@
                                 >
                                     <div class="flex flex-col space-y-1">
                                         <h3 class="text-xl font-medium text-white">
-                                            Доступна темная/светлая тема
+                                            A dark/light theme is available
                                         </h3>
                                     </div>
                                     <img
@@ -144,7 +144,7 @@
                                 >
                                     <div class="flex flex-col space-y-1">
                                         <h3 class="text-xl font-medium text-white">
-                                            Кастомизируй цвета компонентов под себя
+                                            Customize the colors of the components for yourself
                                         </h3>
                                     </div>
                                     <img
@@ -167,7 +167,7 @@
                                 >
                                     <div class="flex flex-col space-y-1">
                                         <h3 class="text-xl font-medium text-white">
-                                            Кастомные темы
+                                            Custom themes
                                         </h3>
                                     </div>
                                     <img
@@ -189,11 +189,11 @@
                     <h1
                         class="text-3xl font-semibold leading-snug text-neutral-900 md:text-4xl"
                     >
-                        Технологии
+                        Technologies
                     </h1>
                     <p class="text-neutral-600">
-                        В нашем проекте используются только наилучшие технологии дающие вам высокую производительность,
-                        чистый код, возможноть переделать проект именно под вас.
+                        Our project uses only the best technologies that give you high performance,
+                        clean code, the ability to redo the project just for you.
                     </p>
                 </div>
                 <div class="flex flex-col space-y-8 md:space-y-20">
@@ -205,7 +205,7 @@
                                 <div class="max-w-sm">
                                     <p class="font-medium">PHP</p>
                                     <p class="font-normal text-neutral-600">
-                                        Самый популярный серверный язый програмирования.
+                                        The most popular server-side programming language.
                                     </p>
                                 </div>
                             </div>
@@ -213,8 +213,7 @@
                                 <div class="flex max-w-sm flex-col space-y-1">
                                     <p class="font-medium">Laravel</p>
                                     <p class="font-normal text-neutral-600">
-                                        это лучший фреймворк веб-приложений с выразительным, элегантным синтаксисом.
-                                        <br> |Лучший PHP фреймворк.
+                                        It is the best web application framework with expressive, elegant syntax. The best PHP framework.
                                     </p>
                                 </div>
                             </div>
@@ -222,7 +221,7 @@
                                 <div class="max-w-sm">
                                     <p class="font-medium">Blade</p>
                                     <p class="font-normal text-neutral-600">
-                                        Простой, но мощный движок для создания шаблонов, который входит в состав
+                                        A simple but powerful template engine that is included in the
                                         Laravel.
                                     </p>
                                 </div>
@@ -237,9 +236,9 @@
                                 <div class="max-w-sm">
                                     <p class="font-medium">TailwindCSS</p>
                                     <p class="font-normal text-neutral-600">
-                                        CSS-фреймворк, который позволяет создавать пользовательские интерфейсы при
-                                        помощи набора готовых классов. Он был разработан для ускорения процесса
-                                        разработки и облегчения поддержки кода.
+                                        CSS is a framework that allows you to create user interfaces
+                                        using a set of ready-made classes. It was designed to speed up the process
+                                        developing and facilitating code support.
                                     </p>
                                 </div>
                             </div>
@@ -247,7 +246,7 @@
                                 <div class="flex max-w-sm flex-col space-y-1">
                                     <p class="font-medium">Livewire</p>
                                     <p class="font-normal text-neutral-600">
-                                        Упрощает создание динамических интерфейсов, используя преимущественно PHP
+                                        Simplifies the creation of dynamic interfaces using mainly PHP
                                     </p>
                                 </div>
                             </div>
@@ -255,7 +254,7 @@
                                 <div class="max-w-sm">
                                     <p class="font-medium">FilamentPHP</p>
                                     <p class="font-normal text-neutral-600">
-                                        Это панель на Laravel, которая может ускорить процесс разработки веб-приложений.
+                                        This is a panel on Laravel that can speed up the process of developing web applications.
                                     </p>
                                 </div>
                             </div>
@@ -272,10 +271,10 @@
                     <h1
                         class="text-3xl font-semibold leading-snug text-white md:text-4xl"
                     >
-                        Universally loved
+                        Why us?
                     </h1>
                     <p class="text-neutral-400">
-                        Anim aute id magna aliqua ad ad non deserunt sunt.
+                        5 advantages of our project
                     </p>
                 </div>
                 <div class="flex flex-col space-y-6 md:space-y-12">
@@ -287,12 +286,12 @@
                                 class="group flex w-full cursor-pointer flex-col space-y-2 rounded-2xl bg-neutral-700 p-6 text-left md:w-1/3"
                             >
                                 <div class="flex">
-                                    <img
-                                        src="https://images.unsplash.com/flagged/photo-1570612861542-284f4c12e75f?ixlib=rb-1.2.1&q=80&fm=jpg&crop=faces&fit=crop&h=100&w=100&ixid=eyJhcHBfaWQiOjE3Nzg0fQ"
-                                        class="h-9 w-9 rounded-full" alt=""
-                                    />
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="green" class="bi bi-plus-circle" viewBox="0 0 16 16">
+                                        <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16"/>
+                                        <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4"/>
+                                    </svg>
                                     <div class="ml-4 flex flex-col text-sm text-white">
-                                        <div class="font-semibold">Flex Readman</div>
+                                        <div class="font-semibold">Free AI</div>
                                         <div
                                             class="text-neutral-400 group-hover:text-neutral-300"
                                         >
@@ -302,7 +301,7 @@
 
                                 <div class="max-w-sm">
                                     <p class="text-neutral-300">
-                                        Just tried out Datagarden and it blew me away!
+                                        We use GPT 3.5 configured for accountants and it's absolutely free!
                                     </p>
                                 </div>
                             </div>
@@ -310,12 +309,12 @@
                                 class="group flex w-full cursor-pointer flex-col space-y-2 rounded-2xl bg-neutral-700 p-6 text-left md:w-1/3"
                             >
                                 <div class="flex">
-                                    <img
-                                        src="https://images.unsplash.com/photo-1456327102063-fb5054efe647?ixlib=rb-0.3.5&q=80&fm=jpg&crop=faces&fit=crop&h=200&w=200&s=f05c14dd4db49f08a789e6449604c490"
-                                        class="h-9 w-9 rounded-full" alt=""
-                                    />
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="green" class="bi bi-plus-circle" viewBox="0 0 16 16">
+                                        <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16"/>
+                                        <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4"/>
+                                    </svg>
                                     <div class="ml-4 flex flex-col text-sm text-white">
-                                        <div class="font-semibold">Eton Trust</div>
+                                        <div class="font-semibold">Open source code</div>
                                         <div
                                             class="text-neutral-400 group-hover:text-neutral-300"
                                         >
@@ -325,8 +324,7 @@
 
                                 <div class="min-w-sm">
                                     <p class="text-neutral-300">
-                                        If I had any money left after my last aquisition, i'd
-                                        totally buy this!
+                                        Unlike our competitors, we give access to the basic project absolutely free of charge, as well as provide the code
                                     </p>
                                 </div>
                             </div>
@@ -334,12 +332,12 @@
                                 class="group flex w-full cursor-pointer flex-col space-y-2 rounded-2xl bg-neutral-700 p-6 text-left md:w-1/3"
                             >
                                 <div class="flex">
-                                    <img
-                                        src="https://randomuser.me/api/portraits/men/52.jpg"
-                                        class="h-9 w-9 rounded-full" alt=""
-                                    />
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="green" class="bi bi-plus-circle" viewBox="0 0 16 16">
+                                        <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16"/>
+                                        <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4"/>
+                                    </svg>
                                     <div class="ml-4 flex flex-col text-sm text-white">
-                                        <div class="font-semibold">Go Rogueman</div>
+                                        <div class="font-semibold">Updatability</div>
                                         <div
                                             class="text-neutral-400 group-hover:text-neutral-300"
                                         >
@@ -350,8 +348,7 @@
 
                                 <div class="min-w-sm">
                                     <p class="text-neutral-300">
-                                        Amazing stuff! Adding this to my products list for this
-                                        year 👏
+                                        We listen to our users and constantly update our project at the request of users
                                     </p>
                                 </div>
                             </div>
@@ -365,12 +362,12 @@
                                 class="group flex cursor-pointer flex-col space-y-2 rounded-2xl bg-neutral-700 p-6 text-left md:w-1/2 md:max-w-[326px]"
                             >
                                 <div class="flex">
-                                    <img
-                                        src="https://randomuser.me/api/portraits/men/29.jpg"
-                                        class="h-9 w-9 rounded-full" alt=""
-                                    />
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="green" class="bi bi-plus-circle" viewBox="0 0 16 16">
+                                        <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16"/>
+                                        <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4"/>
+                                    </svg>
                                     <div class="ml-4 flex flex-col text-sm text-white">
-                                        <div class="font-semibold">Dishy Sunak</div>
+                                        <div class="font-semibold">Modern stack</div>
                                         <div
                                             class="text-neutral-400 group-hover:text-neutral-300"
                                         >
@@ -381,8 +378,7 @@
 
                                 <div class="min-w-sm">
                                     <p class="text-neutral-300">
-                                        Congratulations to the team at Datagarden on todays
-                                        launch!
+                                        Our stack is very popular, flexible and extensible. Therefore, your company can very easily find a developer to refine the functionality exactly for you
                                     </p>
                                 </div>
                             </div>
@@ -390,12 +386,12 @@
                                 class="group flex cursor-pointer flex-col space-y-2 rounded-2xl bg-neutral-700 p-6 text-left md:w-1/2 md:max-w-[326px]"
                             >
                                 <div class="flex">
-                                    <img
-                                        src="https://randomuser.me/api/portraits/men/1.jpg"
-                                        class="h-9 w-9 rounded-full"
-                                        alt=""/>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="green" class="bi bi-plus-circle" viewBox="0 0 16 16">
+                                        <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16"/>
+                                        <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4"/>
+                                    </svg>
                                     <div class="ml-4 flex flex-col text-sm text-white">
-                                        <div class="font-semibold">Dave Hawkins</div>
+                                        <div class="font-semibold">∞ user - ∞ companies</div>
                                         <div
                                             class="text-neutral-400 group-hover:text-neutral-300"
                                         >
@@ -408,7 +404,7 @@
 
                                 <div class="min-w-sm">
                                     <p class="text-neutral-300">
-                                        Hey wait this website looks familiar?? Congrats anyhow.
+                                        Create as many companies as you want, and connect infinitely many additional users
                                     </p>
                                 </div>
                             </div>
@@ -425,14 +421,14 @@
                     <h1
                         class="text-4xl font-semibold leading-snug tracking-tight md:text-5xl"
                     >
-                        Обратная связь.
+                       Feedback
                     </h1>
                     <p class="text-gray-600">
-                        Если вы нашли баг или хотите со мной связаться, <br>то напиши те мне в TG: ya_hannes.
+                        If you find a bug or want to contact me, then write to me at Telegram: ya_hannes.
                     </p>
                 </div>
                 <div class="max-4xl flex flex-col space-y-4">
-                    <p class="text-neutral-400">Или</p>
+                    <p class="text-neutral-400">Or</p>
                     <form class="flex flex-col space-y-3" method="POST" action="{{route('feedback.create')}}">
                         @if(session()->has('success'))
                             <div id="toast-success" class="flex items-center w-full max-w-xs p-4 mb-4 text-gray-500 bg-white rounded-lg shadow dark:text-gray-400 dark:bg-gray-800" role="alert">

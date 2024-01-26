@@ -30,7 +30,7 @@ class CompanyPayment extends Model
 		return $this->belongsTo(Company::class);
 	}
 
-    public function companyExtract() : BelongsTo
+    public function extract() : BelongsTo
     {
         return $this->belongsTo(CompanyExtract::class);
     }

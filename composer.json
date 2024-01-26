@@ -16,6 +16,7 @@
         "filament/filament": "3.1",
         "filament/forms": "3.1",
         "filament/widgets": "3.1",
+        "flowframe/laravel-trend": "^0.1.5",
         "guzzlehttp/guzzle": "^7.2",
         "hasnayeen/themes": "^3.0",
         "icetalker/filament-chatgpt-bot": "^1.0",
@@ -26,7 +27,6 @@
         "marjose123/filament-lockscreen": "2.0",
         "njxqlus/filament-progressbar": "^1.0",
         "shuvroroy/filament-spatie-laravel-health": "^2.0",
-        "spatie/cpu-load-health-check": "^1.0",
         "swisnl/filament-backgrounds": "^1.1"
     },
     "require-dev": {

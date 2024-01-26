@@ -54,7 +54,7 @@ class DashboardPanelProvider extends PanelProvider
                     ->variant(Variants::MARBLE)
                     ->size(60)
                     ->square()
-                    ->colors(['0A0310','49007E','FF005B','FF7D10','FFB238']),
+                    ->colors(['0A0310','49007E','166534','104B27','28821D']),
                 FilamentBackgroundsPlugin::make()
                     ->showAttribution(false)
                     ->remember(200),

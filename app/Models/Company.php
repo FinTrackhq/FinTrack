@@ -26,6 +26,10 @@ class Company extends Model
     {
         return $this->hasMany(CompanyExtract::class);
     }
+    public function companyPayments(): HasMany
+    {
+        return $this->hasMany(CompanyPayment::class);
+    }
     public function companyRequisites() : HasOne
     {
         return $this->hasOne(CompanyRequisite::class);
@@ -34,11 +38,6 @@ class Company extends Model
     {
         return $this->hasOne(CompanyWarehouse::class);
     }
-    public function companyPayments(): HasMany
-    {
-        return $this->hasMany(CompanyPayment::class);
-    }
-
     public function stuffDocuments(): HasMany
     {
         return $this->hasMany(StuffDocument::class);
