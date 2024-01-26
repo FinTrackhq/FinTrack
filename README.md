@@ -17,7 +17,7 @@ This is an accounting web application similar to SAP/1C
 
 ## Screenshots
 
-![App Screenshot](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
+![App Screenshot](https://i.postimg.cc/cLsP48WH/image.png)
 
 
 ## Installation
