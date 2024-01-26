@@ -1,9 +1,9 @@
 
-![Logo](https://i.postimg.cc/0jfbBymv/logo.png)
+<p align="center">
+  <img src="https://i.postimg.cc/0jfbBymv/logo.png" />
+</p>
 
-![Github All Releases](https://img.shields.io/github/downloads/yahannes/FinTrack>/total.svg)
-
-![GitHub License](https://img.shields.io/github/license/yahannes/FinTrack)
+![Github All Releases](https://img.shields.io/github/downloads/yahannes/FinTrack>/total.svg) ![GitHub License](https://img.shields.io/github/license/yahannes/FinTrack)
 
 ## About FinTrack
 this is an accounting web application similar to SAP/1C
