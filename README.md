@@ -21,9 +21,7 @@ this is an accounting web application similar to SAP/1C
   php artisan key:generate
   npm run serve
 ```
-    P.s
-
-
+    
 ## The future of the project
 Finally, I would like to say that the development of this project depends entirely on you. Please insert the stars⭐and, if possible, recommend you to your friends and you can also suggest what needs to be added or changed in the project.
 Thank you for reading to the end
