@@ -12,13 +12,19 @@ class SaleChart extends ChartWidget
 {
     protected static ?string $heading = 'Sales';
     protected static string $color = 'danger';
-
+    protected static ?array $options = [
+        'plugins' => [
+            'legend' => [
+                'display' => false,
+            ],
+        ],
+    ];
     protected function getData(): array
     {
         $data = Trend::model(CompanySale::class)
             ->between(
-                start: now()->startOfDay(),
-                end: now()->endOfDay(),
+                start: now()->startOfSecond(),
+                end: now()->endOfSecond(),
             )
             ->perMonth()
             ->count();

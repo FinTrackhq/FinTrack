@@ -12,7 +12,13 @@ class PurchaseChart extends ChartWidget
 {
     protected static ?string $heading = 'Purchases';
     protected static string $color = 'success';
-
+    protected static ?array $options = [
+        'plugins' => [
+            'legend' => [
+                'display' => false,
+            ],
+        ],
+    ];
     protected function getData(): array
     {
         $data = Trend::model(CompanyPurchase::class)
@@ -26,7 +32,7 @@ class PurchaseChart extends ChartWidget
         return [
             'datasets' => [
                 [
-                    'label' => 'Company Sales',
+                    'label' => 'Company Purchases',
                     'data' => $data->map(fn (TrendValue $value) => $value->aggregate),
                 ],
             ],
