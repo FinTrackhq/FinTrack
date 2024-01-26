@@ -13,7 +13,7 @@
 </p>
 
 ## About FinTrack
-this is an accounting web application similar to SAP/1C
+This is an accounting web application similar to SAP/1C
 
 ## Screenshots
 
@@ -26,6 +26,7 @@ this is an accounting web application similar to SAP/1C
   npm i
   ren .env.example .env
   php artisan key:generate
+  php artisan migrate --seed
   npm run serve
 ```
     
