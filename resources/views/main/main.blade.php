@@ -431,8 +431,8 @@
                     <p class="text-neutral-400">Or</p>
                     <form class="flex flex-col space-y-3" method="POST" action="{{route('feedback.create')}}">
                         @if(session()->has('success'))
-                            <div id="toast-success" class="flex items-center w-full max-w-xs p-4 mb-4 text-gray-500 bg-white rounded-lg shadow dark:text-gray-400 dark:bg-gray-800" role="alert">
-                                <div class="inline-flex items-center justify-center flex-shrink-0 w-8 h-8 text-green-500 bg-green-100 rounded-lg dark:bg-green-800 dark:text-green-200">
+                            <div id="toast-success" class="flex items-center w-full max-w-xs p-4 mb-4 text-gray-500 bg-white rounded-lg shadow " role="alert">
+                                <div class="inline-flex items-center justify-center flex-shrink-0 w-8 h-8 text-green-500 bg-green-100 rounded-lg ">
                                     <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
                                         <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z"/>
                                     </svg>
@@ -448,25 +448,25 @@
                             </div>
                         @endif
                         @csrf
-                        <label for="name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Name</label><input
+                        <label for="name" class="block mb-2 text-sm font-medium text-gray-900">Name</label><input
                             type="text"
                             id="name" name="name"
                             class="block w-full rounded-md border border-gray-200 py-2.5 px-4 text-base text-gray-900 shadow-sm focus:border-green-700 focus:ring-green-700"
                             placeholder="Zhan"
                             required minlength="2"
                         />
-                        <label for="Theme" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Theme</label><input
+                        <label for="Theme" class="block mb-2 text-sm font-medium text-gray-900 ">Theme</label><input
                             type="text"
                             id="Theme" name="theme"
                             class="block w-full rounded-md border border-gray-200 py-2.5 px-4 text-base text-gray-900 shadow-sm focus:border-green-700 focus:ring-green-700"
                             placeholder="Write your theme..."
                             required minlength="4"
                         />
-                        <label for="message" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Message</label>
+                        <label for="message" class="block mb-2 text-sm font-medium text-gray-900 ">Message</label>
                         <textarea id="message" rows="4" name="message" class="block w-full rounded-md border border-gray-200 py-2.5 px-4 text-base text-gray-900 shadow-sm focus:border-green-700 focus:ring-green-700" placeholder="Write your message here..."
                         required minlength="100">
                         </textarea>
-                        <label for="social_link" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Social link</label><input
+                        <label for="social_link" class="block mb-2 text-sm font-medium text-gray-900 ">Social link</label><input
                             type="text"
                             id="social_link" name="social_link"
                             class="block w-full rounded-md border border-gray-200 py-2.5 px-4 text-base text-gray-900 shadow-sm focus:border-green-700 focus:ring-green-700"
