@@ -11,9 +11,6 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 class CompanyPayment extends Model
 {
     use HasFactory, SoftDeletes;
-
-
-
     /**
      * Mass-assignable attributes.
      *
@@ -30,7 +27,7 @@ class CompanyPayment extends Model
 		return $this->belongsTo(Company::class);
 	}
 
-    public function extract() : BelongsTo
+    public function companyExtract() : BelongsTo
     {
         return $this->belongsTo(CompanyExtract::class);
     }

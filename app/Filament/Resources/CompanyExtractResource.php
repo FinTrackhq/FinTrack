@@ -9,8 +9,6 @@ use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Table;
-use Illuminate\Database\Eloquent\Builder;
-use Illuminate\Database\Eloquent\SoftDeletingScope;
 
 class CompanyExtractResource extends Resource
 {
@@ -36,7 +34,7 @@ class CompanyExtractResource extends Resource
                     ->numeric()
                     ->prefix('$'),
                 Forms\Components\Select::make('payment_id')
-                    ->relationship('companyPayment', 'bic')
+                    ->relationship('companyPayment', 'account')
                     ->required()
             ]);
     }

@@ -26,7 +26,6 @@
         "laravel/tinker": "^2.8",
         "marjose123/filament-lockscreen": "2.0",
         "njxqlus/filament-progressbar": "^1.0",
-        "shuvroroy/filament-spatie-laravel-health": "^2.0",
         "swisnl/filament-backgrounds": "^1.1"
     },
     "require-dev": {

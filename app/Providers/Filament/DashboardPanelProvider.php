@@ -12,7 +12,6 @@ use Filament\Pages;
 use Filament\Panel;
 use Filament\PanelProvider;
 use Filament\Support\Colors\Color;
-use Filament\Widgets;
 use Hasnayeen\Themes\Http\Middleware\SetTheme;
 use Hasnayeen\Themes\ThemesPlugin;
 use Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse;
@@ -28,9 +27,6 @@ use LaraZeus\Boredom\Enums\Variants;
 use lockscreen\FilamentLockscreen\Http\Middleware\Locker;
 use lockscreen\FilamentLockscreen\Lockscreen;
 use Njxqlus\FilamentProgressbar\FilamentProgressbarPlugin;
-use BezhanSalleh\FilamentLanguageSwitch\LanguageSwitch;
-use ShuvroRoy\FilamentSpatieLaravelHealth\FilamentSpatieLaravelHealthPlugin;
-use ShuvroRoy\FilamentSpatieLaravelHealth\Pages\HealthCheckResults;
 use Swis\Filament\Backgrounds\FilamentBackgroundsPlugin;
 class DashboardPanelProvider extends PanelProvider
 {
@@ -60,8 +56,6 @@ class DashboardPanelProvider extends PanelProvider
                     ->remember(200),
                 ThemesPlugin::make(),
                 new Lockscreen(),
-                FilamentSpatieLaravelHealthPlugin::make()
-                    ->usingPage(HealthCheckResults::class),
                 FilamentProgressbarPlugin::make()
                     ->color('#166534'),
             ])
