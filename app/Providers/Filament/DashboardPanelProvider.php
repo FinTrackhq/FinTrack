@@ -21,6 +21,7 @@ use Illuminate\Routing\Middleware\SubstituteBindings;
 use Illuminate\Session\Middleware\AuthenticateSession;
 use Illuminate\Session\Middleware\StartSession;
 use Illuminate\View\Middleware\ShareErrorsFromSession;
+use Jeffgreco13\FilamentBreezy\BreezyCore;
 use LaraZeus\Boredom\BoringAvatarPlugin;
 use LaraZeus\Boredom\BoringAvatarsProvider;
 use LaraZeus\Boredom\Enums\Variants;
@@ -38,7 +39,6 @@ class DashboardPanelProvider extends PanelProvider
         return $panel
             ->default()
             ->login()
-            ->emailVerification()
             ->passwordReset()
             ->id('dashboard')
             ->path('dashboard')
@@ -47,7 +47,14 @@ class DashboardPanelProvider extends PanelProvider
             ])
             ->profile()
             ->plugins([
-               BoringAvatarPlugin::make()
+                BreezyCore::make()
+                    ->myProfile(
+                        navigationGroup: 'Settings',
+                        hasAvatars: false,
+                        slug: 'my-profile'
+                    )
+                    ->enableTwoFactorAuthentication(),
+                BoringAvatarPlugin::make()
                     ->variant(Variants::MARBLE)
                     ->size(60)
                     ->square()
