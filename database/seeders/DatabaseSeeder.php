@@ -17,7 +17,8 @@ class DatabaseSeeder extends Seeder
     {
         User::factory(1)->create();
         $this->call([
-            CompanySeeder::class
+            CompanySeeder::class,
+            PlanAccountSeeder::class,
         ]);
         // \App\Models\User::factory()->create([
         //     'name' => 'Test User',
