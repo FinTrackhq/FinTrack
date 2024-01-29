@@ -38,6 +38,7 @@ class DashboardPanelProvider extends PanelProvider
         return $panel
             ->default()
             ->login()
+            ->emailVerification()
             ->passwordReset()
             ->id('dashboard')
             ->path('dashboard')
