@@ -53,6 +53,7 @@ class DashboardPanelProvider extends PanelProvider
                         hasAvatars: false,
                         slug: 'my-profile'
                     )
+                    ->enableSanctumTokens()
                     ->enableTwoFactorAuthentication(),
                 BoringAvatarPlugin::make()
                     ->variant(Variants::MARBLE)
