@@ -9,6 +9,8 @@ use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Table;
+use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Database\Eloquent\SoftDeletingScope;
 
 class CompanyExtractResource extends Resource
 {
@@ -18,10 +20,15 @@ class CompanyExtractResource extends Resource
     protected static ?string $modelLabel = 'Extract';
     protected static ?string $slug = 'Extract';
     protected static ?string $navigationIcon = 'heroicon-o-document-duplicate';
+
     public static function form(Form $form): Form
     {
         return $form
             ->schema([
+                Forms\Components\Select::make('payment_id')
+                    ->relationship('payment', 'account')
+                    ->reactive()
+                    ->required(),
                 Forms\Components\TextInput::make('name')
                     ->required()
                     ->maxLength(255),
@@ -30,12 +37,7 @@ class CompanyExtractResource extends Resource
                     ->maxLength(255),
                 Forms\Components\TextInput::make('expenditure')
                     ->required()
-                    ->maxLength(255)
-                    ->numeric()
-                    ->prefix('$'),
-                Forms\Components\Select::make('payment_id')
-                    ->relationship('companyPayment', 'account')
-                    ->required()
+                    ->maxLength(255),
             ]);
     }
 
@@ -52,7 +54,7 @@ class CompanyExtractResource extends Resource
                     ->searchable(),
                 Tables\Columns\TextColumn::make('expenditure')
                     ->searchable(),
-                Tables\Columns\TextColumn::make('payment_id')
+                Tables\Columns\TextColumn::make('payment.account')
                     ->numeric()
                     ->sortable(),
                 Tables\Columns\TextColumn::make('created_at')
