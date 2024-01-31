@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->string('coming');
-            $table->string('expenditure');
+            $table->integer('expenditure');
             $table->foreignId('company_id')->constrained()->cascadeOnDelete()->cascadeOnUpdate();
             $table->foreignId('payment_id')->constrained('company_payments')->cascadeOnDelete()->cascadeOnUpdate();
             $table->timestamps();

@@ -28,22 +28,36 @@ class CompanySaleResource extends Resource
             ->schema([
                 Select::make('warehouse_id')
                     ->relationship('warehouse', 'name')
+                    ->prefixIcon('heroicon-o-wallet')
                     ->required(),
                 Select::make('plan_account_id')
                     ->relationship('planAccount','name')
+                    ->prefixIcon('heroicon-o-document')
+                    ->searchable()
                     ->required(),
                 Forms\Components\TextInput::make('name')
                     ->required()
+                    ->placeholder('Software purchase')
+                    ->minLength(1)
+                    ->prefixIcon('heroicon-o-user')
                     ->maxLength(255),
                 Forms\Components\TextInput::make('quantity')
                     ->required()
+                    ->placeholder('10')
+                    ->prefixIcon('heroicon-o-rectangle-stack')
+                    ->minLength(1)
                     ->numeric(),
                 Forms\Components\TextInput::make('price')
                     ->required()
                     ->numeric()
+                    ->placeholder('100')
+                    ->minLength(1)
                     ->prefix('$'),
                 Forms\Components\TextInput::make('summary')
                     ->required()
+                    ->placeholder('1000')
+                    ->minLength(1)
+                    ->prefix('$')
                     ->numeric(),
             ]);
     }

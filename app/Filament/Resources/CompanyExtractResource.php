@@ -27,16 +27,26 @@ class CompanyExtractResource extends Resource
             ->schema([
                 Forms\Components\Select::make('payment_id')
                     ->relationship('payment', 'account')
+                    ->suffixIcon('heroicon-o-credit-card')
                     ->reactive()
                     ->required(),
                 Forms\Components\TextInput::make('name')
                     ->required()
+                    ->suffixIcon('heroicon-o-user')
+                    ->placeholder('Ivanov Ivan Ivanovich')
+                    ->minLength(5)
                     ->maxLength(255),
                 Forms\Components\TextInput::make('coming')
+                    ->placeholder('Issuing salaries to an employee')
                     ->required()
+                    ->suffixIcon('heroicon-o-question-mark-circle')
                     ->maxLength(255),
                 Forms\Components\TextInput::make('expenditure')
+                    ->placeholder('70000')
+                    ->suffix('$')
+                    ->numeric()
                     ->required()
+                    ->minLength(1)
                     ->maxLength(255),
             ]);
     }

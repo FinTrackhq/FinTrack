@@ -25,7 +25,10 @@ class CompanyWarehouseResource extends Resource
         return $form
             ->schema([
                 Forms\Components\TextInput::make('name')
-                ->reactive()
+                    ->required()
+                    ->placeholder('Main warehouse')
+                    ->prefixIcon('heroicon-o-wallet')
+                    ->reactive()
 
             ]);
     }

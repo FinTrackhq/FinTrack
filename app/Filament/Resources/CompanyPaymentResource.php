@@ -27,13 +27,17 @@ class CompanyPaymentResource extends Resource
             ->schema([
                 Forms\Components\TextInput::make('account')
                     ->required()
+                    ->prefixIcon('heroicon-o-banknotes')
                     ->numeric()
+                    ->minLength(20)
                     ->maxLength(20)
                     ->placeholder('00000000000000000000'),
                 Forms\Components\TextInput::make('bic')
                     ->required()
+                    ->prefixIcon('heroicon-o-banknotes')
                     ->numeric()
                     ->placeholder('012345678')
+                    ->minLength(9)
                     ->maxLength(9),
             ]);
     }
@@ -46,7 +50,6 @@ class CompanyPaymentResource extends Resource
                     ->numeric()
                     ->sortable(),
                 Tables\Columns\TextColumn::make('account')
-                    ->numeric()
                     ->sortable(),
                 Tables\Columns\TextColumn::make('bic')
                     ->numeric()

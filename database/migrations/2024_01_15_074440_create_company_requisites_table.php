@@ -13,9 +13,9 @@ return new class extends Migration
     {
         Schema::create('company_requisites', function (Blueprint $table) {
             $table->id();
-            $table->integer('inn');
-            $table->integer('kpp');
-            $table->integer('ogrn');
+            $table->string('inn');
+            $table->string('kpp');
+            $table->string('ogrn');
             $table->foreignId('company_id')->constrained()->cascadeOnDelete()->cascadeOnUpdate();
             $table->timestamps();
             $table->softDeletes();

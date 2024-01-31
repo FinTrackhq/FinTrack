@@ -26,20 +26,31 @@ class CompanyStuffResource extends Resource
         return $form
             ->schema([
                 Forms\Components\TextInput::make('full_name')
+                    ->prefixIcon('heroicon-o-user')
+                    ->placeholder('Ivanov Ivan Ivanovich')
                     ->required()
                     ->maxLength(255),
                 Forms\Components\DatePicker::make('birthday')
+                    ->prefixIcon('heroicon-o-calendar-days')
+                    ->date()
+                    ->placeholder('07.07.2000')
                     ->required(),
                 Forms\Components\TextInput::make('phone')
-                    ->tel()
+                    ->suffixIcon('heroicon-m-device-phone-mobile')
                     ->required()
+                    ->placeholder('7012345678')
+                    ->maxLength(10)
                     ->numeric(),
                 Forms\Components\TextInput::make('email')
+                    ->placeholder('example@example.example')
+                    ->prefixIcon('heroicon-o-envelope')
                     ->email()
                     ->required()
                     ->maxLength(255),
                 Forms\Components\TextInput::make('post')
                     ->required()
+                    ->prefixIcon('heroicon-o-user-circle')
+                    ->placeholder('director')
                     ->maxLength(255),
             ]);
     }

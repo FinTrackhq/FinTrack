@@ -17,7 +17,7 @@ return new class extends Migration
             $table->integer('passport_number')->unique();
             $table->string('passport_issued');
             $table->date('passport_date');
-            $table->integer('snils')->unique();
+            $table->string('snils')->unique();
             $table->foreignId('company_id')->constrained()->cascadeOnDelete()->cascadeOnUpdate();
             $table->foreignId('stuff_id')->constrained('company_stuffs')->cascadeOnDelete()->cascadeOnUpdate();
             $table->softDeletes();

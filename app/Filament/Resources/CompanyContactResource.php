@@ -41,6 +41,7 @@ class CompanyContactResource extends Resource
                     ->suffixIcon('heroicon-m-device-phone-mobile')
                     ->required()
                     ->placeholder('7012345678')
+                    ->minLength(10)
                     ->maxLength(10)
                     ->numeric(),
             ]);

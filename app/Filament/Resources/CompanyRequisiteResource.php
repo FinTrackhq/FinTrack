@@ -32,12 +32,24 @@ class CompanyRequisiteResource extends Resource
             ->schema([
                 Forms\Components\TextInput::make('inn')
                     ->required()
+                    ->minLength(12)
+                    ->maxLength(12)
+                    ->placeholder('012345678999')
+                    ->prefixIcon('heroicon-o-document-text')
                     ->numeric(),
                 Forms\Components\TextInput::make('kpp')
                     ->required()
+                    ->minLength(9)
+                    ->maxLength(9)
+                    ->placeholder('012345678')
+                    ->prefixIcon('heroicon-o-document-text')
                     ->numeric(),
                 Forms\Components\TextInput::make('ogrn')
                     ->required()
+                    ->minLength(12)
+                    ->maxLength(12)
+                    ->placeholder('012345678999')
+                    ->prefixIcon('heroicon-o-document-text')
                     ->numeric(),
             ]);
     }

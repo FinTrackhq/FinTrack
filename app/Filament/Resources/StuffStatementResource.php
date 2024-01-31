@@ -26,15 +26,22 @@ class StuffStatementResource extends Resource
             ->schema([
                 Forms\Components\Select::make('stuff_id')
                     ->relationship('stuff', 'id')
+                    ->prefixIcon('heroicon-o-user')
                     ->required(),
                 Forms\Components\TextInput::make('salary_10')
                     ->required()
+                    ->prefix('$')
+                    ->placeholder('500')
                     ->numeric(),
                 Forms\Components\TextInput::make('salary_25')
                     ->required()
+                    ->prefix('$')
+                    ->placeholder('500')
                     ->numeric(),
                 Forms\Components\TextInput::make('salary')
                     ->required()
+                    ->prefix('$')
+                    ->placeholder('1000')
                     ->numeric(),
             ]);
     }

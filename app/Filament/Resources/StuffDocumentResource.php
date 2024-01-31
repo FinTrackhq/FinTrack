@@ -25,20 +25,37 @@ class StuffDocumentResource extends Resource
             ->schema([
                 Forms\Components\Select::make('stuff_id')
                     ->relationship('stuff', 'full_name')
+                    ->prefixIcon('heroicon-o-user')
                     ->required(),
                 Forms\Components\TextInput::make('passport_series')
                     ->required()
+                    ->prefixIcon('heroicon-o-identification')
+                    ->placeholder('0123')
+                    ->minLength(4)
+                    ->maxLength(4)
                     ->numeric(),
                 Forms\Components\TextInput::make('passport_number')
                     ->required()
+                    ->placeholder('012345')
+                    ->minLength(6)
+                    ->maxLength(6)
+                    ->prefixIcon('heroicon-o-identification')
                     ->numeric(),
                 Forms\Components\TextInput::make('passport_issued')
                     ->required()
+                    ->placeholder('Russia, Voronezh region, c. Voronezh, prospekt Revolyutsii, house 20')
+                    ->prefixIcon('heroicon-o-identification')
                     ->maxLength(255),
                 Forms\Components\DatePicker::make('passport_date')
-                    ->required(),
+                    ->required()
+                    ->date()
+                    ->prefixIcon('heroicon-o-identification'),
                 Forms\Components\TextInput::make('snils')
                     ->required()
+                    ->placeholder('01234567899')
+                    ->minLength(11)
+                    ->maxLength(11)
+                    ->prefixIcon('heroicon-o-identification')
                     ->numeric(),
             ]);
     }

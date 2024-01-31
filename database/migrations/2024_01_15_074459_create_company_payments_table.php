@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('company_payments', function (Blueprint $table) {
             $table->id();
-            $table->integer('account')->unique();
+            $table->string('account')->unique();
             $table->integer('bic');
             $table->foreignId('company_id')->constrained()->cascadeOnDelete()->cascadeOnUpdate();
             $table->timestamps();
