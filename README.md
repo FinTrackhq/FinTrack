@@ -21,6 +21,8 @@ This is an accounting web application similar to SAP/1C
 
 ## Installation
 ```bash
+  git clone https://github.com/yahannes/FinTrack.git
+  cd FinTrack
   composer i 
   npm i
   ren .env.example .env
