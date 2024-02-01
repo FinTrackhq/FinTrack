@@ -16,10 +16,13 @@ use \Filament\Panel;
 use \Illuminate\Database\Eloquent\Model;
 use \Illuminate\Support\Collection;
 
-class User extends Authenticatable implements HasTenants
+class User extends Authenticatable implements HasTenants, FilamentUser
 {
     use HasApiTokens, HasFactory, Notifiable, TwoFactorAuthenticatable;
-
+    public function canAccessPanel(Panel $panel): bool
+    {
+        return str_ends_with($this->email, '@fintrack.space') && $this->hasVerifiedEmail();
+    }
     /**
      * The attributes that are mass assignable.
      *
@@ -46,6 +49,7 @@ class User extends Authenticatable implements HasTenants
      *
      * @var array<string, string>
      */
+
     protected $casts = [
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
