@@ -59,7 +59,7 @@ class User extends Authenticatable implements HasTenants, FilamentUser, MustVeri
         return $this->companies;
     }
 
-    public function Company(): BelongsToMany
+    public function companies(): BelongsToMany
     {
         return $this->belongsToMany(Company::class);
     }
