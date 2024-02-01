@@ -20,7 +20,7 @@ class User extends Authenticatable implements HasTenants, FilamentUser, MustVeri
     use HasApiTokens, HasFactory, Notifiable, TwoFactorAuthenticatable;
     public function canAccessPanel(Panel $panel): bool
     {
-        return str_ends_with($this->email, '@fintrack.space') && $this->hasVerifiedEmail();
+        return str_ends_with($this->email, '');
     }
     /**
      * The attributes that are mass assignable.

@@ -41,7 +41,6 @@ class DashboardPanelProvider extends PanelProvider
             ->default()
             ->login(Login::class)
             ->registration()
-            ->emailVerification()
             ->passwordReset()
             ->id('dashboard')
             ->path('dashboard')
