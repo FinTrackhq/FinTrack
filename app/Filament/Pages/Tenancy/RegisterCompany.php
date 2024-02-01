@@ -18,8 +18,17 @@ class RegisterCompany extends RegisterTenant
     {
         return $form
             ->schema([
-                TextInput::make('name'),
-                TextInput::make('short_name'),
+                TextInput::make('name')
+                ->placeholder('FinTrack LTD.')
+                ->minLength(2)
+                ->maxLength(255)
+                ->prefixIcon('heroicon-o-home'),
+                TextInput::make('short_name')
+                    ->prefixIcon('heroicon-o-home')
+                    ->placeholder('FT LTD.')
+                    ->minLength(2)
+                    ->maxLength(10),
+
                 Select::make('type')
                     ->options([
                         'General' => 'General',

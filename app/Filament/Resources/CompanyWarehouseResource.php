@@ -26,6 +26,8 @@ class CompanyWarehouseResource extends Resource
             ->schema([
                 Forms\Components\TextInput::make('name')
                     ->required()
+                    ->minLength(2)
+                    ->maxLength(255)
                     ->placeholder('Main warehouse')
                     ->prefixIcon('heroicon-o-wallet')
                     ->reactive()
