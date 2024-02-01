@@ -40,6 +40,8 @@ class DashboardPanelProvider extends PanelProvider
         return $panel
             ->default()
             ->login(Login::class)
+            ->registration()
+            ->emailVerification()
             ->passwordReset()
             ->id('dashboard')
             ->path('dashboard')
@@ -69,7 +71,6 @@ class DashboardPanelProvider extends PanelProvider
                 FilamentProgressbarPlugin::make()
                     ->color('#166534'),
             ])
-            ->registration()
             ->brandLogo(asset('/file/image/logo/svg/logo.svg'))
             ->brandLogoHeight('3rem')
             ->favicon(asset('file/image/logo/svg/logo.svg'))
