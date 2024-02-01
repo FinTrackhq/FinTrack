@@ -2,21 +2,18 @@
 
 namespace App\Models;
 
-// use Illuminate\Contracts\Auth\MustVerifyEmail;
-use Filament\Http\Responses\Auth\Contracts\EmailVerificationResponse;
+use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Filament\Models\Contracts\FilamentUser;
 use Filament\Models\Contracts\HasTenants;
-use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
-use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Jeffgreco13\FilamentBreezy\Traits\TwoFactorAuthenticatable;
 use Laravel\Sanctum\HasApiTokens;
-use \Filament\Panel;
-use \Illuminate\Database\Eloquent\Model;
-use \Illuminate\Support\Collection;
+use Filament\Panel;
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Collection;
 
 class User extends Authenticatable implements HasTenants, FilamentUser, MustVerifyEmail
 {
@@ -62,7 +59,7 @@ class User extends Authenticatable implements HasTenants, FilamentUser, MustVeri
         return $this->companies;
     }
 
-    public function companies(): BelongsToMany
+    public function Company(): BelongsToMany
     {
         return $this->belongsToMany(Company::class);
     }
