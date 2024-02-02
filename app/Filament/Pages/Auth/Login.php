@@ -2,7 +2,7 @@
 
 namespace App\Filament\Pages\Auth;
 
-use Afatmustafa\FilamentTurnstile\Forms\Components\Turnstile;
+use AbanoubNassem\FilamentGRecaptchaField\Forms\Components\GRecaptcha;
 use Filament\Forms\Form;
 use Filament\Pages\Auth\Login as AuthLogin;
 
@@ -20,11 +20,7 @@ class Login extends AuthLogin
                         $this->getEmailFormComponent(),
                         $this->getPasswordFormComponent(),
                         $this->getRememberFormComponent(),
-                        Turnstile::make('captcha')
-                            ->theme('auto') // accepts light, dark, auto
-                            ->language('ru')
-                            ->size('big')
-                            ->nullable(),
+                        GRecaptcha::make('captcha')
                     ])
                     ->statePath('data'),
             ),
