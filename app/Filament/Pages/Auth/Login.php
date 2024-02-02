@@ -21,6 +21,7 @@ class Login extends AuthLogin
                         $this->getPasswordFormComponent(),
                         $this->getRememberFormComponent(),
                         GRecaptcha::make('captcha')
+                        ->nullable(),
                     ])
                     ->statePath('data'),
             ),
