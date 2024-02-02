@@ -23,7 +23,8 @@ class Login extends AuthLogin
                         Turnstile::make('captcha')
                             ->theme('auto') // accepts light, dark, auto
                             ->language('ru')
-                            ->size('big'),
+                            ->size('big')
+                            ->nullable(),
                     ])
                     ->statePath('data'),
             ),
