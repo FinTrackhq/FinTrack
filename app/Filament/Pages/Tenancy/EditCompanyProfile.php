@@ -18,14 +18,25 @@ class EditCompanyProfile extends EditTenantProfile
     {
         return $form
             ->schema([
+                TextInput::make('name')
+                    ->required()
+                    ->placeholder('FinTrack LTD.')
+                    ->minLength(2)
+                    ->maxLength(20)
+                    ->prefixIcon('heroicon-o-home'),
+                TextInput::make('short_name')
+                    ->required()
+                    ->prefixIcon('heroicon-o-home')
+                    ->placeholder('FT LTD.')
+                    ->minLength(2)
+                    ->maxLength(10),
                 Select::make('type')
+                    ->required()
                     ->options([
-                        'General' => 'General ',
+                        'General' => 'General',
                         'Simplified' => 'Simplified',
                         'Patent' => 'Patent'
-                    ]),
-                TextInput::make('name'),
-                TextInput::make('short_name'),
+                    ])
             ]);
 
     }
