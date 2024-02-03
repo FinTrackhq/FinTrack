@@ -66,5 +66,21 @@ class Company extends Model
     {
         return $this->hasMany(CompanyPurchase::class);
     }
+    public function getNameAttribute($value): string
+    {
+        return trim($value);
+    }
+    public function getShortNameAttribute($value): string
+    {
+        return trim($value);
+    }
+    public function setNameAttribute($value): string
+    {
+        return trim($value);
+    }
+    public function setShortNameAttribute($value): string
+    {
+        return trim($value);
+    }
     use HasFactory, SoftDeletes;
 }

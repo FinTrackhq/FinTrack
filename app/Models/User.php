@@ -68,4 +68,13 @@ class User extends Authenticatable implements HasTenants, FilamentUser
     {
         return $this->companies->contains($tenant);
     }
+
+    public function getNameAttribute($value): string
+    {
+        return trim($value);
+    }
+    public function setNameAttribute($value): string
+    {
+        return trim($value);
+    }
 }
