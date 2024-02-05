@@ -23,14 +23,15 @@ class RegisterCompany extends RegisterTenant
                 ->placeholder('FinTrack LTD.')
                 ->minLength(2)
                 ->maxLength(20)
-                ->prefixIcon('heroicon-o-home'),
+                ->prefixIcon('heroicon-o-home')
+                ->unique(),
                 TextInput::make('short_name')
                     ->required()
                     ->prefixIcon('heroicon-o-home')
                     ->placeholder('FT LTD.')
                     ->minLength(2)
-                    ->maxLength(10),
-
+                    ->maxLength(10)
+                    ->unique(),
                 Select::make('type')
                     ->required()
                     ->options([

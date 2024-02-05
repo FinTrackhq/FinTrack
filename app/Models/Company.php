@@ -74,13 +74,5 @@ class Company extends Model
     {
         return trim($value);
     }
-    public function setNameAttribute($value): string
-    {
-        return trim($value);
-    }
-    public function setShortNameAttribute($value): string
-    {
-        return trim($value);
-    }
     use HasFactory, SoftDeletes;
 }

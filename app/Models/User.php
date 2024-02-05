@@ -73,8 +73,4 @@ class User extends Authenticatable implements HasTenants, FilamentUser
     {
         return trim($value);
     }
-    public function setNameAttribute($value): string
-    {
-        return trim($value);
-    }
 }
