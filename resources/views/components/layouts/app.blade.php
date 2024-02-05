@@ -20,7 +20,10 @@
     </head>
 
     <body class="antialiased">
-        @yield('main')
+        {{ $slot }}
+
+        @livewire('notifications')
+
         @filamentScripts
         @vite('resources/js/app.js')
     </body>
