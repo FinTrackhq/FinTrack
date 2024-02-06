@@ -50,8 +50,10 @@ class CompanyPaymentResource extends Resource
                     ->numeric()
                     ->sortable(),
                 Tables\Columns\TextColumn::make('account')
+                    ->searchable()
                     ->sortable(),
                 Tables\Columns\TextColumn::make('bic')
+                    ->searchable()
                     ->numeric()
                     ->sortable(),
                 Tables\Columns\TextColumn::make('created_at')

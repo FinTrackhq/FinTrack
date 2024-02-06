@@ -57,12 +57,15 @@ class StuffStatementResource extends Resource
                     ->numeric()
                     ->sortable(),
                 Tables\Columns\TextColumn::make('salary_10')
+                    ->searchable()
                     ->numeric()
                     ->sortable(),
                 Tables\Columns\TextColumn::make('salary_25')
+                    ->searchable()
                     ->numeric()
                     ->sortable(),
                 Tables\Columns\TextColumn::make('salary')
+                    ->searchable()
                     ->numeric()
                     ->sortable(),
                 Tables\Columns\TextColumn::make('deleted_at')

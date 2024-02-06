@@ -62,12 +62,14 @@ class CompanyRequisiteResource extends Resource
                     ->numeric()
                     ->sortable(),
                 Tables\Columns\TextColumn::make('inn')
+                    ->searchable()
                     ->numeric()
                     ->sortable(),
                 Tables\Columns\TextColumn::make('kpp')
                     ->numeric()
                     ->sortable(),
                 Tables\Columns\TextColumn::make('ogrn')
+                    ->searchable()
                     ->numeric()
                     ->sortable(),
                 Tables\Columns\TextColumn::make('created_at')

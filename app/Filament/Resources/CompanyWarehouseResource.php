@@ -43,6 +43,7 @@ class CompanyWarehouseResource extends Resource
                     ->numeric()
                     ->sortable(),
                 Tables\Columns\TextColumn::make('name')
+                    ->searchable()
                     ->sortable(),
                 Tables\Columns\TextColumn::make('quantity')
                     ->numeric()
