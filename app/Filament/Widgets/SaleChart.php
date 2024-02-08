@@ -23,8 +23,8 @@ class SaleChart extends ChartWidget
     {
         $data = Trend::model(CompanySale::class)
             ->between(
-                start: now()->startOfSecond(),
-                end: now()->endOfSecond(),
+                start: now()->startOfYear(),
+                end: now()->endOfYear(),
             )
             ->perMonth()
             ->count();

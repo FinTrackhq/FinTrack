@@ -21,7 +21,7 @@ class DashboardOverview extends BaseWidget
             Stat::make('Number of workers', CompanyStuff::query()->count())
             ->chart([0 , 0.5, 1, 1.5, CompanyStuff::query()->count()])
                 ->color(CompanyStuff::query()->count() > 1 ? 'success' : 'danger'),
-            Stat::make('extract quantity', CompanyExtract::query()->count())
+            Stat::make('Extract quantity', CompanyExtract::query()->count())
                 ->chart([0 , 0.5, 1, 1.5, CompanyExtract::query()->count()])
                 ->color(CompanyExtract::query()->count() > 1 ? 'success' : 'danger'),
         ];

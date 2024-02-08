@@ -23,8 +23,8 @@ class PurchaseChart extends ChartWidget
     {
         $data = Trend::model(CompanyPurchase::class)
             ->between(
-                start: now()->startOfDay(),
-                end: now()->endOfDay(),
+                start: now()->startOfYear(),
+                end: now()->endOfYear(),
             )
             ->perMonth()
             ->count();
