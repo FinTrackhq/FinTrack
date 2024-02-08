@@ -2,11 +2,12 @@
 namespace App\Filament\Pages\Tenancy;
 
 use App\Models\Company;
+use Filament\Forms\Components\Actions;
+use Filament\Forms\Components\Actions\Action;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Form;
 use Filament\Pages\Tenancy\RegisterTenant;
-use Illuminate\Database\Eloquent\Model;
 
 class RegisterCompany extends RegisterTenant
 {
@@ -18,6 +19,11 @@ class RegisterCompany extends RegisterTenant
     {
         return $form
             ->schema([
+                Actions::make([
+                    Action::make('Back to dashboard')
+                        ->icon('heroicon-m-chevron-left')
+                        ->action(fn() => redirect('dashboard')),
+                ]),
                 TextInput::make('name')
                     ->required()
                 ->placeholder('FinTrack LTD.')
@@ -39,6 +45,7 @@ class RegisterCompany extends RegisterTenant
                         'Simplified' => 'Simplified',
                         'Patent' => 'Patent'
                     ])
+
             ]);
     }
 

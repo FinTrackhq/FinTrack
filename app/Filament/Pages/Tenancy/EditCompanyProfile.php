@@ -1,11 +1,12 @@
 <?php
 namespace App\Filament\Pages\Tenancy;
 
+use Filament\Forms\Components\Actions;
+use Filament\Forms\Components\Actions\Action;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Form;
 use Filament\Pages\Tenancy\EditTenantProfile;
-use Illuminate\Database\Eloquent\Model;
 
 class EditCompanyProfile extends EditTenantProfile
 {
@@ -18,6 +19,11 @@ class EditCompanyProfile extends EditTenantProfile
     {
         return $form
             ->schema([
+                Actions::make([
+                    Action::make('Back to dashboard')
+                        ->icon('heroicon-m-chevron-left')
+                        ->action(fn() => redirect('dashboard')),
+                ]),
                 TextInput::make('name')
                     ->required()
                     ->placeholder('FinTrack LTD.')
@@ -36,7 +42,7 @@ class EditCompanyProfile extends EditTenantProfile
                         'General' => 'General',
                         'Simplified' => 'Simplified',
                         'Patent' => 'Patent'
-                    ])
+                    ]),
             ]);
 
     }

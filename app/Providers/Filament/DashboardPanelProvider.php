@@ -3,6 +3,7 @@
 namespace App\Providers\Filament;
 
 use App\Filament\Pages\Auth\Login;
+use App\Filament\Pages\Auth\Register;
 use App\Filament\Pages\Tenancy\EditCompanyProfile;
 use App\Filament\Pages\Tenancy\RegisterCompany;
 use App\Models\Company;
@@ -40,7 +41,7 @@ class DashboardPanelProvider extends PanelProvider
         return $panel
             ->default()
             ->login(Login::class)
-            ->registration()
+            ->registration(Register::class)
             ->passwordReset()
             ->id('dashboard')
             ->path('dashboard')
