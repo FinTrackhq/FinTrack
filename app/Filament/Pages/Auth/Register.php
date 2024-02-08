@@ -2,34 +2,34 @@
 
 namespace App\Filament\Pages\Auth;
 
+use Filament\Forms\Components\TextInput;
+use Filament\Forms\Form;
 use Filament\Pages\Auth\Register as BaseRegister;
-use Filament\Forms\Components\Component;
-use Filament\Forms\Components\Actions\Action;
+use Illuminate\Support\Facades\Hash;
+use Rawilk\FilamentPasswordInput\Password;
 
 class Register extends  BaseRegister
 {
-    protected function getForms(): array
+    public function form(Form $form): Form
     {
-        return [
-            'form' => $this->form(
-                $this->makeForm()
-                    ->schema([
-                        $this->getNameFormComponent(),
-                        $this->getEmailFormComponent(),
-                        $this->getPasswordFormComponent(),
-                        $this->getPasswordConfirmationFormComponent(),
-                        $this->getBackToDashboardComponent(),
-                    ])
-                    ->statePath('data'),
-            ),
-        ];
+        return $form
+            ->schema([
+                $this->getNameFormComponent(),
+                $this->getEmailFormComponent(),
+                Password::make('password')
+                    ->label(__('filament-panels::pages/auth/register.form.password.label'))
+                    ->password()
+                    ->required()
+                    ->rule(\Illuminate\Validation\Rules\Password::default())
+                    ->dehydrateStateUsing(fn ($state) => Hash::make($state))
+                    ->same('passwordConfirmation')
+                    ->validationAttribute(__('filament-panels::pages/auth/register.form.password.validation_attribute')),
+                Password::make('passwordConfirmation')
+                    ->label(__('filament-panels::pages/auth/register.form.password_confirmation.label'))
+                    ->password()
+                    ->required()
+                    ->dehydrated(false),
+            ]);
 
-
-    }
-    protected function getBackToDashboardComponent() : Component
-    {
-        return Action::make('edit')
-            ->button()
-            ->url('http://localhost:8000/dashboard');
     }
 }
