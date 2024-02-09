@@ -4,6 +4,7 @@ namespace App\Filament\Resources;
 
 use App\Filament\Resources\CompanySaleResource\Pages;
 use App\Models\CompanySale;
+use Filament\Facades\Filament;
 use Filament\Forms;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Form;
@@ -27,7 +28,7 @@ class CompanySaleResource extends Resource
         return $form
             ->schema([
                 Select::make('warehouse_id')
-                    ->relationship('warehouse', 'name')
+                    ->relationship('warehouse', 'name',modifyQueryUsing: fn (Builder $query) => $query->whereBelongsTo(Filament::getTenant()))
                     ->prefixIcon('heroicon-o-wallet')
                     ->required(),
                 Select::make('plan_account_id')

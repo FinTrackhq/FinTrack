@@ -5,11 +5,13 @@ namespace App\Filament\Resources;
 use App\Filament\Resources\CompanyPurchaseResource\Pages;
 use App\Models\CompanyPurchase;
 use Filament\Forms;
-use Filament\Forms\Components\Select;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Table;
+use Filament\Facades\Filament;
+use Filament\Forms\Components\Select;
+use Illuminate\Database\Eloquent\Builder;
 
 class CompanyPurchaseResource extends Resource
 {
@@ -26,7 +28,7 @@ class CompanyPurchaseResource extends Resource
         return $form
             ->schema([
                 Select::make('warehouse_id')
-                    ->relationship('warehouse', 'name')
+                    ->relationship('warehouse', 'name',modifyQueryUsing: fn (Builder $query) => $query->whereBelongsTo(Filament::getTenant()))
                     ->prefixIcon('heroicon-o-wallet')
                     ->required(),
                 Select::make('plan_account_id')
