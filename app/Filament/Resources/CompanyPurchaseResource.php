@@ -45,17 +45,20 @@ class CompanyPurchaseResource extends Resource
                     ->placeholder('10')
                     ->prefixIcon('heroicon-o-rectangle-stack')
                     ->minLength(1)
+                    ->maxLength(100)
                     ->numeric(),
                 Forms\Components\TextInput::make('price')
                     ->required()
                     ->numeric()
                     ->placeholder('100')
                     ->minLength(1)
+                    ->maxLength(100)
                     ->prefix('$'),
                 Forms\Components\TextInput::make('summary')
                     ->required()
                     ->placeholder('1000')
                     ->minLength(1)
+                    ->maxLength(100)
                     ->prefix('$')
                     ->numeric(),
             ]);
