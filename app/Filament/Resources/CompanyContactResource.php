@@ -42,7 +42,7 @@ class CompanyContactResource extends Resource
                 Forms\Components\TextInput::make('number')
                     ->suffixIcon('heroicon-m-device-phone-mobile')
                     ->required()
-                    ->placeholder('7012345678')
+                    ->placeholder('0123456789')
                     ->minLength(10)
                     ->maxLength(10)
                     ->numeric()

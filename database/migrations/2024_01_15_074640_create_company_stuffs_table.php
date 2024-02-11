@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('full_name');
             $table->date('birthday');
-            $table->integer('phone')->unique();
+            $table->string('number')->unique();
             $table->string('email')->unique();
             $table->string('post');
             $table->foreignId('company_id')->constrained()->cascadeOnDelete()->cascadeOnUpdate();
