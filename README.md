@@ -9,6 +9,7 @@
     <a href="https://php.net"><img alt="PHP 8.1" src="https://img.shields.io/badge/PHP-8.1-777BB4?style=for-the-badge&logo=php"></a>
     <a href="https://filamentadmin.com/docs/3.x/admin/installation"><img alt="FILAMENT 8.x" src="https://img.shields.io/badge/FILAMENT-3.x-EBB304?style=for-the-badge"></a>
     <a href="https://github.com/yahannes/fintrack/actions"><img alt="Tests passing" src="https://img.shields.io/badge/Tests-passing-green?style=for-the-badge&logo=github"></a>
+    <a href="https://github.com/yahannes/FinTrack/issues"><img alt="Tests passing" src="https://img.shields.io/github/issues/yahannes/FinTrack.svg?style=for-the-badge"></a>
 </p>
 
 ## About FinTrack
