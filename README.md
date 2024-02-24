@@ -1,10 +1,9 @@
-
-<h1>Note: The project will continue its development from 19.02, thanks for your understanding!</h1>
+<h1 style="color: #166534;text-align: center">REPO STATUS : IN DEVELOPMENT</h1>
 <p align="center">
-  <img src="https://i.postimg.cc/0jfbBymv/logo.png" />
+  <img src="https://i.postimg.cc/0jfbBymv/logo.png" alt=""/>
 </p>
 
-<p align="center">
+<p style=" text-align: center" >
     <a href="https://laravel.com"><img alt="Laravel v10.x" src="https://img.shields.io/badge/Laravel-v10.x-FF2D20?style=for-the-badge&logo=laravel"></a>
     <a href="https://livewire.laravel.com"><img alt="Livewire v3.x" src="https://img.shields.io/badge/Livewire-v3.x-FB70A9?style=for-the-badge"></a>
     <a href="https://php.net"><img alt="PHP 8.1" src="https://img.shields.io/badge/PHP-8.1-777BB4?style=for-the-badge&logo=php"></a>

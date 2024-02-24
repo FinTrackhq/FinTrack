@@ -3,7 +3,6 @@
 namespace App\Filament\Widgets;
 
 use App\Models\CompanyPurchase;
-use App\Models\CompanySale;
 use Filament\Widgets\ChartWidget;
 use Flowframe\Trend\Trend;
 use Flowframe\Trend\TrendValue;
@@ -11,7 +10,7 @@ use Flowframe\Trend\TrendValue;
 class PurchaseChart extends ChartWidget
 {
     protected static ?string $heading = 'Purchases';
-    protected static string $color = 'success';
+    protected static string $color = 'warning';
     protected static ?array $options = [
         'plugins' => [
             'legend' => [

@@ -12,11 +12,6 @@ use Illuminate\Http\Resources\Json\AnonymousResourceCollection;
 
 class CompanyContactController extends Controller
 {
-    public function __construct()
-    {
-
-    }
-
     public function index(): AnonymousResourceCollection
     {
         $companyContacts = CompanyContact::dynamicPaginate();

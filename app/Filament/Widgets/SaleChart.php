@@ -2,7 +2,6 @@
 
 namespace App\Filament\Widgets;
 
-use App\Models\Company;
 use App\Models\CompanySale;
 use Filament\Widgets\ChartWidget;
 use Flowframe\Trend\Trend;
@@ -11,7 +10,7 @@ use Flowframe\Trend\TrendValue;
 class SaleChart extends ChartWidget
 {
     protected static ?string $heading = 'Sales';
-    protected static string $color = 'danger';
+    protected static string $color = 'success';
     protected static ?array $options = [
         'plugins' => [
             'legend' => [

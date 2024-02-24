@@ -12,11 +12,6 @@ use Illuminate\Http\Resources\Json\AnonymousResourceCollection;
 
 class CompanyRequisiteController extends Controller
 {
-    public function __construct()
-    {
-
-    }
-
     public function index(): AnonymousResourceCollection
     {
         $companyRequisites = CompanyRequisite::dynamicPaginate();

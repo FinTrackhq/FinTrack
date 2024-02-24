@@ -7,6 +7,7 @@ use App\Filament\Pages\Auth\Register;
 use App\Filament\Pages\Tenancy\EditCompanyProfile;
 use App\Filament\Pages\Tenancy\RegisterCompany;
 use App\Models\Company;
+use Exception;
 use Filament\Http\Middleware\Authenticate;
 use Filament\Http\Middleware\DisableBladeIconComponents;
 use Filament\Http\Middleware\DispatchServingFilamentEvent;
@@ -34,7 +35,7 @@ use Swis\Filament\Backgrounds\FilamentBackgroundsPlugin;
 class DashboardPanelProvider extends PanelProvider
 {
     /**
-     * @throws \Exception
+     * @throws Exception
      */
     public function panel(Panel $panel): Panel
     {
@@ -52,9 +53,9 @@ class DashboardPanelProvider extends PanelProvider
             ->plugins([
                 BreezyCore::make()
                     ->myProfile(
-                        navigationGroup: 'Settings',
                         hasAvatars: false,
-                        slug: 'my-profile'
+                        slug: 'my-profile',
+                        navigationGroup: 'Settings'
                     )
                     ->enableSanctumTokens()
                     ->enableTwoFactorAuthentication(),

@@ -9,14 +9,8 @@ use App\Http\Resources\StuffDocument\StuffDocumentResource;
 use App\Models\StuffDocument;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Resources\Json\AnonymousResourceCollection;
-
 class StuffDocumentController extends Controller
 {
-    public function __construct()
-    {
-
-    }
-
     public function index(): AnonymousResourceCollection
     {
         $stuffDocuments = StuffDocument::dynamicPaginate();
