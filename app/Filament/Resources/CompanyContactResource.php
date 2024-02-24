@@ -29,24 +29,21 @@ class CompanyContactResource extends Resource
                     ->suffixIcon('heroicon-m-globe-alt')
                     ->placeholder('Russia, Voronezh region, c. Voronezh, prospekt Revolyutsii, house 20')
                     ->minLength(2)
-                    ->maxLength(255)
-                    ->unique(),
+                    ->maxLength(255),
                 Forms\Components\TextInput::make('email')
                     ->required()
                     ->email()
                     ->placeholder('example@fintrack.space')
                     ->suffixIcon('heroicon-o-envelope')
                     ->minLength(5)
-                    ->maxLength(255)
-                    ->unique(),
+                    ->maxLength(255),
                 Forms\Components\TextInput::make('number')
                     ->suffixIcon('heroicon-m-device-phone-mobile')
                     ->required()
                     ->placeholder('0123456789')
                     ->minLength(10)
                     ->maxLength(10)
-                    ->numeric()
-                    ->unique(),
+                    ->numeric(),
             ]);
     }
 
