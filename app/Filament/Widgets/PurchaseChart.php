@@ -3,6 +3,7 @@
 namespace App\Filament\Widgets;
 
 use App\Models\CompanyPurchase;
+use Filament\Facades\Filament;
 use Filament\Widgets\ChartWidget;
 use Flowframe\Trend\Trend;
 use Flowframe\Trend\TrendValue;
@@ -20,7 +21,7 @@ class PurchaseChart extends ChartWidget
     ];
     protected function getData(): array
     {
-        $data = Trend::model(CompanyPurchase::class)
+        $data = Trend::query(CompanyPurchase::query()->whereBelongsTo(Filament::getTenant()))
             ->between(
                 start: now()->startOfYear(),
                 end: now()->endOfYear(),
