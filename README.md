@@ -1,4 +1,4 @@
-<h1 style="color: #166534;text-align: center">REPO STATUS : IN DEVELOPMENT</h1>
+<h1 align="center">REPO STATUS : IN DEVELOPMENT</h1>
 <p align="center">
   <img src="https://i.postimg.cc/0jfbBymv/logo.png" alt=""/>
 </p>
