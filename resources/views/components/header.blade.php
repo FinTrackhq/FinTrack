@@ -1,13 +1,23 @@
 <div class="flex w-full flex-col items-center justify-between md:flex-row">
-    <!-- Обновленный блок с логотипом и версией -->
-    <div class="flex flex-row justify-between items-center md:w-1/4">
-        <div class="flex items-center">
-            <img src="{{asset('file/image/logo/svg/logo.svg')}}" class="size-10" alt="">
-            <p class="rounded-full text-cyan-50 bg-green-600 px-2 py-1 text-base ml-2">V 0.1</p>
+    <div class="flex items-center relative">
+        <img src="{{asset('file/image/logo/svg/logo.svg')}}" class="size-10" alt="">
+        <div class="group">
+            <p class="rounded-full text-cyan-50 bg-green-600 px-2 py-1 text-base ml-2 cursor-pointer">V 0.2</p>
+            <div class="absolute left-0 mt-18 px-7 w-56 bg-white shadow-lg rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 invisible group-hover:visible">
+                <p class="text-gray-700 px-4 py-2 text-sm">
+                    <strong>What's new?</strong>
+                <ul class="list-disc pl-5">
+                    <li>Multi-tenancy dashboard</li>
+                    <li>New Functions</li>
+                    <li>Api integration</li>
+                    <li>Validate input output</li>
+                    <li>Fixing bugs and more!</li>
+                </ul>
+                </p>
+            </div>
         </div>
     </div>
 
-    <!-- Блок навигации -->
     <div class="md:bg-neutral-100 flex justify-center items-center">
         <nav id="nav" class="w-full px-4 py-4 md:flex">
             <ul class="flex flex-col space-y-1 text-base font-medium text-gray-900 md:flex-row md:space-x-2 md:space-y-0">
