@@ -32,7 +32,6 @@
         </nav>
     </div>
 
-    <!-- Блок кнопок -->
     <div
         id="buttons"
         class="w-full flex flex-col justify-end space-y-2 space-x-0 rounded-b-md px-3 pb-4 md:flex md:w-1/4 md:flex-row md:space-y-0 md:space-x-4 md:bg-neutral-100 md:px-0 md:pb-0"
