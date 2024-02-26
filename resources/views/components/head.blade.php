@@ -4,6 +4,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>{{config('app.name')}}</title>
 <script src="https://cdn.tailwindcss.com"></script>
+<meta name="yandex-verification" content="040c73c3b4e413b3" />
 <script>
     tailwind.config = {
         theme: {
