@@ -1,4 +1,4 @@
-name: Deploy angels
+name: Deploy on hosting
 
 on:
   push:

@@ -15,13 +15,13 @@ class DashboardOverview extends BaseWidget
     protected function getStats(): array
     {
         return [
-            Stat::make('Balance', CompanySale::query()->whereBelongsTo(Filament::getTenant())->sum('summary') - CompanyPurchase::query()->whereBelongsTo(Filament::getTenant())->sum('summary') - CompanyExtract::query()->whereBelongsTo(Filament::getTenant())->sum('expenditure'). '$')
+            Stat::make(__('dashboard.balance'), CompanySale::query()->whereBelongsTo(Filament::getTenant())->sum('summary') - CompanyPurchase::query()->whereBelongsTo(Filament::getTenant())->sum('summary') - CompanyExtract::query()->whereBelongsTo(Filament::getTenant())->sum('expenditure'). '$')
                 ->chart([0 , 0.5, 1, 1.5, CompanySale::query()->sum('summary') - CompanyPurchase::query()->sum('summary')])
                 ->color(CompanySale::query()->sum('summary') - CompanyPurchase::query()->sum('summary') - CompanyExtract::query()->sum('expenditure') > 1 ? 'success' : 'danger'),
-            Stat::make('Number of workers', CompanyStuff::query()->whereBelongsTo(Filament::getTenant())->count())
+            Stat::make(__('dashboard.workers'), CompanyStuff::query()->whereBelongsTo(Filament::getTenant())->count())
                 ->chart([0 , 0.5, 1, 1.5])
                 ->color('success'),
-            Stat::make('Extract quantity', CompanyExtract::query()->whereBelongsTo(Filament::getTenant())->count())
+            Stat::make(__('dashboard.extract'), CompanyExtract::query()->whereBelongsTo(Filament::getTenant())->count())
                 ->chart([0 , 0.5, 1, 1.5])
                 ->color('success'),
         ];

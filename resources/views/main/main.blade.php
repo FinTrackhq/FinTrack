@@ -18,7 +18,7 @@
                 </div>
                 <div class="mx-auto max-w-4xl">
                     <img
-                        src="{{asset('file/image/screenshots/dashboard.png')}}"
+                        src="{{asset('file/image/screenshots/dashboard.php.png')}}"
                         class="relative z-50 rounded-xl md:w-auto" alt=""
                     />
                     <div>

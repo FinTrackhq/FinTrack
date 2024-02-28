@@ -17,7 +17,8 @@ class StuffStatementResource extends Resource
     protected static ?string $model = StuffStatement::class;
 
     protected static ?string $navigationGroup = 'Stuff management';
-    protected static ?string $navigationLabel = 'Statement';
+
+    protected static ?string $slug = 'StuffStatement';
     protected static ?string $navigationIcon = 'heroicon-o-presentation-chart-line';
 
     public static function form(Form $form): Form
@@ -25,20 +26,24 @@ class StuffStatementResource extends Resource
         return $form
             ->schema([
                 Forms\Components\Select::make('stuff_id')
+                    ->label(__('columns.stuff'))
                     ->relationship('stuff', 'id')
                     ->prefixIcon('heroicon-o-user')
                     ->required(),
                 Forms\Components\TextInput::make('salary_10')
+                    ->label(__('columns.salary10'))
                     ->required()
                     ->prefix('$')
                     ->placeholder('500')
                     ->numeric(),
                 Forms\Components\TextInput::make('salary_25')
+                    ->label(__('columns.salary25'))
                     ->required()
                     ->prefix('$')
                     ->placeholder('500')
                     ->numeric(),
                 Forms\Components\TextInput::make('salary')
+                    ->label(__('columns.salary'))
                     ->required()
                     ->prefix('$')
                     ->placeholder('1000')
@@ -51,32 +56,36 @@ class StuffStatementResource extends Resource
         return $table
             ->columns([
                 Tables\Columns\TextColumn::make('stuff.id')
-                    ->numeric()
-                    ->sortable(),
-                Tables\Columns\TextColumn::make('company.name')
+                    ->label(__('columns.stuff'))
                     ->numeric()
                     ->sortable(),
                 Tables\Columns\TextColumn::make('salary_10')
+                    ->label(__('columns.salary10'))
                     ->searchable()
                     ->numeric()
                     ->sortable(),
                 Tables\Columns\TextColumn::make('salary_25')
+                    ->label(__('columns.salary25'))
                     ->searchable()
                     ->numeric()
                     ->sortable(),
                 Tables\Columns\TextColumn::make('salary')
+                    ->label(__('columns.salary'))
                     ->searchable()
                     ->numeric()
                     ->sortable(),
-                Tables\Columns\TextColumn::make('deleted_at')
-                    ->dateTime()
-                    ->sortable()
-                    ->toggleable(isToggledHiddenByDefault: true),
                 Tables\Columns\TextColumn::make('created_at')
+                    ->label(__('columns.createAt'))
                     ->dateTime()
                     ->sortable()
                     ->toggleable(isToggledHiddenByDefault: true),
                 Tables\Columns\TextColumn::make('updated_at')
+                    ->label(__('columns.updateAt'))
+                    ->dateTime()
+                    ->sortable()
+                    ->toggleable(isToggledHiddenByDefault: true),
+                Tables\Columns\TextColumn::make('deleted_at')
+                    ->label(__('columns.deleteAt'))
                     ->dateTime()
                     ->sortable()
                     ->toggleable(isToggledHiddenByDefault: true),
@@ -110,5 +119,13 @@ class StuffStatementResource extends Resource
             'view' => Pages\ViewStuffStatement::route('/{record}'),
             'edit' => Pages\EditStuffStatement::route('/{record}/edit'),
         ];
+    }
+    public static function getModelLabel() : string
+    {
+        return __('stuffStatement.stuffStatement');
+    }
+    public static function getPluralModelLabel() : string
+    {
+        return __('stuffStatement.stuffStatements');
     }
 }

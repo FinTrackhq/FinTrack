@@ -9,15 +9,13 @@ use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Table;
-use Illuminate\Database\Eloquent\Builder;
-use Illuminate\Database\Eloquent\SoftDeletingScope;
 
 class CompanyPaymentResource extends Resource
 {
     protected static ?string $model = CompanyPayment::class;
-    protected static ?string $navigationLabel = 'Payment';
-    protected static ?string $modelLabel = 'Payment';
+
     protected static ?string $navigationGroup = 'Company management';
+
     protected  static ?string $slug ='Payment';
     protected static ?string $navigationIcon = 'heroicon-o-credit-card';
 
@@ -26,6 +24,7 @@ class CompanyPaymentResource extends Resource
         return $form
             ->schema([
                 Forms\Components\TextInput::make('account')
+                    ->label(__('columns.account'))
                     ->required()
                     ->prefixIcon('heroicon-o-banknotes')
                     ->numeric()
@@ -33,6 +32,7 @@ class CompanyPaymentResource extends Resource
                     ->maxLength(20)
                     ->placeholder('00000000000000000000'),
                 Forms\Components\TextInput::make('bic')
+                    ->label(__('columns.bic'))
                     ->required()
                     ->prefixIcon('heroicon-o-banknotes')
                     ->numeric()
@@ -47,24 +47,30 @@ class CompanyPaymentResource extends Resource
         return $table
             ->columns([
                 Tables\Columns\TextColumn::make('company.name')
+                    ->label(__('columns.name'))
                     ->numeric()
                     ->sortable(),
                 Tables\Columns\TextColumn::make('account')
+                    ->label(__('columns.account'))
                     ->searchable()
                     ->sortable(),
                 Tables\Columns\TextColumn::make('bic')
+                    ->label(__('columns.bic'))
                     ->searchable()
                     ->numeric()
                     ->sortable(),
                 Tables\Columns\TextColumn::make('created_at')
+                    ->label(__('columns.createAt'))
                     ->dateTime()
                     ->sortable()
                     ->toggleable(isToggledHiddenByDefault: true),
                 Tables\Columns\TextColumn::make('updated_at')
+                    ->label(__('columns.updateAt'))
                     ->dateTime()
                     ->sortable()
                     ->toggleable(isToggledHiddenByDefault: true),
                 Tables\Columns\TextColumn::make('deleted_at')
+                    ->label(__('columns.deleteAt'))
                     ->dateTime()
                     ->sortable()
                     ->toggleable(isToggledHiddenByDefault: true),
@@ -98,5 +104,13 @@ class CompanyPaymentResource extends Resource
             'view' => Pages\ViewCompanyPayment::route('/{record}'),
             'edit' => Pages\EditCompanyPayment::route('/{record}/edit'),
         ];
+    }
+    public static function getModelLabel() : string
+    {
+        return __('payment.payment');
+    }
+    public static function getPluralModelLabel() : string
+    {
+        return __('payment.payments');
     }
 }

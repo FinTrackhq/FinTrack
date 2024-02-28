@@ -18,7 +18,7 @@ Route::controller(HomeController::class)->group(function (){
     Route::get('', 'HomePage')->name('Home.Page');
 });
 Route::get('/login', function () {
-    return redirect(route('filament.dashboard.auth.login'));
+    return redirect(route('filament.dashboard.php.auth.login'));
 })->name('login');
 Route::controller(FeedbackController::class)->prefix('feedback')->group(function (){
     Route::post('/create', 'create')->name('feedback.create');

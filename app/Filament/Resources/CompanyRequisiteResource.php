@@ -9,8 +9,6 @@ use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Table;
-use Illuminate\Database\Eloquent\Builder;
-use Illuminate\Database\Eloquent\SoftDeletingScope;
 use Psr\Container\ContainerExceptionInterface;
 use Psr\Container\NotFoundExceptionInterface;
 
@@ -18,7 +16,9 @@ class CompanyRequisiteResource extends Resource
 {
     protected static ?string $model = CompanyRequisite::class;
     protected static ?string $navigationGroup = 'Company management';
-    protected static ?string $navigationLabel = 'Requisite';
+
+    protected static ?string $slug = 'Requisite';
+
     protected static ?string $modelLabel = 'Requisite';
     protected static ?string $navigationIcon = 'heroicon-o-clipboard-document-list';
 
@@ -31,6 +31,7 @@ class CompanyRequisiteResource extends Resource
         return $form
             ->schema([
                 Forms\Components\TextInput::make('inn')
+                    ->label(__('columns.inn'))
                     ->required()
                     ->minLength(12)
                     ->maxLength(12)
@@ -38,6 +39,7 @@ class CompanyRequisiteResource extends Resource
                     ->prefixIcon('heroicon-o-document-text')
                     ->numeric(),
                 Forms\Components\TextInput::make('kpp')
+                    ->label(__('columns.kpp'))
                     ->required()
                     ->minLength(9)
                     ->maxLength(9)
@@ -45,6 +47,7 @@ class CompanyRequisiteResource extends Resource
                     ->prefixIcon('heroicon-o-document-text')
                     ->numeric(),
                 Forms\Components\TextInput::make('ogrn')
+                    ->label(__('columns.ogrn'))
                     ->required()
                     ->minLength(12)
                     ->maxLength(12)
@@ -58,29 +61,32 @@ class CompanyRequisiteResource extends Resource
     {
         return $table
             ->columns([
-                Tables\Columns\TextColumn::make('company.name')
-                    ->numeric()
-                    ->sortable(),
                 Tables\Columns\TextColumn::make('inn')
+                    ->label(__('columns.inn'))
                     ->searchable()
                     ->numeric()
                     ->sortable(),
                 Tables\Columns\TextColumn::make('kpp')
+                    ->label(__('columns.kpp'))
                     ->numeric()
                     ->sortable(),
                 Tables\Columns\TextColumn::make('ogrn')
+                    ->label(__('columns.ogrn'))
                     ->searchable()
                     ->numeric()
                     ->sortable(),
                 Tables\Columns\TextColumn::make('created_at')
+                    ->label(__('columns.createAt'))
                     ->dateTime()
                     ->sortable()
                     ->toggleable(isToggledHiddenByDefault: true),
                 Tables\Columns\TextColumn::make('updated_at')
+                    ->label(__('columns.updateAt'))
                     ->dateTime()
                     ->sortable()
                     ->toggleable(isToggledHiddenByDefault: true),
                 Tables\Columns\TextColumn::make('deleted_at')
+                    ->label(__('columns.deleteAt'))
                     ->dateTime()
                     ->sortable()
                     ->toggleable(isToggledHiddenByDefault: true),
@@ -114,5 +120,13 @@ class CompanyRequisiteResource extends Resource
             'view' => Pages\ViewCompanyRequisite::route('/{record}'),
             'edit' => Pages\EditCompanyRequisite::route('/{record}/edit'),
         ];
+    }
+    public static function getModelLabel() : string
+    {
+        return __('requisite.requisite');
+    }
+    public static function getPluralModelLabel() : string
+    {
+        return __('requisite.requisites');
     }
 }

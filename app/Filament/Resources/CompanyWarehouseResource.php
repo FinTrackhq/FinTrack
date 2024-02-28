@@ -15,16 +15,19 @@ use Illuminate\Database\Eloquent\SoftDeletingScope;
 class CompanyWarehouseResource extends Resource
 {
     protected static ?string $model = CompanyWarehouse::class;
-    protected static ?string $navigationLabel = 'Warehouse';
-    protected static ?string $modelLabel = 'Warehouse';
-    protected static ?string $navigationIcon = 'heroicon-o-wallet';
+
     protected static ?string $navigationGroup = 'Warehouse management';
+
+    protected  static  ?string $slug ="Warehouse";
+    protected static ?string $navigationIcon = 'heroicon-o-wallet';
+
 
     public static function form(Form $form): Form
     {
         return $form
             ->schema([
                 Forms\Components\TextInput::make('name')
+                    ->label(__('columns.name'))
                     ->required()
                     ->minLength(2)
                     ->maxLength(255)
@@ -39,10 +42,8 @@ class CompanyWarehouseResource extends Resource
     {
         return $table
             ->columns([
-                Tables\Columns\TextColumn::make('company.name')
-                    ->numeric()
-                    ->sortable(),
                 Tables\Columns\TextColumn::make('name')
+                    ->label(__('columns.name'))
                     ->searchable()
                     ->sortable(),
                 Tables\Columns\TextColumn::make('quantity')
@@ -52,14 +53,17 @@ class CompanyWarehouseResource extends Resource
                     ->money()
                     ->sortable(),
                 Tables\Columns\TextColumn::make('created_at')
+                    ->label(__('columns.createAt'))
                     ->dateTime()
                     ->sortable()
                     ->toggleable(isToggledHiddenByDefault: true),
                 Tables\Columns\TextColumn::make('updated_at')
+                    ->label(__('columns.updateAt'))
                     ->dateTime()
                     ->sortable()
                     ->toggleable(isToggledHiddenByDefault: true),
                 Tables\Columns\TextColumn::make('deleted_at')
+                    ->label(__('columns.deleteAt'))
                     ->dateTime()
                     ->sortable()
                     ->toggleable(isToggledHiddenByDefault: true),
@@ -93,5 +97,13 @@ class CompanyWarehouseResource extends Resource
             'view' => Pages\ViewCompanyWarehouse::route('/{record}'),
             'edit' => Pages\EditCompanyWarehouse::route('/{record}/edit'),
         ];
+    }
+    public static function getModelLabel() : string
+    {
+        return __('warehouse.warehouse');
+    }
+    public static function getPluralModelLabel() : string
+    {
+        return __('warehouse.warehouses');
     }
 }

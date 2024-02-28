@@ -20,9 +20,9 @@ class RegisterCompany extends RegisterTenant
         return $form
             ->schema([
                 Actions::make([
-                    Action::make('Back to dashboard')
+                    Action::make('Back to dashboard.php')
                         ->icon('heroicon-m-chevron-left')
-                        ->action(fn() => redirect('dashboard')),
+                        ->action(fn() => redirect('dashboard.php')),
                 ]),
                 TextInput::make('name')
                     ->required()
