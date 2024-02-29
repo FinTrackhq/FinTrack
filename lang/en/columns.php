@@ -6,6 +6,8 @@
         "phoneNumber" => "Phone number",
         "payment" => "Payment",
         "name" => "Name",
+        "shortName" => "Short name",
+        "type" => "Type",
         "expenditure" => "Expenditure",
         "coming" => "Coming",
         "account" => "Account",

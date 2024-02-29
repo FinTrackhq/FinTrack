@@ -20,11 +20,12 @@ class RegisterCompany extends RegisterTenant
         return $form
             ->schema([
                 Actions::make([
-                    Action::make('Back to dashboard.php')
+                    Action::make(__('company.backToDashboard'))
                         ->icon('heroicon-m-chevron-left')
                         ->action(fn() => redirect('dashboard.php')),
                 ]),
                 TextInput::make('name')
+                    ->label(__('columns.name'))
                     ->required()
                 ->placeholder('FinTrack LTD.')
                 ->minLength(2)
@@ -32,6 +33,7 @@ class RegisterCompany extends RegisterTenant
                 ->prefixIcon('heroicon-o-home')
                 ->unique(),
                 TextInput::make('short_name')
+                    ->label(__('columns.shortName'))
                     ->required()
                     ->prefixIcon('heroicon-o-home')
                     ->placeholder('FT LTD.')
@@ -39,6 +41,7 @@ class RegisterCompany extends RegisterTenant
                     ->maxLength(10)
                     ->unique(),
                 Select::make('type')
+                    ->label(__('columns.type'))
                     ->required()
                     ->options([
                         'General' => 'General',

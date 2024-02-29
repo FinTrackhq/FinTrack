@@ -6,6 +6,8 @@
         "phoneNumber" => "Номер телефона",
         "payment" => "Способ оплаты",
         "name" => "Имя",
+        "shortName" => "Короткое имя",
+        "type" => "Тип",
         "expenditure" => "Расход",
         "coming" => "Приход",
         "account" => "Счет",

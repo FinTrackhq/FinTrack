@@ -20,23 +20,26 @@ class EditCompanyProfile extends EditTenantProfile
         return $form
             ->schema([
                 Actions::make([
-                    Action::make('Back to dashboard.php')
+                    Action::make(__('company.backToDashboard'))
                         ->icon('heroicon-m-chevron-left')
                         ->action(fn() => redirect('dashboard.php')),
                 ]),
                 TextInput::make('name')
+                    ->label(__('columns.name'))
                     ->required()
                     ->placeholder('FinTrack LTD.')
                     ->minLength(2)
                     ->maxLength(20)
                     ->prefixIcon('heroicon-o-home'),
                 TextInput::make('short_name')
+                    ->label(__('columns.shortName'))
                     ->required()
                     ->prefixIcon('heroicon-o-home')
                     ->placeholder('FT LTD.')
                     ->minLength(2)
                     ->maxLength(10),
                 Select::make('type')
+                    ->label(__('columns.type'))
                     ->required()
                     ->options([
                         'General' => 'General',
