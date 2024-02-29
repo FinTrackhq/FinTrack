@@ -10,7 +10,6 @@ use Flowframe\Trend\TrendValue;
 
 class SaleChart extends ChartWidget
 {
-    protected static ?string $heading = 'Sales';
     protected static string $color = 'success';
     protected static ?array $options = [
         'plugins' => [
@@ -32,14 +31,17 @@ class SaleChart extends ChartWidget
         return [
             'datasets' => [
                 [
-                    'label' => 'Company Sales',
+                    'label' => __('dashboard.companySales'),
                     'data' => $data->map(fn (TrendValue $value) => $value->aggregate),
                 ],
             ],
             'labels' => $data->map(fn (TrendValue $value) => $value->date),
         ];
     }
-
+    public function getHeading() : string
+    {
+        return __('dashboard.sales');
+    }
     protected function getType(): string
     {
         return 'line';

@@ -32,14 +32,17 @@ class PurchaseChart extends ChartWidget
         return [
             'datasets' => [
                 [
-                    'label' => 'Company Purchases',
+                    'label' => __('dashboard.companyPurchases'),
                     'data' => $data->map(fn (TrendValue $value) => $value->aggregate),
                 ],
             ],
             'labels' => $data->map(fn (TrendValue $value) => $value->date),
         ];
     }
-
+    public function getHeading() : string
+    {
+        return __('dashboard.purchases');
+    }
     protected function getType(): string
     {
         return 'line';
