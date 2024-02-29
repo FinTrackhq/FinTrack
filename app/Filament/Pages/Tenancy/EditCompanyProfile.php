@@ -42,9 +42,9 @@ class EditCompanyProfile extends EditTenantProfile
                     ->label(__('columns.type'))
                     ->required()
                     ->options([
-                        'General' => 'General',
-                        'Simplified' => 'Simplified',
-                        'Patent' => 'Patent'
+                        'General' => __('columns.typeGeneral'),
+                        'Simplified' => __('columns.typeSimplified'),
+                        'Patent' => __('columns.typePatent')
                     ]),
             ]);
 
