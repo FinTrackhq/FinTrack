@@ -11,7 +11,7 @@ use Flowframe\Trend\TrendValue;
 class PurchaseChart extends ChartWidget
 {
     protected static ?string $heading = 'Purchases';
-    protected static string $color = 'warning';
+    protected static string $color = 'danger';
     protected static ?array $options = [
         'plugins' => [
             'legend' => [
