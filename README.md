@@ -1,4 +1,10 @@
-<h1 align="center">REPO STATUS : IN DEVELOPMENT</h1>
+<h1 align="center">REPO STATUS : Temporarily not supported (until March 15)</h1>
+<h2 align="justify">Hi all! <br>
+I want to tell you not the best news. <br>
+The fact is that I am temporarily stopping support for the project (until March 15) due to exams, and also getting used to new technologies (Docker, Octane, Roadrunner, and so on). <br>
+If you are interested in this project and would like to make a contribution, then feel free to write to me on Telegram: @ya_hannes or email: zhan555666@yandex.ru  <br>
+P.S. As always, I'll be back with a new release :) <br>
+Good luck</h2>
 <p align="center">
   <img src="https://i.postimg.cc/0jfbBymv/logo.png" alt=""/>
 </p>
