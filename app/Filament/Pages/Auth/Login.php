@@ -29,8 +29,8 @@ class Login extends AuthLogin
                             ->required()
                             ->extraInputAttributes(['tabindex' => 2]),
                         $this->getRememberFormComponent(),
-                        GRecaptcha::make('captcha')
-                        ->nullable(),
+                     //   GRecaptcha::make('captcha')
+                //        ->nullable(),
                     ])
                     ->statePath('data'),
             ),
