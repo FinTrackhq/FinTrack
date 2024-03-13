@@ -4,11 +4,13 @@ namespace App\Filament\Resources;
 
 use App\Filament\Resources\CompanyExtractResource\Pages;
 use App\Models\CompanyExtract;
+use Filament\Facades\Filament;
 use Filament\Forms;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Table;
+use Illuminate\Database\Eloquent\Builder;
 
 class CompanyExtractResource extends Resource
 {
@@ -23,7 +25,7 @@ class CompanyExtractResource extends Resource
             ->schema([
                 Forms\Components\Select::make('payment_id')
                     ->label(__('columns.payment'))
-                    ->relationship('payment', 'account')
+                    ->relationship('payment', 'account', modifyQueryUsing: fn (Builder $query) => $query->whereBelongsTo(Filament::getTenant()))
                     ->suffixIcon('heroicon-o-credit-card')
                     ->reactive()
                     ->required(),

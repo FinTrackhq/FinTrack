@@ -2,7 +2,7 @@
 
 namespace App\Models;
 
-use App\Models\Traits\HasCompanyTrait;
+use App\Models\Traits\CompanyRelationsTrait;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
@@ -16,5 +16,5 @@ class Company extends Model
         'user_id',
     ];
 
-    use HasFactory, SoftDeletes, HasCompanyTrait;
+    use HasFactory, SoftDeletes, CompanyRelationsTrait;
 }
