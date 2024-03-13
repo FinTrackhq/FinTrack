@@ -3,15 +3,15 @@
 namespace App\Models;
 
 
+use App\Models\Traits\HasCompanyTrait;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
-use Illuminate\Database\Eloquent\Relations\HasOne;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
 class CompanyExtract extends Model
 {
-    use HasFactory, SoftDeletes;
+    use HasFactory, SoftDeletes, HasCompanyTrait;
 
     /**
      * Mass-assignable attributes.
@@ -25,15 +25,8 @@ class CompanyExtract extends Model
 		'payment_id',
 		'company_id',
     ];
-
     public function payment() : BelongsTo
     {
         return $this->belongsTo(CompanyPayment::class);
     }
-
-    public function company(): BelongsTo
-	{
-		return $this->belongsTo(Company::class);
-	}
-
 }
