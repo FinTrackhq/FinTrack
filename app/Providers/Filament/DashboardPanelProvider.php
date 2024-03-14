@@ -44,8 +44,8 @@ class DashboardPanelProvider extends PanelProvider
             ->login(Login::class)
             ->registration(Register::class)
             ->passwordReset()
-            ->id('dashboard.php')
-            ->path('dashboard.php')
+            ->id('dashboard')
+            ->path('dashboard')
             ->emailVerification()
             ->colors([
                 'primary' => Color::hex('#166534'),
