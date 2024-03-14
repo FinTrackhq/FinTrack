@@ -13,7 +13,6 @@
                     <li>Validate input output</li>
                     <li>Fixing bugs and more!</li>
                 </ul>
-                </p>
             </div>
         </div>
     </div>
@@ -38,14 +37,14 @@
     >
         <a
             class="w-full rounded-md border border-gray-200 px-5 py-1.5 text-base font-medium hover:text-gray-500 md:w-auto p-6"
-            href="{{route('filament.dashboard.php.auth.login')}}"
+            href="{{route('filament.dashboard.auth.login')}}"
         >
             Log In
         </a>
         <a
             type="button"
             class="focus:outline-none text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800"
-            href="{{route('filament.dashboard.php.auth.register')}}"
+            href="{{route('filament.dashboard.auth.register')}}"
         >
             Sign up
         </a>
