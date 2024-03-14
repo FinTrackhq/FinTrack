@@ -15,7 +15,7 @@ use Filament\Panel;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Collection;
 
-class User extends Authenticatable implements HasTenants, FilamentUser
+class User extends Authenticatable implements HasTenants, FilamentUser, MustVerifyEmail
 {
     use HasApiTokens, HasFactory, Notifiable, TwoFactorAuthenticatable;
     public function canAccessPanel(Panel $panel): bool
