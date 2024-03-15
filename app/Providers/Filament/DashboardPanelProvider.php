@@ -30,7 +30,6 @@ use LaraZeus\Boredom\BoringAvatarsProvider;
 use LaraZeus\Boredom\Enums\Variants;
 use lockscreen\FilamentLockscreen\Http\Middleware\Locker;
 use lockscreen\FilamentLockscreen\Lockscreen;
-use Njxqlus\FilamentProgressbar\FilamentProgressbarPlugin;
 use Swis\Filament\Backgrounds\FilamentBackgroundsPlugin;
 class DashboardPanelProvider extends PanelProvider
 {
@@ -70,8 +69,6 @@ class DashboardPanelProvider extends PanelProvider
                     ->remember(200),
                 ThemesPlugin::make(),
                 new Lockscreen(),
-                FilamentProgressbarPlugin::make()
-                    ->color('#166534'),
             ])
             ->brandLogo(asset('/file/image/logo/svg/logo.svg'))
             ->brandLogoHeight('3rem')

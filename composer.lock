@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "02fc87d48e7965adcc7499ba01808348",
+    "content-hash": "0c836343a9be58662b2bef74730eb262",
     "packages": [
         {
             "name": "abanoubnassem/filament-grecaptcha-field",
@@ -1546,30 +1546,30 @@
         },
         {
             "name": "essa/api-tool-kit",
-            "version": "2.1.4",
+            "version": "2.1.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/ahmedesa/laravel-api-tool-kit.git",
-                "reference": "6aee8d9f0782a008b660d72cf6424f31f6c2f1a4"
+                "reference": "34048ab58e8075f330ea610fdd3c0d87c8446a3e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/ahmedesa/laravel-api-tool-kit/zipball/6aee8d9f0782a008b660d72cf6424f31f6c2f1a4",
-                "reference": "6aee8d9f0782a008b660d72cf6424f31f6c2f1a4",
+                "url": "https://api.github.com/repos/ahmedesa/laravel-api-tool-kit/zipball/34048ab58e8075f330ea610fdd3c0d87c8446a3e",
+                "reference": "34048ab58e8075f330ea610fdd3c0d87c8446a3e",
                 "shasum": ""
             },
             "require": {
-                "illuminate/auth": "^8.0|^9.0|^10.0",
-                "illuminate/container": "^8.0|^9.0|^10.0",
-                "illuminate/database": "^8.0|^9.0|^10.0",
-                "illuminate/http": "^8.0|^9.0|^10.0",
-                "illuminate/support": "^8.0|^9.0|^10.0",
+                "illuminate/auth": "^8.0|^9.0|^10.0|^11.0",
+                "illuminate/container": "^8.0|^9.0|^10.0|^11.0",
+                "illuminate/database": "^8.0|^9.0|^10.0|^11.0",
+                "illuminate/http": "^8.0|^9.0|^10.0|^11.0",
+                "illuminate/support": "^8.0|^9.0|^10.0|^11.0",
                 "php": "^8.0|^8.1"
             },
             "require-dev": {
-                "orchestra/testbench": "^6.0|^7.0|^8.0",
-                "phpunit/phpunit": "^9.6",
-                "tightenco/duster": "^1.2"
+                "orchestra/testbench": "^6.0|^7.0|^8.0|^9.0",
+                "phpunit/phpunit": "^9.6|^11.0",
+                "tightenco/duster": "^1.2||^2.7"
             },
             "type": "library",
             "extra": {
@@ -1610,9 +1610,9 @@
             ],
             "support": {
                 "issues": "https://github.com/ahmedesa/laravel-api-tool-kit/issues",
-                "source": "https://github.com/ahmedesa/laravel-api-tool-kit/tree/2.1.4"
+                "source": "https://github.com/ahmedesa/laravel-api-tool-kit/tree/2.1.5"
             },
-            "time": "2023-12-01T08:06:29+00:00"
+            "time": "2024-03-15T06:30:18+00:00"
         },
         {
             "name": "filament/actions",
@@ -4775,86 +4775,6 @@
             "time": "2024-03-05T20:51:40+00:00"
         },
         {
-            "name": "njxqlus/filament-progressbar",
-            "version": "1.0.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/njxqlus/filament-progressbar.git",
-                "reference": "8d7f955e69e44dbc3b05a089b9ad1073ba8e37ba"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/njxqlus/filament-progressbar/zipball/8d7f955e69e44dbc3b05a089b9ad1073ba8e37ba",
-                "reference": "8d7f955e69e44dbc3b05a089b9ad1073ba8e37ba",
-                "shasum": ""
-            },
-            "require": {
-                "filament/filament": "^3.0",
-                "illuminate/contracts": "^10.0|^11.0",
-                "php": "^8.1",
-                "spatie/laravel-package-tools": "^1.15.0"
-            },
-            "require-dev": {
-                "laravel/pint": "^1.0",
-                "nunomaduro/collision": "^7.9",
-                "nunomaduro/larastan": "^2.0.1",
-                "orchestra/testbench": "^8.0|^9.0",
-                "pestphp/pest": "^2.0",
-                "pestphp/pest-plugin-arch": "^2.0",
-                "pestphp/pest-plugin-laravel": "^2.0",
-                "phpstan/extension-installer": "^1.1",
-                "phpstan/phpstan-deprecation-rules": "^1.0",
-                "phpstan/phpstan-phpunit": "^1.0"
-            },
-            "type": "library",
-            "extra": {
-                "laravel": {
-                    "providers": [
-                        "Njxqlus\\FilamentProgressbar\\FilamentProgressbarServiceProvider"
-                    ],
-                    "aliases": {
-                        "FilamentProgressbar": "Njxqlus\\FilamentProgressbar\\Facades\\FilamentProgressbar"
-                    }
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Njxqlus\\FilamentProgressbar\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Mikael Ahabalyants",
-                    "email": "njxqlus@gmail.com",
-                    "role": "Developer"
-                }
-            ],
-            "description": "This Filament component shows a progress bar at the top of the page when we navigate from one page to another",
-            "homepage": "https://github.com/njxqlus/filament-progressbar",
-            "keywords": [
-                "filament",
-                "laravel",
-                "njxqlus",
-                "pace-js",
-                "progressbar"
-            ],
-            "support": {
-                "issues": "https://github.com/njxqlus/filament-progressbar/issues",
-                "source": "https://github.com/njxqlus/filament-progressbar"
-            },
-            "funding": [
-                {
-                    "url": "https://github.com/njxqlus",
-                    "type": "github"
-                }
-            ],
-            "time": "2024-02-28T19:40:25+00:00"
-        },
-        {
             "name": "nunomaduro/termwind",
             "version": "v1.15.1",
             "source": {
@@ -5749,16 +5669,16 @@
         },
         {
             "name": "psy/psysh",
-            "version": "v0.12.0",
+            "version": "v0.12.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/bobthecow/psysh.git",
-                "reference": "750bf031a48fd07c673dbe3f11f72362ea306d0d"
+                "reference": "39621c73e0754328252f032c6997b983afc50431"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/bobthecow/psysh/zipball/750bf031a48fd07c673dbe3f11f72362ea306d0d",
-                "reference": "750bf031a48fd07c673dbe3f11f72362ea306d0d",
+                "url": "https://api.github.com/repos/bobthecow/psysh/zipball/39621c73e0754328252f032c6997b983afc50431",
+                "reference": "39621c73e0754328252f032c6997b983afc50431",
                 "shasum": ""
             },
             "require": {
@@ -5822,9 +5742,9 @@
             ],
             "support": {
                 "issues": "https://github.com/bobthecow/psysh/issues",
-                "source": "https://github.com/bobthecow/psysh/tree/v0.12.0"
+                "source": "https://github.com/bobthecow/psysh/tree/v0.12.1"
             },
-            "time": "2023-12-20T15:28:09+00:00"
+            "time": "2024-03-15T03:22:57+00:00"
         },
         {
             "name": "ralouphie/getallheaders",
@@ -9989,16 +9909,16 @@
         },
         {
             "name": "pestphp/pest",
-            "version": "v2.34.2",
+            "version": "v2.34.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/pestphp/pest.git",
-                "reference": "853f6efce6bc86636f48a0e921a44ccee9a66cf3"
+                "reference": "6a1161ead830294ef8e21fab83c0bd118b0df7cc"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/pestphp/pest/zipball/853f6efce6bc86636f48a0e921a44ccee9a66cf3",
-                "reference": "853f6efce6bc86636f48a0e921a44ccee9a66cf3",
+                "url": "https://api.github.com/repos/pestphp/pest/zipball/6a1161ead830294ef8e21fab83c0bd118b0df7cc",
+                "reference": "6a1161ead830294ef8e21fab83c0bd118b0df7cc",
                 "shasum": ""
             },
             "require": {
@@ -10008,10 +9928,10 @@
                 "pestphp/pest-plugin": "^2.1.1",
                 "pestphp/pest-plugin-arch": "^2.7.0",
                 "php": "^8.1.0",
-                "phpunit/phpunit": "^10.5.12"
+                "phpunit/phpunit": "^10.5.13"
             },
             "conflict": {
-                "phpunit/phpunit": ">10.5.12",
+                "phpunit/phpunit": ">10.5.13",
                 "sebastian/exporter": "<5.1.0",
                 "webmozart/assert": "<1.11.0"
             },
@@ -10081,7 +10001,7 @@
             ],
             "support": {
                 "issues": "https://github.com/pestphp/pest/issues",
-                "source": "https://github.com/pestphp/pest/tree/v2.34.2"
+                "source": "https://github.com/pestphp/pest/tree/v2.34.4"
             },
             "funding": [
                 {
@@ -10093,7 +10013,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2024-03-11T18:05:47+00:00"
+            "time": "2024-03-14T19:44:18+00:00"
         },
         {
             "name": "pestphp/pest-plugin",
@@ -11028,16 +10948,16 @@
         },
         {
             "name": "phpunit/phpunit",
-            "version": "10.5.12",
+            "version": "10.5.13",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit.git",
-                "reference": "41a9886b85ac7bf3929853baf96b95361cd69d2b"
+                "reference": "20a63fc1c6db29b15da3bd02d4b6cf59900088a7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/41a9886b85ac7bf3929853baf96b95361cd69d2b",
-                "reference": "41a9886b85ac7bf3929853baf96b95361cd69d2b",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/20a63fc1c6db29b15da3bd02d4b6cf59900088a7",
+                "reference": "20a63fc1c6db29b15da3bd02d4b6cf59900088a7",
                 "shasum": ""
             },
             "require": {
@@ -11109,7 +11029,7 @@
             "support": {
                 "issues": "https://github.com/sebastianbergmann/phpunit/issues",
                 "security": "https://github.com/sebastianbergmann/phpunit/security/policy",
-                "source": "https://github.com/sebastianbergmann/phpunit/tree/10.5.12"
+                "source": "https://github.com/sebastianbergmann/phpunit/tree/10.5.13"
             },
             "funding": [
                 {
@@ -11125,7 +11045,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2024-03-09T12:04:07+00:00"
+            "time": "2024-03-12T15:37:41+00:00"
         },
         {
             "name": "rector/rector",

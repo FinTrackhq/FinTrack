@@ -28,7 +28,6 @@
         "laravel/sanctum": "^3.3",
         "laravel/tinker": "^2.8",
         "marjose123/filament-lockscreen": "2.0",
-        "njxqlus/filament-progressbar": "^1.0",
         "rawilk/filament-password-input": "^1.1",
         "swisnl/filament-backgrounds": "^1.1"
     },
