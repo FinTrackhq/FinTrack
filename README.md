@@ -1,15 +1,5 @@
 <h1 align="center">PROJECT STATUS : 
 DEVELOPMENT</h1>
-<h2 align="justify">Hi all! <br>
-I want to tell you not the best news. <br>
-The fact is that I am temporarily stopping support for the project (until March 15) due to exams, and also getting used to new technologies (Docker, Octane, Roadrunner, and so on). <br>
-If you are interested in this project and would like to make a contribution, then feel free to write to me on Telegram: @ya_hannes or email: jan555666@yandex.ru  <br>
-P.S. As always, I'll be back with a new release :) <br>
-Good luck</h2>
-<p align="center">
-  <img src="https://i.postimg.cc/0jfbBymv/logo.png" alt=""/>
-</p>
-
 <p style=" text-align: center" >
     <a href="https://laravel.com"><img alt="Laravel v10.x" src="https://img.shields.io/badge/Laravel-v10.x-FF2D20?style=for-the-badge&logo=laravel"></a>
     <a href="https://livewire.laravel.com"><img alt="Livewire v3.x" src="https://img.shields.io/badge/Livewire-v3.x-FB70A9?style=for-the-badge"></a>
