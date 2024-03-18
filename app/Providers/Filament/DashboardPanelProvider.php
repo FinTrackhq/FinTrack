@@ -78,7 +78,7 @@ class DashboardPanelProvider extends PanelProvider
              BoringAvatarsProvider::class
             )
             ->font('Roboto')
-            ->tenant(Company::class,slugAttribute: 'short_name', ownershipRelationship: 'company')
+            ->tenant(Company::class, ownershipRelationship: 'company')
             ->tenantRegistration(RegisterCompany::class)
             ->tenantProfile(EditCompanyProfile::class)
             ->discoverResources(in: app_path('Filament/Resources'), for: 'App\\Filament\\Resources')
