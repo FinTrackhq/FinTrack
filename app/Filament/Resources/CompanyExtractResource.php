@@ -68,7 +68,6 @@ class CompanyExtractResource extends Resource
                     ->searchable(),
                 Tables\Columns\TextColumn::make('payment.account')
                     ->label(__('columns.account'))
-                    ->numeric()
                     ->sortable(),
                 Tables\Columns\TextColumn::make('created_at')
                     ->label(__('columns.createAt'))
