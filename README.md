@@ -6,7 +6,6 @@
    
 </p>
 
-
 ## About FinTrack
 This is an accounting web application similar to SAP/1C
 
