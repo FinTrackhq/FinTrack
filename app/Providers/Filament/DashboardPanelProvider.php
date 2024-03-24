@@ -39,6 +39,7 @@ class DashboardPanelProvider extends PanelProvider
     public function panel(Panel $panel): Panel
     {
         return $panel
+            ->spa()
             ->default()
             ->login(Login::class)
             ->registration(Register::class)
