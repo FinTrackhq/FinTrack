@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "22696a5b304dcd67097981c32c823259",
+    "content-hash": "ee370c1a1e2fd8bd70d877adb23b7288",
     "packages": [
         {
             "name": "abanoubnassem/filament-grecaptcha-field",
@@ -4142,16 +4142,16 @@
         },
         {
             "name": "marjose123/filament-lockscreen",
-            "version": "v2.0.0",
+            "version": "v2.0.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/MarJose123/filament-lockscreen.git",
-                "reference": "4f1efa13f991b1a72c61737222d8841f6867e7d2"
+                "reference": "d19e291f93ac4e7fa03146789f21ecf40f3a85da"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/MarJose123/filament-lockscreen/zipball/4f1efa13f991b1a72c61737222d8841f6867e7d2",
-                "reference": "4f1efa13f991b1a72c61737222d8841f6867e7d2",
+                "url": "https://api.github.com/repos/MarJose123/filament-lockscreen/zipball/d19e291f93ac4e7fa03146789f21ecf40f3a85da",
+                "reference": "d19e291f93ac4e7fa03146789f21ecf40f3a85da",
                 "shasum": ""
             },
             "require": {
@@ -4201,7 +4201,7 @@
             ],
             "support": {
                 "issues": "https://github.com/MarJose123/filament-lockscreen/issues",
-                "source": "https://github.com/MarJose123/filament-lockscreen/tree/v2.0.0"
+                "source": "https://github.com/MarJose123/filament-lockscreen/tree/v2.0.3"
             },
             "funding": [
                 {
@@ -4213,7 +4213,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2023-08-22T06:43:16+00:00"
+            "time": "2024-01-29T02:40:15+00:00"
         },
         {
             "name": "masterminds/html5",
