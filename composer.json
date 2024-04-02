@@ -17,6 +17,7 @@
         "filament/actions": "^3.2",
         "filament/filament": "^3.2",
         "filament/forms": "^3.2",
+        "filament/tables": "^3.2.",
         "filament/widgets": "^3.2",
         "flowframe/laravel-trend": "^0.2.0",
         "guzzlehttp/guzzle": "^7.2",

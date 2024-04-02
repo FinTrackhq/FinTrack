@@ -20,6 +20,7 @@ class Register extends  BaseRegister
                     ->password()
                     ->required()
                     ->rule(\Illuminate\Validation\Rules\Password::default())
+                    ->alphaDash()
                     ->dehydrateStateUsing(fn ($state) => Hash::make($state))
                     ->same('passwordConfirmation')
                     ->validationAttribute(__('filament-panels::pages/auth/register.form.password.validation_attribute')),
