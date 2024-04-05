@@ -12,7 +12,7 @@ This is an accounting web application similar to SAP/1C
 ## Screenshots
 
 ![App Screenshot](https://i.postimg.cc/c17CpH4M/dashboard.png)
-
+ 
 
 ## Installation
 ```bash
