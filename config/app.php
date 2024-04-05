@@ -163,6 +163,7 @@ return [
         /*
          * Application Service Providers...
          */
+        App\Providers\HealthServiceProvider::class,
         \App\Providers\Filament\DashboardPanelProvider::class,
         App\Providers\AppServiceProvider::class,
         App\Providers\AuthServiceProvider::class,
