@@ -19,14 +19,14 @@ jobs:
           password: ${{ secrets.SSH_PASSWORD }}
           script: |
             cd /home/j/jan555is/fintrack.space
-            php8.2 artisan optimize:clear
-            php8.2 artisan down
+            php8.3 artisan optimize:clear
+            php8.3 artisan down
             git pull origin main
-            php8.2 composer.phar install --optimize-autoloader
-            php8.2 artisan migrate --force
-            php8.2 artisan optimize
-            php8.2 artisan config:cache
-            php8.2 artisan event:cache
-            php8.2 artisan route:cache
-            php8.2 artisan view:cache
-            php8.2 artisan up
+            php8.3 composer.phar install --optimize-autoloader
+            php8.3 artisan migrate --force
+            php8.3 artisan optimize
+            php8.3 artisan config:cache
+            php8.3 artisan event:cache
+            php8.3 artisan route:cache
+            php8.3 artisan view:cache
+            php8.3 artisan up
