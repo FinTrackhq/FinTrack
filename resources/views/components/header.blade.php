@@ -2,15 +2,14 @@
     <div class="flex items-center relative">
         <img src="{{asset('file/image/logo/svg/logo.svg')}}" class="size-10" alt="">
         <div class="group">
-            <p class="rounded-full text-cyan-50 bg-green-600 px-2 py-1 text-base ml-2 cursor-pointer">V 0.2</p>
+            <p class="rounded-full text-cyan-50 bg-green-600 px-2 py-1 text-base ml-2 cursor-pointer">V 0.3</p>
             <div class="absolute left-0 mt-18 px-7 w-56 bg-white shadow-lg rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 invisible group-hover:visible">
                 <p class="text-gray-700 px-4 py-2 text-sm">
                     <strong>What's new?</strong>
                 <ul class="list-disc pl-5">
-                    <li>Multi-tenancy dashboard</li>
+                    <li>Russian localization</li>
+                    <li>Improved optimization</li>
                     <li>New Functions</li>
-                    <li>Api integration</li>
-                    <li>Validate input output</li>
                     <li>Fixing bugs and more!</li>
                 </ul>
             </div>
