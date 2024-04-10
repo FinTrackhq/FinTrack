@@ -4,16 +4,18 @@
     "scripts": {
         "dev": "vite",
         "build": "vite build",
-        "serve": "concurrently  \"php artisan optimize\" \"php artisan serve\" \"npm run dev \"  "
+        "serve": "concurrently  \"php artisan optimize:clear\" \"php artisan serve\" \"npm run dev \"  "
     },
     "devDependencies": {
         "@tailwindcss/forms": "^0.5.7",
-        "@tailwindcss/typography": "^0.5.10",
-        "autoprefixer": "^10.4.17",
+        "@tailwindcss/typography": "github:tailwindcss/typography",
+        "autoprefixer": "^10.4.19",
+        "daisyui": "^4.10.1",
         "laravel-vite-plugin": "^1.0.0",
-        "postcss": "^8.4.33",
+        "postcss": "^8.4.38",
+        "postcss-import": "^16.1.0",
         "postcss-nesting": "^12.0.2",
-        "tailwindcss": "^3.4.1",
+        "tailwindcss": "^3.4.3",
         "vite": "^5.0.12"
     }
 }

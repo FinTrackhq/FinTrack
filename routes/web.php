@@ -11,7 +11,8 @@ use Spatie\Health\Http\Controllers\HealthCheckResultsController;
 */
 
 Route::controller(HomeController::class)->group(function (){
-    Route::get('', 'HomePage')->name('Home.Page');
+    Route::get('/', 'HomePage')->name('Home.Page');
+    Route::post('/', 'LogOut')->name('LogOut');
 });
 Route::controller(FeedbackController::class)->prefix('feedback')->group(function (){
     Route::post('/create', 'create')->name('feedback.create');

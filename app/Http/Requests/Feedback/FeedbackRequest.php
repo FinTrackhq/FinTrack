@@ -16,7 +16,7 @@ class FeedbackRequest extends FormRequest
         return [
             'name' => ['required', 'string', 'min:2'],
             'theme' => ['required', 'string', 'min:2'],
-            'message' => ['required', 'string', 'min:100'],
+            'message' => ['required', 'string', 'min:50'],
             'social_link' => ['required', 'string', 'min:2']
         ];
     }

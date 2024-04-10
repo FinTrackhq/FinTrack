@@ -26,7 +26,6 @@ class AppServiceProvider extends ServiceProvider
         LanguageSwitch::configureUsing(function (LanguageSwitch $switch) {
             $switch
                 ->locales(['en','ru'])
-
                 ->flags([
                     'en' => asset('file/image/flags/en/en_flag.svg'),
                     'ru' => asset('file/image/flags/ru/ru_flag.svg'),
