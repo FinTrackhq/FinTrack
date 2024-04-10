@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-theme="forest">
 <head >
     @include('components.head')
 </head>
