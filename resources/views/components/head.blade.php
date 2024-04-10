@@ -11,7 +11,24 @@
 <script src="https://cdn.tailwindcss.com"></script>
 <meta name="yandex-verification" content="040c73c3b4e413b3" />
 <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
-@vite('resources/css/app.css')
+<script>
+    tailwind.config = {
+        theme: {
+            extend: {
+                colors: {
+                    clifford: '#da373d',
+                }
+            }
+        }
+    }
+</script>
+<style type="text/tailwindcss">
+    @layer utilities {
+        .content-auto {
+            content-visibility: auto;
+        }
+    }
+</style>
 <script type="text/javascript" >
     (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
         m[i].l=1*new Date();
