@@ -6,7 +6,7 @@
                 5 advantages of our project
             </p>
         </div>
-        <div class="grid grid-cols-3 gap-6">
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
             <div class="stack">
                 <div class="card shadow-md bg-primary text-primary-content">
                     <div class="card-body">

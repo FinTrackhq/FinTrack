@@ -12,7 +12,7 @@
                 <li><a>Fixing bugs and more!</a></li>
             </ul>
         </div>
-        <a class="btn btn-error" href="https://opencollective.com/fintrack">
+        <a class="btn btn-error hidden lg:flex" href="https://opencollective.com/fintrack">
             <x-heroicon-m-heart class="w-6  opacity-70" />
             Donate
         </a>
