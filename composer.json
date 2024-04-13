@@ -30,6 +30,7 @@
         "marjose123/filament-lockscreen": "^2.0",
         "rawilk/filament-password-input": "^2.0",
         "spatie/laravel-health": "^1.27",
+        "spatie/laravel-ignition": "^2.5",
         "swisnl/filament-backgrounds": "^1.1"
     },
     "require-dev": {

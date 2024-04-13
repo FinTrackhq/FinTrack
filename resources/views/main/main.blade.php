@@ -5,7 +5,7 @@
         <div class="stat place-items-center">
             <div class="stat-title"><a href="https://github.com/FinTrackhq/FinTrack" class="link">GitHub Stars</a></div>
 
-            <div class="stat-value text-2xl lg:text-4xl">27</div>
+            <div class="stat-value text-2xl lg:text-4xl">{{$resource}}</div>
         </div>
 
         <div class="stat place-items-center">
