@@ -10,7 +10,6 @@ class HomeController extends Controller
 {
     public function HomePage()
     {
-        $response = Http::get('https://api.github.com/repos/fintrackhq/fintrack')['stargazers_count'];
         return view('main.main');
     }
 
