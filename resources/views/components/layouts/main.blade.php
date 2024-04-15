@@ -10,5 +10,9 @@
                @yield('main')
            </main>
     @include('components.footer')
+
+    <script>
+        AOS.init();
+    </script>
 </body>
 </html>

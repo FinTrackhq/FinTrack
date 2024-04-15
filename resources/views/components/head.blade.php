@@ -5,10 +5,11 @@
 <meta name="description" content="FinTrack - is an accounting web application similar to SAP/1C" />
 <meta name="author" content="FinTrackHq" />
 <!--/SEO-->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 <link href="https://cdn.jsdelivr.net/npm/daisyui@4.10.1/dist/full.min.css" rel="stylesheet" type="text/css" />
 <script src="https://cdn.tailwindcss.com"></script>
 <link rel="icon" type="image/svg+xml" href="{{asset('file/image/logo/svg/logo.svg')}}" />
-<script src="https://cdn.tailwindcss.com"></script>
 <meta name="yandex-verification" content="040c73c3b4e413b3" />
 <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
 <script>
@@ -21,14 +22,6 @@
         }
     }
 </script>
-<style type="text/tailwindcss">
-    @layer utilities {
-        .content-auto {
-            content-visibility: auto;
-        }
-    }
-</style>
-
 <!-- Yandex.Metrika counter -->
 <script type="text/javascript" >
     (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
