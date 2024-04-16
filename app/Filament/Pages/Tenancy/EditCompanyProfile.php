@@ -22,7 +22,7 @@ class EditCompanyProfile extends EditTenantProfile
                 Actions::make([
                     Action::make(__('company.backToDashboard'))
                         ->icon('heroicon-m-chevron-left')
-                        ->action(fn() => redirect('dashboard.php')),
+                        ->action(fn() => redirect('dashboard')),
                 ]),
                 TextInput::make('name')
                     ->label(__('columns.name'))
