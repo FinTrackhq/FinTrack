@@ -1,3 +1,4 @@
+<header>
 <div class="navbar z-50 fixed glass rounded-btn mt-3">
     <div class="navbar-start">
         <a class="btn btn-ghost" href="https://github.com/FinTrackhq/FinTrack">
@@ -39,3 +40,4 @@
         @endif
     </div>
 </div>
+</header>

@@ -4,7 +4,6 @@
     @include('components.head')
 </head>
 <body>
-
     @include('components.header')
            <main>
                @yield('main')
