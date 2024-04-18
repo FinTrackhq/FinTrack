@@ -1,10 +1,9 @@
 <div>
-
-    <div class="hero">
+    <div class="hero ">
         <div class="hero-content flex-col lg:flex-row-reverse">
             <div class="text-center lg:text-left">
-                <h1 class="text-5xl font-bold" data-aos="fade-left">Feedback</h1>
-                <p class="py-6" data-aos="fade-left">If you find a bug or want to contact me, then write to me at Telegram: @ya_hannes.</p>
+                <h1 class="text-5xl font-bold" data-aos="zoom-in">Feedback</h1>
+                <p class="py-6" data-aos="zoom-in">If you find a bug or want to contact me, then write to me at Telegram: @ya_hannes.</p>
             </div>
             <div class="card shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
                 <form class="card-body" method="POST" action="{{route('feedback.create')}}">
