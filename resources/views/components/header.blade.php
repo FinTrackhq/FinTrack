@@ -1,5 +1,5 @@
 <header>
-<div class="navbar z-50 fixed glass rounded-btn mt-3 w-screen">
+<div class="navbar z-50 fixed glass rounded-btn mt-3">
     <div class="navbar-start">
         <a class="btn btn-ghost" href="https://github.com/FinTrackhq/FinTrack">
             <img src="{{asset('file/image/logo/svg/github-mark-white.svg')}}" class="w-8 rounded" alt="GitHub">
