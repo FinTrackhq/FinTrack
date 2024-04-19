@@ -30,7 +30,6 @@ class AppServiceProvider extends ServiceProvider
                     'en' => asset('file/image/flags/en/en_flag.svg'),
                     'ru' => asset('file/image/flags/ru/ru_flag.svg'),
                 ])
-                ->flagsOnly()
                 ->displayLocale('ru')
                 ->outsidePanelPlacement(Placement::TopCenter)
                 ->visible(outsidePanels: true);
