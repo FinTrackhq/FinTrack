@@ -18,6 +18,6 @@ Route::controller(HomeController::class)->group(function (){
 Route::controller(FeedbackController::class)->prefix('feedback')->group(function (){
     Route::post('/create', 'create')->name('feedback.create');
 });
-Route::get('/up', HealthCheckResultsController::class);
+Route::get('/', HealthCheckResultsController::class)->domain('status.localhost');
 
 
