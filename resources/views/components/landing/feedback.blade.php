@@ -1,5 +1,4 @@
-<div>
-    <div class="hero ">
+<div lass="hero">
         <div class="hero-content flex-col lg:flex-row-reverse">
             <div class="text-center lg:text-left">
                 <h1 class="text-5xl font-bold" data-aos="zoom-in">Feedback</h1>
@@ -35,4 +34,3 @@
             </div>
         </div>
     </div>
-</div>

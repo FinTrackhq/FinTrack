@@ -3,7 +3,7 @@
         <h1 class="mb-5 text-5xl font-bold"  data-aos="zoom-in">Device support</h1>
     </div>
     <li>
-        <div class="timeline-end timeline-box" data-aos="fade-left">PC</div>
+        <div class="timeline-end timeline-box" data-aos="fade-down">PC</div>
         <div class="timeline-middle" data-aos="fade-down">
             <x-heroicon-m-check-circle class="w-5 h-5 text-primary" />
         </div>
@@ -24,7 +24,7 @@
         <div class="timeline-middle" data-aos="fade-down">
             <x-heroicon-m-check-circle class="w-5 h-5 text-primary" />
         </div>
-        <div class="timeline-end timeline-box" data-aos="fade-left">Tablet</div>
+        <div class="timeline-end timeline-box" data-aos="fade-down">Tablet</div>
         <hr class="bg-primary" data-aos="fade-down"/>
     </li>
 
