@@ -18,4 +18,7 @@ Route::controller(FeedbackController::class)->prefix('feedback')->group(function
     Route::post('/create', 'create')->name('feedback.create');
 });
 
-Route::get('/up', HealthCheckResultsController::class);
+
+Route::domain(getenv('APP_STATUS_URL'))->group(function () {
+    Route::get('/', HealthCheckResultsController::class);
+});
