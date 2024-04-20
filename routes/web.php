@@ -21,5 +21,5 @@ Route::controller(FeedbackController::class)->prefix('feedback')->group(function
 
 
 Route::domain('status.fintrack.test')->group(function () {
-    Route::get('/', HealthCheckResultsController::class);
+    Route::get('/up', HealthCheckResultsController::class);
 });
