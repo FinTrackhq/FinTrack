@@ -52,7 +52,7 @@ class DashboardPanelProvider extends PanelProvider
             ->plugins([
                 BreezyCore::make()
                     ->myProfile(
-                        hasAvatars: false,
+                        hasAvatars: true,
                         slug: 'my-profile',
                         navigationGroup: 'Settings'
                     )
