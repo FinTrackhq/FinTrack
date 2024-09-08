@@ -23,7 +23,6 @@
         "guzzlehttp/guzzle": "^7.2",
         "hasnayeen/themes": "^3.0",
         "jeffgreco13/filament-breezy": "^2.3",
-        "lara-zeus/boredom": "^1.0.1",
         "laravel/framework": "^11.0",
         "laravel/sanctum": "^4.0",
         "laravel/tinker": "^2.8",

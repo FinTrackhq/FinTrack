@@ -12,7 +12,7 @@ class HomeController extends Controller
     public function HomePage()
     {
         $resource = Cache::remember('github_stars', 86400, function () {
-            return Http::withToken(config('githubapi.TOKEN'))->get('https://api.github.com/repos/fintrackhq/fintrack')['stargazers_count'];
+            return Http::get('https://api.github.com/repos/fintrackhq/fintrack')['stargazers_count'];
         });
         return view('main.main' ,compact('resource'));
     }

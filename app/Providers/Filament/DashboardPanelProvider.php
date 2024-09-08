@@ -25,12 +25,10 @@ use Illuminate\Session\Middleware\AuthenticateSession;
 use Illuminate\Session\Middleware\StartSession;
 use Illuminate\View\Middleware\ShareErrorsFromSession;
 use Jeffgreco13\FilamentBreezy\BreezyCore;
-use LaraZeus\Boredom\BoringAvatarPlugin;
-use LaraZeus\Boredom\BoringAvatarsProvider;
-use LaraZeus\Boredom\Enums\Variants;
 use lockscreen\FilamentLockscreen\Http\Middleware\Locker;
 use lockscreen\FilamentLockscreen\Lockscreen;
 use Swis\Filament\Backgrounds\FilamentBackgroundsPlugin;
+
 class DashboardPanelProvider extends PanelProvider
 {
     /**
@@ -60,11 +58,6 @@ class DashboardPanelProvider extends PanelProvider
                     )
                     ->enableSanctumTokens()
                     ->enableTwoFactorAuthentication(),
-                BoringAvatarPlugin::make()
-                    ->variant(Variants::MARBLE)
-                    ->size(60)
-                    ->square()
-                    ->colors(['0A0310','49007E','166534','104B27','28821D']),
                 FilamentBackgroundsPlugin::make()
                     ->showAttribution(false)
                     ->remember(200),
@@ -74,10 +67,6 @@ class DashboardPanelProvider extends PanelProvider
             ->brandLogo(asset('/file/image/logo/svg/logo.svg'))
             ->brandLogoHeight('3rem')
             ->favicon(asset('file/image/logo/svg/logo.svg'))
-
-            ->defaultAvatarProvider(
-             BoringAvatarsProvider::class
-            )
             ->font('Roboto')
             ->tenant(Company::class, ownershipRelationship: 'company')
             ->tenantRegistration(RegisterCompany::class)
