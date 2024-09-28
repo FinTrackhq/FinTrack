@@ -2,26 +2,25 @@
 
 namespace App\Models;
 
-use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Filament\Models\Contracts\FilamentUser;
+use Filament\Models\Contracts\HasAvatar;
 use Filament\Models\Contracts\HasTenants;
+use Filament\Panel;
+use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Illuminate\Support\Collection;
+use Illuminate\Support\Facades\Storage;
 use Jeffgreco13\FilamentBreezy\Traits\TwoFactorAuthenticatable;
 use Laravel\Sanctum\HasApiTokens;
-use Filament\Panel;
-use Illuminate\Database\Eloquent\Model;
-use Illuminate\Support\Collection;
 
-class User extends Authenticatable implements HasTenants, FilamentUser, MustVerifyEmail
+class User extends Authenticatable implements HasTenants, FilamentUser, MustVerifyEmail, HasAvatar
 {
     use HasApiTokens, HasFactory, Notifiable, TwoFactorAuthenticatable;
-    public function canAccessPanel(Panel $panel): bool
-    {
-        return str_ends_with($this->email, '');
-    }
+
     /**
      * The attributes that are mass assignable.
      *
@@ -32,7 +31,6 @@ class User extends Authenticatable implements HasTenants, FilamentUser, MustVeri
         'email',
         'password',
     ];
-
     /**
      * The attributes that should be hidden for serialization.
      *
@@ -42,7 +40,6 @@ class User extends Authenticatable implements HasTenants, FilamentUser, MustVeri
         'password',
         'remember_token',
     ];
-
     /**
      * The attributes that should be cast.
      *
@@ -53,6 +50,11 @@ class User extends Authenticatable implements HasTenants, FilamentUser, MustVeri
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
     ];
+
+    public function canAccessPanel(Panel $panel): bool
+    {
+        return str_ends_with($this->email, '');
+    }
 
     public function getTenants(Panel $panel): Collection
     {
@@ -72,5 +74,10 @@ class User extends Authenticatable implements HasTenants, FilamentUser, MustVeri
     public function getNameAttribute($value): string
     {
         return trim($value);
+    }
+
+    public function getFilamentAvatarUrl(): ?string
+    {
+        return $this->avatar_url ? Storage::url($this->avatar_url) : null;
     }
 }
