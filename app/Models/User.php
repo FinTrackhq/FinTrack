@@ -30,6 +30,7 @@ class User extends Authenticatable implements HasTenants, FilamentUser, MustVeri
         'name',
         'email',
         'password',
+        'avatar_url',
     ];
     /**
      * The attributes that should be hidden for serialization.
